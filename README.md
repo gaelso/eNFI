@@ -1,5 +1,5 @@
 
-# eNFI: National Forest Inventory eLearning Practice Module  <img src='images/eNFI-logo.png' align="right" height="139" /></a>
+# eNFI: National Forest Inventory eLearning <img src='images/eNFI-logo.png' align="right" height="139" /></a>
 
 ### Designed with R [learnr](https://rstudio.github.io/learnr/) 
 
