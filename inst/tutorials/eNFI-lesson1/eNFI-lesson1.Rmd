@@ -1,6 +1,15 @@
 ---
-title: "Overview of the preliminary data"
-output: learnr::tutorial
+title: Title
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: false
+    css: css/style.css
+    toc: true
+    toc_depth: 3
+    includes:
+      in_header: banner1.html
+    
 runtime: shiny_prerendered
 ---
 
