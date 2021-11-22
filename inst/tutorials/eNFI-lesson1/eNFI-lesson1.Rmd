@@ -15,10 +15,29 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
+library(gradethis)
+
 knitr::opts_chunk$set(echo = FALSE)
+
+tutorial_options(
+  exercise.timelimit = 40,
+  exercise.checker = gradethis::grade_learnr#,
+  #exercise.startover = FALSE,
+  #exercise.error.check.code = gradethis::grade_code
+  )
+
+path_proj <- dirname(dirname(dirname(getwd())))
+path_data <- file.path(path_proj, "data/louland")
+
+source(file.path(path_proj, "R/00-libs.R"     ), local = TRUE)
+source(file.path(path_proj, "R/01-read-data.R"), local = TRUE)
+source(file.path(path_proj, "R/00-libs.R"     ), local = TRUE)
+
 ```
 
-# Welcome
+
+
+## Welcome {#welcome}
 
 <txt-green>Welcome to the first lesson</txt-green> of the **National Forest Inventory eLearning practice module**.
 
@@ -29,6 +48,55 @@ This interactive module is designed to complement the [NFI eLearning modules](ht
 It features interactive lessons designed to practice National Forest Inventory (NFI) sampling and the exploratory analysis of NFI field data with the [R programming language](www.r-project.com). Although this fictional land is not an official country, we will use the acronym NFI when referring to its forest inventory as the method and formulas applied here are valid for nationwide forest inventories.
 
 
+
+## A new land has emerged {#newland}
+
+An island previously unknown to humankind has just been discovered and you are part of a team of scientists commissioned to inventory its forest resources, mainly its carbon stock.
+
+```{r makeland, echo=F}
+
+## fixed profile - more profiles to be implemented in V2.0
+newland_name <- "Louland"
+
+sf_lc     <- sf_lc1
+sf_admin  <- sf_adm1
+sf_topo   <- sf_topo1
+pal       <- palette1
+``` 
+
+::::::{.infobox data-latex=""}
+
+In a future version of this interactive training module, you will be able to choose different land profiles with different (1) forest categories, (2) ratio of ocean covering the 90 x 90 km square frame in which the new land is created, (3) inclusion or exclusion of mangrove forests and even (4) the maximum altitude of ```r newland_name``` (it will have an impact on inaccessible plots)!
+
+For now, ```r newland_name``` forests are divided into ```r nb_ft + 1``` categories: Evergreen forest, Mixed-Deciduous forest, Deciduous forest, Other Woodland and Mangrove Forest, also all the island is considered accessible.
+
+::::::
+
+
+Here is what ```r newland_name``` looks like.
+
+
+
+
+
+```{r showland2, echo=F, results='asis', fig.cap="Overview of the new land."}
+
+cat(paste0('
+<center>
+<video width="400" height="300" autoplay loop>
+  <source src="', "images/newland.mp4", '" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</center>
+    '))
+
+```
+
+The remote sensing team has developed land cover and topographic maps based on 30m resolution remote sensing images and initial forest plot measurements taken by the first exploration crew. Based on their observations, we will be able to have a general understanding of ```r newland_name```'s forest cover. This data is called **auxiliary data**, it is not NFI data *per se*, but useful information to help design and implement an NFI.
+
+In the next section, we will have a quick look at the exploration crew's forest inventory data, loaded in R as objects with the `exfi` prefix, and we will use the land cover maps to calculate the area of the main land cover types.
+
+\  
 
 <br>
 

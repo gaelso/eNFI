@@ -1,0 +1,862 @@
+plot_id,gez_name,gez_code,lu_factor,lu_code,envir_stress
+de-axk1,Tropical dry forest,TAwb,Deciduous,DE,0.13865220546722412
+de-1cfk,Tropical rainforest,TAr,Deciduous,DE,0.09884541481733322
+ev-w4yl,Tropical rainforest,TAr,Evergreen,EV,0.1275116205215454
+de-wo9j,Tropical rainforest,TAr,Deciduous,DE,0.07173237204551697
+ev-odi1,Tropical rainforest,TAr,Evergreen,EV,0.15420517325401306
+ev-9pgg,Tropical rainforest,TAr,Evergreen,EV,0.10624450445175171
+ev-p4uq,Tropical rainforest,TAr,Evergreen,EV,0.1878649741411209
+de-xz1k,Tropical rainforest,TAr,Deciduous,DE,0.02835175022482872
+de-stz9,Tropical rainforest,TAr,Deciduous,DE,0.022360585629940033
+ev-9doo,Tropical rainforest,TAr,Evergreen,EV,0.20264258980751038
+ev-g1jj,Tropical rainforest,TAr,Evergreen,EV,0.08553995937108994
+wl-ze8f,Tropical rainforest,TAr,Other woodland,WL,0.06106871739029884
+de-hlm5,Tropical rainforest,TAr,Deciduous,DE,0.044504132121801376
+de-2fbs,Tropical moist forest,TAwa,Deciduous,DE,0.17276746034622192
+de-s7bu,Tropical rainforest,TAr,Deciduous,DE,0.16999384760856628
+de-in9c,Tropical moist forest,TAwa,Deciduous,DE,0.0665455088019371
+ev-lkf2,Tropical rainforest,TAr,Evergreen,EV,0.16293087601661682
+de-2ncv,Tropical rainforest,TAr,Deciduous,DE,0.28166264295578003
+ev-q7jf,Tropical rainforest,TAr,Evergreen,EV,0.1973777413368225
+wl-rc1n,Tropical moist forest,TAwa,Other woodland,WL,0.2092895358800888
+wl-asi7,Tropical rainforest,TAr,Other woodland,WL,0.19842299818992615
+de-1jca,Tropical rainforest,TAr,Deciduous,DE,0.14058184623718262
+de-y7hl,Tropical moist forest,TAwa,Deciduous,DE,0.09094928950071335
+de-cs1w,Tropical moist forest,TAwa,Deciduous,DE,0.12854109704494476
+wl-gfq3,Tropical dry forest,TAwb,Other woodland,WL,0.3419266641139984
+wl-9jol,Tropical dry forest,TAwb,Other woodland,WL,0.16913791000843048
+de-f2hn,Tropical moist forest,TAwa,Deciduous,DE,0.16670012474060059
+de-lc9p,Tropical moist forest,TAwa,Deciduous,DE,0.16644950211048126
+wl-bsu4,Tropical dry forest,TAwb,Other woodland,WL,0.4476391077041626
+de-8cnj,Tropical moist forest,TAwa,Deciduous,DE,0.1803828328847885
+de-y5no,Tropical moist forest,TAwa,Deciduous,DE,0.21475821733474731
+de-ib4v,Tropical moist forest,TAwa,Deciduous,DE,0.23640958964824677
+de-aac9,Tropical moist forest,TAwa,Deciduous,DE,0.2642991244792938
+md-9qhz,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.2865704298019409
+md-i5aq,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.358402818441391
+de-tj9i,Tropical moist forest,TAwa,Deciduous,DE,0.20402228832244873
+de-jvk3,Tropical moist forest,TAwa,Deciduous,DE,0.32064270973205566
+pl-5udl,Tropical moist forest,TAwa,Plantation,PL,0.17166633903980255
+de-n3pu,Tropical moist forest,TAwa,Deciduous,DE,0.2524276077747345
+de-th2e,Tropical moist forest,TAwa,Deciduous,DE,0.3142220675945282
+de-hwh3,Tropical moist forest,TAwa,Deciduous,DE,0.37860527634620667
+de-1esx,Tropical moist forest,TAwa,Deciduous,DE,0.40761837363243103
+de-j4ig,Tropical dry forest,TAwb,Deciduous,DE,0.2626532018184662
+de-rx3i,Tropical moist forest,TAwa,Deciduous,DE,0.24809366464614868
+de-bfm4,Tropical moist forest,TAwa,Deciduous,DE,0.3346847891807556
+de-5uai,Tropical moist forest,TAwa,Deciduous,DE,0.38489967584609985
+de-h9pj,Tropical moist forest,TAwa,Deciduous,DE,0.3850041627883911
+wl-lf5d,Tropical shrubland,TBSh,Other woodland,WL,0.34208133816719055
+de-ehy2,Tropical dry forest,TAwb,Deciduous,DE,0.18744441866874695
+de-9gqv,Tropical moist forest,TAwa,Deciduous,DE,0.4234296977519989
+de-q5hn,Tropical moist forest,TAwa,Deciduous,DE,0.46119189262390137
+de-zh2x,Tropical moist forest,TAwa,Deciduous,DE,0.5967962145805359
+de-jek6,Tropical moist forest,TAwa,Deciduous,DE,0.5389677286148071
+de-4lzn,Tropical moist forest,TAwa,Deciduous,DE,0.6302061080932617
+de-k8rj,Tropical moist forest,TAwa,Deciduous,DE,0.6012824773788452
+wl-pc8l,Tropical shrubland,TBSh,Other woodland,WL,0.6551176309585571
+de-kzt6,Tropical dry forest,TAwb,Deciduous,DE,0.7247797250747681
+wl-1rwq,Tropical dry forest,TAwb,Other woodland,WL,0.6971134543418884
+wl-o6ev,Tropical dry forest,TAwb,Other woodland,WL,0.7646624445915222
+de-aj7z,Tropical dry forest,TAwb,Deciduous,DE,0.7730242609977722
+de-amn6,Tropical dry forest,TAwb,Deciduous,DE,0.7036039233207703
+de-8mvw,Tropical dry forest,TAwb,Deciduous,DE,0.8191289901733398
+de-o3uc,Tropical dry forest,TAwb,Deciduous,DE,0.6626190543174744
+ev-hm2h,Tropical rainforest,TAr,Evergreen,EV,0.10194207727909088
+ev-vgi9,Tropical rainforest,TAr,Evergreen,EV,0.09023328870534897
+ev-5tnb,Tropical rainforest,TAr,Evergreen,EV,0.09874629229307175
+ev-a8ue,Tropical rainforest,TAr,Evergreen,EV,0.1328469216823578
+mg-uy9j,Tropical moist forest,TAwa,Mangrove,MG,0.4084360897541046
+mg-jsq8,Tropical moist forest,TAwa,Mangrove,MG,0.36488109827041626
+mg-7snd,Tropical moist forest,TAwa,Mangrove,MG,0.35271307826042175
+pl-k1ku,Tropical rainforest,TAr,Plantation,PL,0.21596850454807281
+wl-dt6b,Tropical rainforest,TAr,Other woodland,WL,0.18776370584964752
+ev-gyt8,Tropical rainforest,TAr,Evergreen,EV,0.16508790850639343
+ev-9brl,Tropical rainforest,TAr,Evergreen,EV,0.15077432990074158
+mg-d2oz,Tropical moist forest,TAwa,Mangrove,MG,0.41142627596855164
+mg-ew9f,Tropical moist forest,TAwa,Mangrove,MG,0.3865484893321991
+wl-oqw3,Tropical moist forest,NA,Other woodland,WL,0.36864370107650757
+wl-5ofl,Tropical moist forest,TAwa,Other woodland,WL,0.35597890615463257
+wl-m2mc,Tropical moist forest,TAwa,Other woodland,WL,0.30172890424728394
+wl-xy3e,Tropical moist forest,TAwa,Other woodland,WL,0.2393193244934082
+wl-qnp9,Tropical rainforest,TAr,Other woodland,WL,0.20596392452716827
+ev-7vqq,Tropical rainforest,TAr,Evergreen,EV,0.17700070142745972
+wl-w5uk,Tropical moist forest,TAwa,Other woodland,WL,0.4998640716075897
+wl-eo2x,Tropical moist forest,TAwa,Other woodland,WL,0.4238845109939575
+wl-efq2,Tropical moist forest,TAwa,Other woodland,WL,0.40137770771980286
+wl-3ybm,Tropical moist forest,TAwa,Other woodland,WL,0.19347654283046722
+wl-r6el,Tropical rainforest,TAr,Other woodland,WL,0.17288655042648315
+pl-ho8t,Tropical rainforest,TAr,Plantation,PL,0.19299109280109406
+wl-ehw9,Tropical moist forest,TAwa,Other woodland,WL,0.496960312128067
+wl-8xth,Tropical rainforest,TAr,Other woodland,WL,0.2742285430431366
+ev-o4fc,Tropical rainforest,TAr,Evergreen,EV,0.19701211154460907
+ev-mj6b,Tropical rainforest,TAr,Evergreen,EV,0.1961839199066162
+wl-zkg2,Tropical moist forest,TAwa,Other woodland,WL,0.40699711441993713
+wl-7rtu,Tropical rainforest,TAr,Other woodland,WL,0.25657716393470764
+wl-u4yo,Tropical rainforest,TAr,Other woodland,WL,0.2410551756620407
+ev-ox9h,Tropical rainforest,TAr,Evergreen,EV,0.24112896621227264
+ev-gco9,Tropical rainforest,TAr,Evergreen,EV,0.2479013353586197
+ev-5ijt,Tropical rainforest,TAr,Evergreen,EV,0.22842417657375336
+wl-u3vv,Tropical moist forest,TAwa,Other woodland,WL,0.562282919883728
+wl-pu2f,Tropical moist forest,TAwa,Other woodland,WL,0.5564931035041809
+wl-qoi8,Tropical moist forest,TAwa,Other woodland,WL,0.5440609455108643
+wl-7vug,Tropical moist forest,TAwa,Other woodland,WL,0.5093383193016052
+wl-y4cx,Tropical moist forest,TAwa,Other woodland,WL,0.4937913417816162
+wl-go7i,Tropical rainforest,TAr,Other woodland,WL,0.31344375014305115
+ev-kdc3,Tropical rainforest,TAr,Evergreen,EV,0.2557833790779114
+ev-1cqy,Tropical rainforest,TAr,Evergreen,EV,0.2593773901462555
+ev-k3yu,Tropical rainforest,TAr,Evergreen,EV,0.24619458615779877
+wl-wq2v,Tropical moist forest,TAwa,Other woodland,WL,0.5948536992073059
+wl-phz2,Tropical moist forest,TAwa,Other woodland,WL,0.5734971165657043
+wl-8xxr,Tropical moist forest,TAwa,Other woodland,WL,0.5598425269126892
+ev-h1rs,Tropical rainforest,TAr,Evergreen,EV,0.26996779441833496
+ev-nn6c,Tropical rainforest,TAr,Evergreen,EV,0.25982698798179626
+wl-qsk9,Tropical moist forest,TAwa,Other woodland,WL,0.6082664728164673
+wl-4wez,Tropical moist forest,TAwa,Other woodland,WL,0.5817729234695435
+wl-h3ct,Tropical moist forest,TAwa,Other woodland,WL,0.5710453391075134
+wl-oc3j,Tropical moist forest,TAwa,Other woodland,WL,0.5669817328453064
+wl-xtx2,Tropical moist forest,TAwa,Other woodland,WL,0.4996831715106964
+wl-4yku,Tropical moist forest,TAwa,Other woodland,WL,0.5437005758285522
+wl-i6dv,Tropical moist forest,TAwa,Other woodland,WL,0.48626819252967834
+wl-fk3f,Tropical moist forest,TAwa,Other woodland,WL,0.41589397192001343
+wl-oid3,Tropical moist forest,TAwa,Other woodland,WL,0.3677181601524353
+wl-6cay,Tropical moist forest,TAwa,Other woodland,WL,0.3492823839187622
+wl-a3sc,Tropical rainforest,TAr,Other woodland,WL,0.356687992811203
+wl-ch3e,Tropical moist forest,TAwa,Other woodland,WL,0.5323401689529419
+wl-qpe5,Tropical moist forest,TAwa,Other woodland,WL,0.4925794005393982
+wl-5zty,Tropical moist forest,TAwa,Other woodland,WL,0.392471581697464
+wl-v3tr,Tropical rainforest,TAr,Other woodland,WL,0.4003444015979767
+wl-yc3f,Tropical rainforest,TAr,Other woodland,WL,0.3464280068874359
+wl-ivz8,Tropical moist forest,TAwa,Other woodland,WL,0.5045645833015442
+wl-5yki,Tropical moist forest,TAwa,Other woodland,WL,0.4931705892086029
+wl-p2vg,Tropical rainforest,TAr,Other woodland,WL,0.35281163454055786
+wl-uy2b,Tropical rainforest,TAr,Other woodland,WL,0.25146302580833435
+wl-lmi5,Tropical moist forest,TAwa,Other woodland,WL,0.566389799118042
+wl-5hmn,Tropical moist forest,TAwa,Other woodland,WL,0.514621376991272
+wl-l7ry,Tropical rainforest,TAr,Other woodland,WL,0.2571774423122406
+wl-xk8k,Tropical rainforest,TAr,Other woodland,WL,0.21581587195396423
+wl-bay8,Tropical rainforest,TAr,Other woodland,WL,0.22298286855220795
+wl-4dgj,Tropical moist forest,TAwa,Other woodland,WL,0.47521865367889404
+wl-c1nv,Tropical moist forest,TAwa,Other woodland,WL,0.4343184530735016
+wl-go6v,Tropical moist forest,TAwa,Other woodland,WL,0.482169508934021
+wl-rmg1,Tropical moist forest,TAwa,Other woodland,WL,0.3764870762825012
+wl-1yeg,Tropical dry forest,TAwb,Other woodland,WL,0.9058298468589783
+wl-m5ru,Tropical dry forest,TAwb,Other woodland,WL,0.8608583211898804
+wl-hi9s,Tropical moist forest,TAwa,Other woodland,WL,0.6785686016082764
+wl-jfz7,Tropical moist forest,TAwa,Other woodland,WL,0.5105272531509399
+wl-5sdc,Tropical moist forest,TAwa,Other woodland,WL,0.5605998039245605
+wl-q2lz,Tropical moist forest,TAwa,Other woodland,WL,0.5848522186279297
+wl-rz6k,Tropical moist forest,TAwa,Other woodland,WL,0.5602644681930542
+wl-hbl4,Tropical moist forest,TAwa,Other woodland,WL,0.2813878655433655
+wl-4qdb,Tropical moist forest,TAwa,Other woodland,WL,0.18146352469921112
+wl-u7tw,Tropical moist forest,TAwa,Other woodland,WL,0.1614883840084076
+wl-sh6f,Tropical moist forest,TAwa,Other woodland,WL,0.18299342691898346
+md-ecz2,Tropical mountain system,TM,Mixed Deciduous,MD,0.1706087440252304
+wl-1ymv,Tropical moist forest,TAwa,Other woodland,WL,0.15342043340206146
+wl-e9tc,Tropical moist forest,TAwa,Other woodland,WL,0.15670384466648102
+ev-yn5s,Tropical rainforest,TAr,Evergreen,EV,0.021559758111834526
+ev-tbi8,Tropical rainforest,TAr,Evergreen,EV,0.026577750220894814
+de-7osm,Tropical rainforest,TAr,Deciduous,DE,0.12516959011554718
+md-n4vl,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.16791903972625732
+wl-fh8a,Tropical moist forest,TAwa,Other woodland,WL,0.15509545803070068
+wl-reu6,Tropical moist forest,TAwa,Other woodland,WL,0.13615207374095917
+ev-2ujg,Tropical rainforest,TAr,Evergreen,EV,-0.062310829758644104
+ev-q5qi,Tropical rainforest,TAr,Evergreen,EV,-0.0558074526488781
+ev-iz2t,Tropical rainforest,TAr,Evergreen,EV,-0.037326663732528687
+de-ogu7,Tropical rainforest,TAr,Deciduous,DE,0.14671121537685394
+ev-6kqk,Tropical rainforest,TAr,Evergreen,EV,0.1553671956062317
+de-f8gi,Tropical rainforest,TAr,Deciduous,DE,0.1574794352054596
+de-wo2u,Tropical moist forest,TAwa,Deciduous,DE,0.18559767305850983
+de-jne1,Tropical moist forest,TAwa,Deciduous,DE,0.1637008935213089
+de-4fnf,Tropical moist forest,TAwa,Deciduous,DE,0.1501258760690689
+de-e3jg,Tropical moist forest,TAwa,Deciduous,DE,0.13619250059127808
+de-xz8b,Tropical moist forest,TAwa,Deciduous,DE,0.13057971000671387
+de-ocx2,Tropical moist forest,TAwa,Deciduous,DE,0.11905433982610703
+ev-5oyq,Tropical moist forest,TAwa,Evergreen,EV,0.11741634458303452
+md-x5tb,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.11177296191453934
+wl-dn4u,Tropical moist forest,TAwa,Other woodland,WL,0.10769279301166534
+ev-wmo6,Tropical rainforest,TAr,Evergreen,EV,-0.09104171395301819
+ev-2qax,Tropical mountain system,TM,Evergreen,EV,-0.06401558220386505
+ev-b4sw,Tropical mountain system,TM,Evergreen,EV,-0.07448562234640121
+ev-tp5n,Tropical rainforest,TAr,Evergreen,EV,-0.03760186955332756
+wl-zhb3,Tropical rainforest,TAr,Other woodland,WL,0.05982271209359169
+ev-4bcq,Tropical rainforest,TAr,Evergreen,EV,0.07881209254264832
+de-u4ha,Tropical rainforest,TAr,Deciduous,DE,0.09699167311191559
+de-na3d,Tropical rainforest,TAr,Deciduous,DE,0.10681303590536118
+ev-svo1,Tropical rainforest,TAr,Evergreen,EV,0.10316324234008789
+de-1ila,Tropical rainforest,TAr,Deciduous,DE,0.09285525977611542
+de-h7ey,Tropical rainforest,TAr,Deciduous,DE,0.0853484570980072
+de-hl8k,Tropical rainforest,TAr,Deciduous,DE,0.08361488580703735
+de-kzy9,Tropical rainforest,TAr,Deciduous,DE,0.08039529621601105
+ev-7kyy,Tropical rainforest,TAr,Evergreen,EV,0.0753054991364479
+wl-f3vm,Tropical rainforest,TAr,Other woodland,WL,0.048657383769750595
+md-qm7t,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.061062585562467575
+ev-zld9,Tropical rainforest,TAr,Evergreen,EV,-0.0843767523765564
+ev-3tca,Tropical rainforest,TAr,Evergreen,EV,-0.07202316075563431
+ev-y6kt,Tropical rainforest,TAr,Evergreen,EV,-0.03747236728668213
+ev-qa5w,Tropical rainforest,TAr,Evergreen,EV,0.0013822820037603378
+ev-nfl6,Tropical rainforest,TAr,Evergreen,EV,0.05197491496801376
+de-7jii,Tropical rainforest,TAr,Deciduous,DE,-0.005115914158523083
+de-x9zj,Tropical rainforest,TAr,Deciduous,DE,-0.015388453379273415
+de-jv6u,Tropical rainforest,TAr,Deciduous,DE,-0.00391424261033535
+ev-dkn2,Tropical rainforest,TAr,Evergreen,EV,0.012860171496868134
+ev-7nlt,Tropical rainforest,TAr,Evergreen,EV,-0.0022120072972029448
+de-s6os,Tropical rainforest,TAr,Deciduous,DE,0.02977941371500492
+ev-dt3w,Tropical rainforest,TAr,Evergreen,EV,-0.17080871760845184
+ev-dmi9,Tropical rainforest,TAr,Evergreen,EV,0.006676835939288139
+de-4lrl,Tropical rainforest,TAr,Deciduous,DE,0.02135983668267727
+de-r4lr,Tropical rainforest,TAr,Deciduous,DE,-0.053994711488485336
+de-nq3f,Tropical rainforest,TAr,Deciduous,DE,-0.06009058654308319
+de-twn2,Tropical rainforest,TAr,Deciduous,DE,-0.04668283462524414
+ev-9vbf,Tropical rainforest,TAr,Evergreen,EV,-0.042345624417066574
+ev-j5jv,Tropical rainforest,TAr,Evergreen,EV,-0.0465737022459507
+ev-np1i,Tropical rainforest,TAr,Evergreen,EV,-0.019000710919499397
+de-auk8,Tropical rainforest,TAr,Deciduous,DE,-0.01677112467586994
+ev-2lak,Tropical rainforest,TAr,Evergreen,EV,-7.80319533078e-5
+ev-g3uy,Tropical rainforest,TAr,Evergreen,EV,-0.049495335668325424
+ev-ya2a,Tropical rainforest,TAr,Evergreen,EV,-0.029425539076328278
+ev-avn1,Tropical rainforest,TAr,Evergreen,EV,-0.02092153951525688
+ev-2dba,Tropical rainforest,TAr,Evergreen,EV,-0.015356538817286491
+ev-h9gm,Tropical rainforest,TAr,Evergreen,EV,-0.016242749989032745
+ev-cl2l,Tropical rainforest,TAr,Evergreen,EV,-0.04805637523531914
+ev-wyo3,Tropical rainforest,TAr,Evergreen,EV,-0.05797262489795685
+ev-2zzj,Tropical rainforest,TAr,Evergreen,EV,-0.06547117233276367
+ev-m7cl,Tropical rainforest,TAr,Evergreen,EV,-0.07032296061515808
+ev-gg3t,Tropical rainforest,TAr,Evergreen,EV,-0.07033870369195938
+ev-nzv5,Tropical rainforest,TAr,Evergreen,EV,-0.06957829743623734
+ev-5hnf,Tropical rainforest,TAr,Evergreen,EV,-0.07058229297399521
+ev-i4vr,Tropical rainforest,TAr,Evergreen,EV,-0.06930408626794815
+ev-ur4b,Tropical rainforest,TAr,Evergreen,EV,-0.05424508452415466
+ev-jea2,Tropical rainforest,TAr,Evergreen,EV,-0.06018287315964699
+ev-1eyv,Tropical rainforest,TAr,Evergreen,EV,-0.057621873915195465
+ev-w2io,Tropical rainforest,TAr,Evergreen,EV,-0.05892371013760567
+ev-eo7a,Tropical rainforest,TAr,Evergreen,EV,-0.05278629809617996
+ev-iyv8,Tropical rainforest,TAr,Evergreen,EV,-0.13769912719726563
+ev-4qai,Tropical rainforest,TAr,Evergreen,EV,-0.11378312855958939
+ev-p7kp,Tropical rainforest,TAr,Evergreen,EV,-0.08340591192245483
+ev-ra7n,Tropical rainforest,TAr,Evergreen,EV,-0.07169575244188309
+ev-ylb7,Tropical rainforest,TAr,Evergreen,EV,-0.07015053927898407
+ev-8fej,Tropical rainforest,TAr,Evergreen,EV,-0.08027350157499313
+ev-e3jt,Tropical rainforest,TAr,Evergreen,EV,-0.08177829533815384
+ev-zn9l,Tropical rainforest,TAr,Evergreen,EV,-0.09069125354290009
+ev-rpa8,Tropical rainforest,TAr,Evergreen,EV,-0.0794624611735344
+ev-6ohi,Tropical rainforest,TAr,Evergreen,EV,-0.0748172476887703
+de-a8tl,Tropical rainforest,TAr,Deciduous,DE,-0.06949824839830399
+de-ta7h,Tropical rainforest,TAr,Deciduous,DE,-0.0675092488527298
+ev-kog9,Tropical rainforest,TAr,Evergreen,EV,-0.06695324927568436
+de-8rsh,Tropical rainforest,TAr,Deciduous,DE,-0.049372248351573944
+de-l3dd,Tropical rainforest,TAr,Deciduous,DE,-0.039897460490465164
+de-ja8p,Tropical rainforest,TAr,Deciduous,DE,-0.026382461190223694
+de-jvf3,Tropical rainforest,TAr,Deciduous,DE,-0.023694461211562157
+ev-2xbr,Tropical rainforest,TAr,Evergreen,EV,-0.2085513323545456
+ev-p3jq,Tropical rainforest,TAr,Evergreen,EV,-0.11712171137332916
+ev-fj4x,Tropical rainforest,TAr,Evergreen,EV,-0.08921392261981964
+ev-zlu9,Tropical rainforest,TAr,Evergreen,EV,-0.07567428797483444
+ev-5zpx,Tropical rainforest,TAr,Evergreen,EV,-0.08425507694482803
+ev-h4ii,Tropical rainforest,TAr,Evergreen,EV,-0.10554483532905579
+ev-gt2u,Tropical rainforest,TAr,Evergreen,EV,-0.11223383247852325
+ev-tzh5,Tropical rainforest,TAr,Evergreen,EV,-0.1113608330488205
+ev-2ptl,Tropical rainforest,TAr,Evergreen,EV,-0.1108156219124794
+ev-d2qk,Tropical rainforest,TAr,Evergreen,EV,-0.10840541869401932
+ev-gq1w,Tropical rainforest,TAr,Evergreen,EV,-0.08018762618303299
+ev-hrv3,Tropical rainforest,TAr,Evergreen,EV,-0.06679783761501312
+ev-2wod,Tropical rainforest,TAr,Evergreen,EV,-0.055617835372686386
+de-p1vz,Tropical rainforest,TAr,Deciduous,DE,-0.051895834505558014
+de-nz2a,Tropical rainforest,TAr,Deciduous,DE,-0.030887046828866005
+ev-ycc1,Tropical rainforest,TAr,Evergreen,EV,-0.0374610461294651
+de-2dxw,Tropical rainforest,TAr,Deciduous,DE,-0.06179983541369438
+ev-b4pn,Tropical rainforest,TAr,Evergreen,EV,-0.05124083533883095
+de-nw3i,Tropical rainforest,TAr,Deciduous,DE,-0.044837046414613724
+ev-zpy8,Tropical rainforest,TAr,Evergreen,EV,-0.021043289452791214
+ev-3viv,Tropical rainforest,TAr,Evergreen,EV,-0.018205704167485237
+ev-i1jw,Tropical rainforest,TAr,Evergreen,EV,-0.015249124728143215
+ev-th3c,Tropical rainforest,TAr,Evergreen,EV,-0.018324125558137894
+ev-qlp3,Tropical rainforest,TAr,Evergreen,EV,-0.03381933644413948
+ev-7amt,Tropical rainforest,TAr,Evergreen,EV,-0.024111079052090645
+ev-d2uj,Tropical rainforest,TAr,Evergreen,EV,-0.028900789096951485
+ev-qb8x,Tropical rainforest,TAr,Evergreen,EV,-0.025236204266548157
+ev-oin5,Tropical rainforest,TAr,Evergreen,EV,-0.025669414550065994
+ev-9xuh,Tropical rainforest,TAr,Evergreen,EV,-0.031116625294089317
+ev-o2wt,Tropical rainforest,TAr,Evergreen,EV,-0.035434626042842865
+ev-wf2n,Tropical rainforest,TAr,Evergreen,EV,-0.033317048102617264
+ev-rcg4,Tropical rainforest,TAr,Evergreen,EV,-0.03148091584444046
+ev-9ggt,Tropical rainforest,TAr,Evergreen,EV,-0.03209512680768967
+ev-c2xd,Tropical rainforest,TAr,Evergreen,EV,-0.035477664321660995
+ev-ce9o,Tropical rainforest,TAr,Evergreen,EV,-0.03910587355494499
+ev-jal6,Tropical rainforest,TAr,Evergreen,EV,-0.030254289507865906
+ev-4uuq,Tropical rainforest,TAr,Evergreen,EV,-0.032091498374938965
+ev-l2cz,Tropical rainforest,TAr,Evergreen,EV,-0.021100124344229698
+ev-ms8q,Tropical rainforest,TAr,Evergreen,EV,-0.02990766428411007
+ev-wyr6,Tropical rainforest,TAr,Evergreen,EV,-0.03658466413617134
+ev-9ras,Tropical rainforest,TAr,Evergreen,EV,-0.03803487494587898
+ev-f7cc,Tropical rainforest,TAr,Evergreen,EV,-0.031660087406635284
+ev-hh7c,Tropical rainforest,TAr,Evergreen,EV,-0.02873150072991848
+ev-uio7,Tropical rainforest,TAr,Evergreen,EV,-0.02515449933707714
+ev-8klw,Tropical rainforest,TAr,Evergreen,EV,-0.025343500077724457
+ev-k6rb,Tropical rainforest,TAr,Evergreen,EV,-0.0313146635890007
+ev-nr3n,Tropical rainforest,TAr,Evergreen,EV,-0.0228898748755455
+ev-frg6,Tropical rainforest,TAr,Evergreen,EV,-0.021257085725665092
+ev-9jao,Tropical rainforest,TAr,Evergreen,EV,-0.011705500073730946
+ev-j7ux,Tropical rainforest,TAr,Evergreen,EV,-0.042285047471523285
+ev-wz4t,Tropical rainforest,TAr,Evergreen,EV,-0.03196224942803383
+ev-isx6,Tropical rainforest,TAr,Evergreen,EV,-0.028612453490495682
+ev-7mua,Tropical rainforest,TAr,Evergreen,EV,-0.025036664679646492
+ev-b3yr,Tropical rainforest,TAr,Evergreen,EV,-0.011842085979878902
+ev-sx5x,Tropical rainforest,TAr,Evergreen,EV,-0.00925149954855442
+ev-qae7,Tropical rainforest,TAr,Evergreen,EV,-0.1175382137298584
+ev-7lqj,Tropical rainforest,TAr,Evergreen,EV,-0.11611320823431015
+ev-p7ti,Tropical rainforest,TAr,Evergreen,EV,-0.11526921391487122
+ev-qd5u,Tropical rainforest,TAr,Evergreen,EV,-0.09210861474275589
+ev-wjb6,Tropical rainforest,TAr,Evergreen,EV,-0.08199303597211838
+ev-1zge,Tropical rainforest,TAr,Evergreen,EV,-0.06542003899812698
+ev-c9yo,Tropical rainforest,TAr,Evergreen,EV,-0.04922904819250107
+ev-cr4r,Tropical rainforest,TAr,Evergreen,EV,-0.04390204697847366
+ev-kbh2,Tropical rainforest,TAr,Evergreen,EV,-0.038745250552892685
+ev-6xhb,Tropical rainforest,TAr,Evergreen,EV,-0.03031766414642334
+ev-a3qm,Tropical rainforest,TAr,Evergreen,EV,-0.12066078931093216
+ev-sf6c,Tropical rainforest,TAr,Evergreen,EV,-0.11909178644418716
+ev-num8,Tropical rainforest,TAr,Evergreen,EV,-0.11343079060316086
+ev-8gvh,Tropical rainforest,TAr,Evergreen,EV,-0.11686620116233826
+ev-i8ib,Tropical rainforest,TAr,Evergreen,EV,-0.09953741729259491
+ev-xq3b,Tropical rainforest,TAr,Evergreen,EV,-0.08943382650613785
+ev-oot9,Tropical rainforest,TAr,Evergreen,EV,-0.08224182575941086
+ev-2eah,Tropical rainforest,TAr,Evergreen,EV,-0.08809445798397064
+ev-d9sc,Tropical rainforest,TAr,Evergreen,EV,-0.06798862665891647
+ev-bo5d,Tropical rainforest,TAr,Evergreen,EV,-0.06132304668426514
+ev-cyr3,Tropical rainforest,TAr,Evergreen,EV,-0.055605046451091766
+ev-2ipk,Tropical rainforest,TAr,Evergreen,EV,-0.04744604602456093
+ev-e6ec,Tropical rainforest,TAr,Evergreen,EV,-0.001577500021085143
+ev-co4d,Tropical rainforest,TAr,Evergreen,EV,-0.11759878695011139
+ev-hxq7,Tropical rainforest,TAr,Evergreen,EV,-0.11323478817939758
+ev-4vop,Tropical rainforest,TAr,Evergreen,EV,-0.12108220905065536
+ev-m7ob,Tropical rainforest,TAr,Evergreen,EV,-0.12113362550735474
+ev-jg4z,Tropical rainforest,TAr,Evergreen,EV,-0.11554882675409317
+ev-nta7,Tropical rainforest,TAr,Evergreen,EV,-0.09639883041381836
+ev-7nvc,Tropical rainforest,TAr,Evergreen,EV,-0.10751182585954666
+ev-p2kd,Tropical rainforest,TAr,Evergreen,EV,-0.09595125168561935
+ev-al4l,Tropical rainforest,TAr,Evergreen,EV,-0.08320345729589462
+ev-tkc6,Tropical rainforest,TAr,Evergreen,EV,-0.07086283713579178
+ev-5tzd,Tropical rainforest,TAr,Evergreen,EV,-0.06555404514074326
+ev-g7dc,Tropical rainforest,TAr,Evergreen,EV,-0.05638604611158371
+ev-jc1u,Tropical rainforest,TAr,Evergreen,EV,-0.05353304743766785
+ev-jdf4,Tropical rainforest,TAr,Evergreen,EV,-0.04230766370892525
+ev-2puv,Tropical rainforest,TAr,Evergreen,EV,-0.03276566416025162
+ev-x4ge,Tropical rainforest,TAr,Evergreen,EV,-0.015041874721646309
+ev-iq1o,Tropical rainforest,TAr,Evergreen,EV,-0.004856289364397526
+ev-vaj8,Tropical rainforest,TAr,Evergreen,EV,-0.12487829476594925
+ev-9nip,Tropical rainforest,TAr,Evergreen,EV,-0.09895999729633331
+ev-i7su,Tropical rainforest,TAr,Evergreen,EV,-0.08727020770311356
+ev-ap9w,Tropical rainforest,TAr,Evergreen,EV,-0.06889008730649948
+ev-utu4,Tropical rainforest,TAr,Evergreen,EV,-0.0694100484251976
+ev-2rfr,Tropical rainforest,TAr,Evergreen,EV,-0.06330224871635437
+ev-a5zs,Tropical rainforest,TAr,Evergreen,EV,-0.042360663414001465
+ev-fq6o,Tropical rainforest,TAr,Evergreen,EV,-0.1221289187669754
+ev-osj3,Tropical rainforest,TAr,Evergreen,EV,-0.11327149718999863
+ev-3hzs,Tropical rainforest,TAr,Evergreen,EV,-0.10979049652814865
+ev-x3lh,Tropical rainforest,TAr,Evergreen,EV,-0.09359599649906158
+ev-ub7v,Tropical rainforest,TAr,Evergreen,EV,-0.07316162437200546
+ev-mlq9,Tropical rainforest,TAr,Evergreen,EV,-0.05691991373896599
+ev-1mcj,Tropical rainforest,TAr,Evergreen,EV,-0.11042692512273788
+ev-f5na,Tropical rainforest,TAr,Evergreen,EV,-0.10333633422851562
+ev-hc1x,Tropical rainforest,TAr,Evergreen,EV,-0.09761516749858856
+ev-brz6,Tropical rainforest,TAr,Evergreen,EV,-0.10935112833976746
+ev-7cjw,Tropical rainforest,TAr,Evergreen,EV,-0.10328154265880585
+ev-d9gp,Tropical rainforest,TAr,Evergreen,EV,-0.07824162393808365
+ev-nz4s,Tropical rainforest,TAr,Evergreen,EV,-0.07253403961658478
+ev-apo5,Tropical rainforest,TAr,Evergreen,EV,-0.0706002488732338
+ev-4lpp,Tropical rainforest,TAr,Evergreen,EV,-0.09363570809364319
+ev-f8uc,Tropical rainforest,TAr,Evergreen,EV,-0.09941554069519043
+ev-es5m,Tropical rainforest,TAr,Evergreen,EV,-0.09477516263723373
+ev-dgm8,Tropical rainforest,TAr,Evergreen,EV,-0.10133737325668335
+ev-3bzx,Tropical rainforest,TAr,Evergreen,EV,-0.07026325166225433
+ev-k9ni,Tropical rainforest,TAr,Evergreen,EV,-0.07112725079059601
+ev-du2a,Tropical rainforest,TAr,Evergreen,EV,-0.0627276748418808
+ev-uuq9,Tropical rainforest,TAr,Evergreen,EV,-0.08540371060371399
+ev-3pqc,Tropical rainforest,TAr,Evergreen,EV,-0.08520571142435074
+ev-q6iz,Tropical rainforest,TAr,Evergreen,EV,-0.08909100294113159
+ev-vf2y,Tropical rainforest,TAr,Evergreen,EV,-0.08788362145423889
+ev-tnw8,Tropical rainforest,TAr,Evergreen,EV,-0.08655091375112534
+ev-4hlp,Tropical rainforest,TAr,Evergreen,EV,-0.08539112657308578
+ev-b2nj,Tropical rainforest,TAr,Evergreen,EV,-0.07930225133895874
+ev-rq8q,Tropical rainforest,TAr,Evergreen,EV,-0.0752536728978157
+ev-mzb1,Tropical rainforest,TAr,Evergreen,EV,-0.07421407848596573
+ev-1nfo,Tropical rainforest,TAr,Evergreen,EV,-0.07545950263738632
+ev-f7vz,Tropical rainforest,TAr,Evergreen,EV,-0.0703091248869896
+ev-tp5g,Tropical rainforest,TAr,Evergreen,EV,-0.08313895761966705
+ev-anj3,Tropical rainforest,TAr,Evergreen,EV,-0.06621450185775757
+ev-1jtz,Tropical rainforest,TAr,Evergreen,EV,-0.06908871233463287
+ev-j3gk,Tropical rainforest,TAr,Evergreen,EV,-0.0678323283791542
+ev-tt9a,Tropical rainforest,TAr,Evergreen,EV,-0.062333375215530396
+ev-ovq8,Tropical rainforest,TAr,Evergreen,EV,-0.05972491577267647
+ev-3krl,Tropical rainforest,TAr,Evergreen,EV,-0.05623858422040939
+ev-e4av,Tropical rainforest,TAr,Evergreen,EV,-0.047361623495817184
+ev-yt9p,Tropical rainforest,TAr,Evergreen,EV,-0.04914083704352379
+ev-iiq1,Tropical rainforest,TAr,Evergreen,EV,-0.05137217044830322
+ev-9zdk,Tropical rainforest,TAr,Evergreen,EV,-0.06274916976690292
+ev-y3cz,Tropical rainforest,TAr,Evergreen,EV,-0.06071941554546356
+ev-nx7p,Tropical rainforest,TAr,Evergreen,EV,-0.057317834347486496
+ev-zck8,Tropical rainforest,TAr,Evergreen,EV,-0.04425525665283203
+ev-4zwh,Tropical rainforest,TAr,Evergreen,EV,-0.04463725909590721
+ev-w3lh,Tropical rainforest,TAr,Evergreen,EV,-0.06179804727435112
+ev-hr1s,Tropical rainforest,TAr,Evergreen,EV,-0.04805125668644905
+ev-sfp5,Tropical rainforest,TAr,Evergreen,EV,-0.04164708033204079
+ev-1gkw,Tropical rainforest,TAr,Evergreen,EV,-0.023565078154206276
+ev-n6fd,Tropical rainforest,TAr,Evergreen,EV,-0.020608702674508095
+ev-zy5y,Tropical rainforest,TAr,Evergreen,EV,-0.018171165138483047
+ev-fzw9,Tropical rainforest,TAr,Evergreen,EV,0.010146742686629295
+ev-7enj,Tropical rainforest,TAr,Evergreen,EV,0.0019557427149266005
+ev-s3lh,Tropical rainforest,TAr,Evergreen,EV,-0.0017830784199759364
+ev-gf4h,Tropical rainforest,TAr,Evergreen,EV,0.00133429653942585
+ev-wud1,Tropical rainforest,TAr,Evergreen,EV,-6.339142564684153e-4
+ev-2hem,Tropical rainforest,TAr,Evergreen,EV,-2.807572891470045e-4
+ev-l4jq,Tropical rainforest,TAr,Evergreen,EV,-0.005360960960388184
+ev-pb9e,Tropical rainforest,TAr,Evergreen,EV,0.014711124822497368
+ev-ejc1,Tropical rainforest,TAr,Evergreen,EV,0.01251992117613554
+ev-2xyj,Tropical rainforest,TAr,Evergreen,EV,0.017215710133314133
+ev-k1it,Tropical rainforest,TAr,Evergreen,EV,0.008908499963581562
+ev-ru1s,Tropical rainforest,TAr,Evergreen,EV,0.010991664603352547
+ev-nwh8,Tropical rainforest,TAr,Evergreen,EV,0.012368242256343365
+ev-1ufu,Tropical rainforest,TAr,Evergreen,EV,0.026172921061515808
+ev-a7hz,Tropical rainforest,TAr,Evergreen,EV,0.02905808575451374
+ev-nc5p,Tropical rainforest,TAr,Evergreen,EV,0.02690608613193035
+ev-ofv2,Tropical rainforest,TAr,Evergreen,EV,0.017009874805808067
+ev-9skd,Tropical rainforest,TAr,Evergreen,EV,0.019786452874541283
+ev-j7ur,Tropical rainforest,TAr,Evergreen,EV,0.01814083568751812
+ev-yd5v,Tropical rainforest,TAr,Evergreen,EV,0.010670211166143417
+ev-vaf8,Tropical rainforest,TAr,Evergreen,EV,0.0473550409078598
+ev-2mzw,Tropical rainforest,TAr,Evergreen,EV,0.023090586066246033
+ev-p7eo,Tropical rainforest,TAr,Evergreen,EV,0.026172297075390816
+ev-zx4p,Tropical rainforest,TAr,Evergreen,EV,0.032922085374593735
+ev-mdf9,Tropical rainforest,TAr,Evergreen,EV,0.038185086101293564
+ev-8ksa,Tropical rainforest,TAr,Evergreen,EV,0.018285874277353287
+ev-u1br,Tropical rainforest,TAr,Evergreen,EV,0.028354039415717125
+ev-ho1g,Tropical rainforest,TAr,Evergreen,EV,0.01684383489191532
+ev-ecl4,Tropical rainforest,TAr,Evergreen,EV,0.028086422011256218
+ev-9kcf,Tropical rainforest,TAr,Evergreen,EV,0.03662149980664253
+ev-r2nn,Tropical rainforest,TAr,Evergreen,EV,0.04693228751420975
+ev-fk8x,Tropical rainforest,TAr,Evergreen,EV,0.0395905002951622
+ev-hst6,Tropical rainforest,TAr,Evergreen,EV,0.027706289663910866
+ev-5vje,Tropical rainforest,TAr,Evergreen,EV,0.032962460070848465
+ev-f1mh,Tropical rainforest,TAr,Evergreen,EV,0.04020857810974121
+ev-fa4l,Tropical rainforest,TAr,Evergreen,EV,0.04820546135306358
+ev-uzr6,Tropical rainforest,TAr,Evergreen,EV,0.049209460616111755
+ev-9rpd,Tropical rainforest,TAr,Evergreen,EV,0.05094042047858238
+ev-b5bn,Tropical rainforest,TAr,Evergreen,EV,0.05181049928069115
+ev-kr5l,Tropical rainforest,TAr,Evergreen,EV,0.05128170922398567
+ev-vid1,Tropical rainforest,TAr,Evergreen,EV,0.03387546166777611
+ev-1mmz,Tropical rainforest,TAr,Evergreen,EV,0.05253220349550247
+de-z6gl,Tropical dry forest,TAwb,Deciduous,DE,0.06867000460624695
+ev-du3d,Tropical rainforest,TAr,Evergreen,EV,0.08714558929204941
+ev-fga1,Tropical rainforest,TAr,Evergreen,EV,0.08259816467761993
+ev-3fly,Tropical rainforest,TAr,Evergreen,EV,0.1019599512219429
+ev-k7xf,Tropical rainforest,TAr,Evergreen,EV,0.09431316703557968
+ev-dv5q,Tropical rainforest,TAr,Evergreen,EV,0.08851754665374756
+ev-sma7,Tropical rainforest,TAr,Evergreen,EV,0.11317016184329987
+pl-4hzc,Tropical dry forest,TAwb,Plantation,PL,0.15671494603157043
+md-t1pc,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.1919243186712265
+md-hj3r,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.13439689576625824
+md-npj4,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.1377469152212143
+md-4xxp,Tropical mountain system,TM,Mixed Deciduous,MD,0.0358206182718277
+md-u1jh,Tropical mountain system,TM,Mixed Deciduous,MD,-0.12737932801246643
+md-in9p,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.15430301427841187
+pl-vdr6,Tropical moist forest,TAwa,Plantation,PL,-0.09148324280977249
+de-5bgi,Tropical dry forest,TAwb,Deciduous,DE,0.11859386414289474
+ev-l6hq,Tropical rainforest,TAr,Evergreen,EV,-0.06903950124979019
+ev-fz7t,Tropical rainforest,TAr,Evergreen,EV,-0.03703007847070694
+ev-vgu2,Tropical rainforest,TAr,Evergreen,EV,-0.09349395334720612
+pl-9xwx,Tropical moist forest,TAwa,Plantation,PL,0.060389913618564606
+ev-f1ba,Tropical rainforest,TAr,Evergreen,EV,-0.15417766571044922
+ev-qk9p,Tropical rainforest,TAr,Evergreen,EV,-0.19367870688438416
+md-hnl6,Tropical mountain system,TM,Mixed Deciduous,MD,-0.1879069209098816
+md-3npe,Tropical mountain system,TM,Mixed Deciduous,MD,-0.14301300048828125
+ev-j8ho,Tropical rainforest,TAr,Evergreen,EV,-0.10864300280809402
+de-uw1m,Tropical dry forest,TAwb,Deciduous,DE,0.6268760561943054
+de-vew6,Tropical moist forest,TAwa,Deciduous,DE,0.615761399269104
+de-3ybg,Tropical dry forest,TAwb,Deciduous,DE,0.6088540554046631
+wl-h3nc,Tropical dry forest,TAwb,Other woodland,WL,0.6102672219276428
+wl-ss8v,Tropical moist forest,TAwa,Other woodland,WL,0.6309085488319397
+wl-ell2,Tropical moist forest,TAwa,Other woodland,WL,0.6101503968238831
+de-9xfy,Tropical dry forest,TAwb,Deciduous,DE,0.6057602167129517
+wl-q8oq,Tropical dry forest,TAwb,Other woodland,WL,0.5943180918693542
+de-tk5f,Tropical dry forest,TAwb,Deciduous,DE,0.6483660936355591
+ev-xjx9,Tropical moist forest,TAwa,Evergreen,EV,0.47223901748657227
+mg-3fcf,Tropical moist forest,TAwa,Mangrove,MG,0.6185755729675293
+de-d5xp,Tropical dry forest,TAwb,Deciduous,DE,0.6122037172317505
+de-wc4d,Tropical dry forest,TAwb,Deciduous,DE,0.6363257169723511
+wl-ipj6,Tropical dry forest,TAwb,Other woodland,WL,0.6498239040374756
+md-1hlj,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.6806488633155823
+md-a7wy,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.6787002682685852
+md-ri4x,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4711437225341797
+de-byl3,Tropical moist forest,TAwa,Deciduous,DE,0.6015806794166565
+de-4ppb,Tropical moist forest,TAwa,Deciduous,DE,0.6042927503585815
+de-y7ox,Tropical moist forest,TAwa,Deciduous,DE,0.5913310050964355
+de-lf4l,Tropical moist forest,TAwa,Deciduous,DE,0.5877410173416138
+de-uuw8,Tropical moist forest,TAwa,Deciduous,DE,0.5935700535774231
+de-4swo,Tropical dry forest,TAwb,Deciduous,DE,0.60126793384552
+de-s4vx,Tropical dry forest,TAwb,Deciduous,DE,0.6169167160987854
+md-pg4h,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.672412097454071
+md-bol8,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.691078245639801
+md-2lur,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.46153175830841064
+de-p8xj,Tropical moist forest,TAwa,Deciduous,DE,0.5843395590782166
+md-hg4a,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.658492922782898
+md-fzo7,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.6618987321853638
+de-5lso,Tropical moist forest,TAwa,Deciduous,DE,0.4067431688308716
+de-h9hf,Tropical moist forest,TAwa,Deciduous,DE,0.48444613814353943
+ev-bl9k,Tropical moist forest,TAwa,Evergreen,EV,0.5015901327133179
+de-bkm1,Tropical moist forest,TAwa,Deciduous,DE,0.5236725211143494
+de-8vrd,Tropical moist forest,TAwa,Deciduous,DE,0.5479715466499329
+md-r4wy,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.43469077348709106
+de-fq8n,Tropical moist forest,TAwa,Deciduous,DE,0.48167213797569275
+de-deu3,Tropical moist forest,TAwa,Deciduous,DE,0.47604355216026306
+md-3pam,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.17350995540618896
+md-a8kw,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.02814408577978611
+ev-tg4f,Tropical rainforest,TAr,Evergreen,EV,-0.06367162615060806
+wl-asm7,Tropical shrubland,TBSh,Other woodland,WL,0.41777122020721436
+wl-8dvz,Tropical moist forest,TAwa,Other woodland,WL,0.09102713316679001
+md-a1rb,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.11914090812206268
+ev-gc5r,Tropical rainforest,TAr,Evergreen,EV,0.01075286790728569
+ev-nco6,Tropical rainforest,TAr,Evergreen,EV,0.03246709331870079
+md-3zte,Tropical mountain system,TM,Mixed Deciduous,MD,0.09035332500934601
+ev-q4vd,Tropical rainforest,TAr,Evergreen,EV,0.2930704355239868
+ev-mn8n,Tropical rainforest,TAr,Evergreen,EV,-0.034719694405794144
+ev-sdc1,Tropical rainforest,TAr,Evergreen,EV,0.01547219604253769
+md-9gwa,Tropical moist forest,TAwa,Mixed Deciduous,MD,-0.041125163435935974
+md-l2th,Tropical mountain system,TM,Mixed Deciduous,MD,0.029091250151395798
+ev-ue3x,Tropical rainforest,TAr,Evergreen,EV,0.025181999430060387
+ev-bbh2,Tropical rainforest,TAr,Evergreen,EV,0.038791634142398834
+md-6vpu,Tropical mountain system,TM,Mixed Deciduous,MD,-0.12412874400615692
+ev-e3yp,Tropical rainforest,TAr,Evergreen,EV,0.27474305033683777
+ev-xc9t,Tropical rainforest,TAr,Evergreen,EV,0.3044121265411377
+md-bqv5,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.30683645606040955
+ev-4kca,Tropical rainforest,TAr,Evergreen,EV,0.25995102524757385
+md-z9fb,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.20386888086795807
+md-ao7a,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.40228271484375
+md-wll3,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3198298513889313
+md-3thk,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3984772562980652
+md-a1tm,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3792729079723358
+md-rf1e,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.2898908257484436
+md-azq6,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3990436792373657
+md-4ocr,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.37499332427978516
+ev-p5bp,Tropical rainforest,TAr,Evergreen,EV,0.11750110983848572
+md-qy6c,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.5433536171913147
+wl-ewc7,Tropical dry forest,TAwb,Other woodland,WL,0.41052669286727905
+ev-5axr,Tropical rainforest,TAr,Evergreen,EV,0.34383663535118103
+md-r1tr,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.29109618067741394
+de-pv7z,Tropical dry forest,TAwb,Deciduous,DE,0.2655142545700073
+md-vbq6,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.48802462220191956
+ev-1yqr,Tropical rainforest,TAr,Evergreen,EV,0.13199907541275024
+ev-f5um,Tropical rainforest,TAr,Evergreen,EV,0.13189180195331573
+md-ok5v,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.2577430307865143
+de-rpj4,Tropical dry forest,TAwb,Deciduous,DE,0.2078867107629776
+ev-9zfz,Tropical rainforest,TAr,Evergreen,EV,0.3693658411502838
+ev-e6aj,Tropical rainforest,TAr,Evergreen,EV,0.2732119858264923
+ev-on6q,Tropical rainforest,TAr,Evergreen,EV,0.1075679212808609
+ev-lyw6,Tropical rainforest,TAr,Evergreen,EV,0.11432574689388275
+de-7qik,Tropical dry forest,TAwb,Deciduous,DE,0.4551877975463867
+mg-c2yk,Tropical rainforest,TAr,Mangrove,MG,0.07610800117254257
+md-kz8d,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4770847260951996
+md-ntu6,Tropical mountain system,TM,Mixed Deciduous,MD,0.42758291959762573
+de-6lnn,Tropical dry forest,TAwb,Deciduous,DE,0.48599082231521606
+ev-b1da,Tropical rainforest,TAr,Evergreen,EV,0.062195125967264175
+ev-fo7l,Tropical rainforest,TAr,Evergreen,EV,0.09276217222213745
+de-tmd6,Tropical dry forest,TAwb,Deciduous,DE,0.5135229229927063
+de-2qvj,Tropical dry forest,TAwb,Deciduous,DE,0.4827451705932617
+de-t9bc,Tropical dry forest,TAwb,Deciduous,DE,0.5799004435539246
+de-fv9s,Tropical dry forest,TAwb,Deciduous,DE,0.2600545585155487
+ev-nnr8,Tropical rainforest,TAr,Evergreen,EV,0.19937609136104584
+ev-4uti,Tropical rainforest,TAr,Evergreen,EV,0.20867787301540375
+ev-g4il,Tropical rainforest,TAr,Evergreen,EV,0.09873849898576736
+ev-eq8c,Tropical rainforest,TAr,Evergreen,EV,0.09019745141267776
+ev-iyy8,Tropical rainforest,TAr,Evergreen,EV,0.07874545454978943
+de-2nae,Tropical dry forest,TAwb,Deciduous,DE,0.3180573284626007
+md-w3xa,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4857702851295471
+ev-mn4q,Tropical rainforest,TAr,Evergreen,EV,0.3281415104866028
+wl-zgn1,Tropical dry forest,TAwb,Other woodland,WL,0.5761674046516418
+md-1jlc,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.20780615508556366
+md-q5he,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3266478478908539
+ev-la1n,Tropical rainforest,TAr,Evergreen,EV,0.33495983481407166
+ev-zyy9,Tropical rainforest,TAr,Evergreen,EV,-0.12449874728918076
+de-3scx,Tropical dry forest,TAwb,Deciduous,DE,0.2041029930114746
+ev-b1du,Tropical rainforest,TAr,Evergreen,EV,-0.03653011843562126
+md-ni4m,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.2193739116191864
+md-czw1,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.2925392985343933
+ev-3ttw,Tropical rainforest,TAr,Evergreen,EV,-0.09483932703733444
+ev-v4bc,Tropical rainforest,TAr,Evergreen,EV,-0.010976756922900677
+ev-ox1x,Tropical rainforest,TAr,Evergreen,EV,-0.028030117973685265
+ev-rnb8,Tropical rainforest,TAr,Evergreen,EV,-0.03209990635514259
+ev-2wxi,Tropical rainforest,TAr,Evergreen,EV,-0.15499775111675262
+ev-s4ct,Tropical rainforest,TAr,Evergreen,EV,-0.1446763277053833
+ev-st6g,Tropical rainforest,TAr,Evergreen,EV,-0.14365200698375702
+md-lgv4,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.17946961522102356
+ev-3jwx,Tropical rainforest,TAr,Evergreen,EV,-0.02606833539903164
+ev-w6jw,Tropical rainforest,TAr,Evergreen,EV,0.1635008305311203
+de-le6g,Tropical dry forest,TAwb,Deciduous,DE,0.20857363939285278
+ev-tvh1,Tropical rainforest,TAr,Evergreen,EV,-0.017163757234811783
+ev-4mge,Tropical rainforest,TAr,Evergreen,EV,-0.03153933584690094
+ev-i5zu,Tropical rainforest,TAr,Evergreen,EV,-0.039128124713897705
+ev-zz9m,Tropical rainforest,TAr,Evergreen,EV,-0.043493907898664474
+ev-byt7,Tropical rainforest,TAr,Evergreen,EV,-0.05192390829324722
+md-3wxx,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.0011899999808520079
+ev-d2qv,Tropical rainforest,TAr,Evergreen,EV,-0.039597757160663605
+ev-uc1h,Tropical rainforest,TAr,Evergreen,EV,-0.04800212383270264
+ev-gkr8,Tropical rainforest,TAr,Evergreen,EV,0.028624217957258224
+ev-7wcr,Tropical rainforest,TAr,Evergreen,EV,-0.03753536939620972
+ev-e8za,Tropical rainforest,TAr,Evergreen,EV,-0.04441896080970764
+ev-cd5w,Tropical rainforest,TAr,Evergreen,EV,0.09099921584129333
+ev-gxh4,Tropical rainforest,TAr,Evergreen,EV,0.036673422902822495
+md-8xts,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.03911474347114563
+ev-l9xp,Tropical rainforest,TAr,Evergreen,EV,-0.044645756483078
+md-ig4p,Tropical moist forest,TAwa,Mixed Deciduous,MD,-0.0075125000439584255
+ev-zzv7,Tropical rainforest,TAr,Evergreen,EV,-0.05665188282728195
+ev-2sjk,Tropical rainforest,TAr,Evergreen,EV,0.15924274921417236
+ev-w7xm,Tropical rainforest,TAr,Evergreen,EV,0.05017857998609543
+ev-kw1a,Tropical rainforest,TAr,Evergreen,EV,-0.11871953308582306
+ev-eje2,Tropical rainforest,TAr,Evergreen,EV,-0.010562367737293243
+ev-7tdu,Tropical rainforest,TAr,Evergreen,EV,-0.014569000340998173
+ev-p3lh,Tropical rainforest,TAr,Evergreen,EV,-6.993677234277129e-4
+ev-gh3h,Tropical rainforest,TAr,Evergreen,EV,0.08492953330278397
+ev-ypm8,Tropical rainforest,TAr,Evergreen,EV,0.04833037406206131
+ev-7vkf,Tropical rainforest,TAr,Evergreen,EV,-0.0025282034184783697
+ev-t8bf,Tropical rainforest,TAr,Evergreen,EV,0.014518000185489655
+ev-fh8r,Tropical rainforest,TAr,Evergreen,EV,0.11242569983005524
+ev-rae8,Tropical rainforest,TAr,Evergreen,EV,0.08420775085687637
+ev-5qsl,Tropical rainforest,TAr,Evergreen,EV,0.06408096849918365
+ev-x1vg,Tropical rainforest,TAr,Evergreen,EV,0.051418375223875046
+ev-cv7g,Tropical rainforest,TAr,Evergreen,EV,0.04867979511618614
+ev-ssf5,Tropical rainforest,TAr,Evergreen,EV,0.05163079500198364
+ev-1mdx,Tropical rainforest,TAr,Evergreen,EV,0.06713279336690903
+ev-r2er,Tropical rainforest,TAr,Evergreen,EV,0.06070400029420853
+ev-me6b,Tropical rainforest,TAr,Evergreen,EV,0.06261400133371353
+ev-jzw2,Tropical rainforest,TAr,Evergreen,EV,0.13757029175758362
+ev-3lau,Tropical rainforest,TAr,Evergreen,EV,0.09611497074365616
+ev-q7wk,Tropical rainforest,TAr,Evergreen,EV,0.11173517256975174
+ev-eu5s,Tropical rainforest,TAr,Evergreen,EV,0.09924879670143127
+ev-wsp2,Tropical rainforest,TAr,Evergreen,EV,0.13196949660778046
+ev-9eyk,Tropical rainforest,TAr,Evergreen,EV,0.1360461264848709
+ev-a5tk,Tropical rainforest,TAr,Evergreen,EV,0.15271900594234467
+ev-xc5l,Tropical rainforest,TAr,Evergreen,EV,0.12560179829597473
+ev-vxj9,Tropical rainforest,TAr,Evergreen,EV,-0.034659501165151596
+ev-8fof,Tropical rainforest,TAr,Evergreen,EV,-0.09851309657096863
+ev-w3on,Tropical rainforest,TAr,Evergreen,EV,-0.1281219720840454
+de-vs9y,Tropical dry forest,TAwb,Deciduous,DE,0.173797145485878
+de-gyz1,Tropical dry forest,TAwb,Deciduous,DE,0.2089855819940567
+md-3yiy,Tropical moist forest,TAwa,Mixed Deciduous,MD,-0.03573346138000488
+ev-l1jt,Tropical rainforest,TAr,Evergreen,EV,-0.09754612296819687
+ev-rv3q,Tropical rainforest,TAr,Evergreen,EV,-0.13530096411705017
+ev-nvh1,Tropical rainforest,TAr,Evergreen,EV,-0.12959997355937958
+md-4jhv,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.16977904736995697
+ev-f9ql,Tropical rainforest,TAr,Evergreen,EV,-0.14378875494003296
+md-cy3j,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.21102875471115112
+ev-org2,Tropical rainforest,TAr,Evergreen,EV,-0.15066775679588318
+de-8tca,Tropical dry forest,TAwb,Deciduous,DE,0.23971712589263916
+ev-x6gp,Tropical rainforest,TAr,Evergreen,EV,0.09703442454338074
+wl-hi3i,Tropical moist forest,TAwa,Other woodland,WL,0.03920717164874077
+ev-fwc8,Tropical rainforest,TAr,Evergreen,EV,0.047801341861486435
+ev-9duf,Tropical rainforest,TAr,Evergreen,EV,0.01688341423869133
+wl-h5wy,Tropical moist forest,TAwa,Other woodland,WL,0.13564662635326385
+ev-ic3s,Tropical rainforest,TAr,Evergreen,EV,0.022268343716859818
+ev-llq6,Tropical rainforest,TAr,Evergreen,EV,0.15725262463092804
+ev-5flp,Tropical rainforest,TAr,Evergreen,EV,-0.014483796432614326
+ev-t8md,Tropical rainforest,TAr,Evergreen,EV,-0.10181999951601028
+md-yc6k,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.06544649600982666
+md-akz6,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.06146153062582016
+ev-4rbg,Tropical rainforest,TAr,Evergreen,EV,-0.1099247932434082
+pl-r1za,Tropical moist forest,TAwa,Plantation,PL,0.047014959156513214
+md-nv3w,Tropical mountain system,TM,Mixed Deciduous,MD,-0.01879720389842987
+ev-lkn9,Tropical rainforest,TAr,Evergreen,EV,-0.07441136986017227
+ev-7adw,Tropical rainforest,TAr,Evergreen,EV,-0.004414414055645466
+md-n2pq,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.028291242197155952
+wl-li8k,Tropical moist forest,TAwa,Other woodland,WL,0.0073944213800132275
+md-piu1,Tropical mountain system,TM,Mixed Deciduous,MD,-0.055590998381376266
+ev-4opq,Tropical rainforest,TAr,Evergreen,EV,-0.11120858043432236
+wl-o6ib,Tropical mountain system,TM,Other woodland,WL,-0.057830244302749634
+ev-ec1a,Tropical rainforest,TAr,Evergreen,EV,-0.11591099947690964
+ev-okp8,Tropical rainforest,TAr,Evergreen,EV,-0.08737500011920929
+md-5epx,Tropical mountain system,TM,Mixed Deciduous,MD,-0.0704725831747055
+ev-o2ql,Tropical rainforest,TAr,Evergreen,EV,-0.06473399698734283
+ev-cn7f,Tropical rainforest,TAr,Evergreen,EV,-0.04289700835943222
+md-zjq9,Tropical mountain system,TM,Mixed Deciduous,MD,-0.09538496285676956
+wl-8gtj,Tropical moist forest,TAwa,Other woodland,WL,-0.017585868015885353
+ev-d4cu,Tropical rainforest,TAr,Evergreen,EV,-0.015560117550194263
+md-zv6e,Tropical moist forest,TAwa,Mixed Deciduous,MD,-0.07282833009958267
+wl-wxz1,Tropical rainforest,TAr,Other woodland,WL,0.011977882124483585
+ev-7ame,Tropical rainforest,TAr,Evergreen,EV,-0.052078116685152054
+md-g9cx,Tropical moist forest,TAwa,Mixed Deciduous,MD,-0.04035099223256111
+md-ce3u,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.08245158940553665
+wl-zfr5,Tropical rainforest,TAr,Other woodland,WL,-0.1382991522550583
+wl-3wnw,Tropical moist forest,TAwa,Other woodland,WL,0.05256721004843712
+wl-d2kj,Tropical rainforest,TAr,Other woodland,WL,-0.13651157915592194
+md-cq3m,Tropical mountain system,TM,Mixed Deciduous,MD,-0.05049612373113632
+wl-egj8,Tropical mountain system,TM,Other woodland,WL,-0.057014960795640945
+ev-6zsz,Tropical rainforest,TAr,Evergreen,EV,-0.08804415911436081
+md-r2ny,Tropical moist forest,TAwa,Mixed Deciduous,MD,-0.04701319709420204
+ev-md1y,Tropical rainforest,TAr,Evergreen,EV,-0.11308937519788742
+ev-fdt9,Tropical rainforest,TAr,Evergreen,EV,-0.09357599914073944
+wl-3lyy,Tropical moist forest,TAwa,Other woodland,WL,-0.07293716073036194
+ev-c4ni,Tropical rainforest,TAr,Evergreen,EV,-0.036790959537029266
+md-qy4g,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.008707585744559765
+wl-qui9,Tropical rainforest,TAr,Other woodland,WL,0.04173163324594498
+ev-5ghr,Tropical rainforest,TAr,Evergreen,EV,-0.11393100023269653
+md-z3lx,Tropical mountain system,TM,Mixed Deciduous,MD,-0.052839912474155426
+md-hc6c,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.04663238301873207
+wl-gcc1,Tropical moist forest,TAwa,Other woodland,WL,0.05242379009723663
+md-1whh,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.05970417335629463
+md-o1bn,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.09640353173017502
+ev-xs8f,Tropical rainforest,TAr,Evergreen,EV,0.06760478764772415
+ev-aco5,Tropical rainforest,TAr,Evergreen,EV,-0.015224328264594078
+md-3huy,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.06674002247552077
+ev-b5iu,Tropical rainforest,TAr,Evergreen,EV,0.08662199974060059
+wl-du2e,Tropical rainforest,TAr,Other woodland,WL,0.0635996162891388
+md-lbh4,Tropical moist forest,TAwa,Mixed Deciduous,MD,-0.07226061820983887
+ev-2hgx,Tropical rainforest,TAr,Evergreen,EV,-0.20088599622249603
+md-b5jt,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.08122041076421738
+wl-ze3p,Tropical rainforest,TAr,Other woodland,WL,-0.11129099875688553
+ev-zim1,Tropical rainforest,TAr,Evergreen,EV,-0.21821700036525726
+md-4ofb,Tropical mountain system,TM,Mixed Deciduous,MD,-0.05359499901533127
+md-h6gv,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.03278232738375664
+ev-ej6m,Tropical rainforest,TAr,Evergreen,EV,-0.026405999436974525
+ev-pxc4,Tropical rainforest,TAr,Evergreen,EV,-0.0012029999634250998
+ev-3bha,Tropical rainforest,TAr,Evergreen,EV,-0.016302000731229782
+ev-q9xk,Tropical rainforest,TAr,Evergreen,EV,-0.12201900035142899
+pl-ak7x,Tropical rainforest,TAr,Plantation,PL,-0.20502600073814392
+wl-ejd9,Tropical rainforest,TAr,Other woodland,WL,-0.11729057878255844
+ev-3xmb,Tropical rainforest,TAr,Evergreen,EV,-0.1584542840719223
+ev-h6sd,Tropical rainforest,TAr,Evergreen,EV,-0.23823300004005432
+ev-xe2h,Tropical rainforest,TAr,Evergreen,EV,-0.12512116134166718
+ev-ccy6,Tropical rainforest,TAr,Evergreen,EV,-0.16545692086219788
+ev-7njy,Tropical rainforest,TAr,Evergreen,EV,-0.18990300595760345
+ev-m5ng,Tropical rainforest,TAr,Evergreen,EV,-0.10041937232017517
+pl-go8c,Tropical rainforest,TAr,Plantation,PL,-0.11478245258331299
+wl-cgd5,Tropical rainforest,TAr,Other woodland,WL,-0.05761199817061424
+ev-2htd,Tropical rainforest,TAr,Evergreen,EV,-0.08722750842571259
+ev-f3vh,Tropical rainforest,TAr,Evergreen,EV,-0.10035233944654465
+md-dh4n,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3244311511516571
+md-kds1,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.34716716408729553
+de-1ylc,Tropical mountain system,TM,Deciduous,DE,0.2786063551902771
+md-z2gj,Tropical mountain system,TM,Mixed Deciduous,MD,0.3449586033821106
+de-df6z,Tropical moist forest,TAwa,Deciduous,DE,0.34862464666366577
+md-egv4,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3846714198589325
+md-3axd,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.2995469570159912
+md-x1eu,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3058285415172577
+md-im8g,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.39781463146209717
+md-diu5,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4693027436733246
+wl-7wfd,Tropical moist forest,TAwa,Other woodland,WL,0.4482433795928955
+de-f8vz,Tropical moist forest,TAwa,Deciduous,DE,0.499748170375824
+md-lt7d,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.38747847080230713
+md-zjn7,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4347323775291443
+de-8flr,Tropical dry forest,TAwb,Deciduous,DE,0.5300872921943665
+md-r9nx,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.38402336835861206
+de-nl2a,Tropical moist forest,TAwa,Deciduous,DE,0.4067451059818268
+md-rmx8,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.44088926911354065
+md-1gwa,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.44393467903137207
+de-d7dy,Tropical dry forest,TAwb,Deciduous,DE,0.5414502620697021
+md-bd2q,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.30459269881248474
+md-zam3,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.32280150055885315
+md-8nxr,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4838862121105194
+md-b9ol,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.45987120270729065
+md-at1u,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3943095803260803
+de-vug1,Tropical moist forest,TAwa,Deciduous,DE,0.500581681728363
+de-8zfb,Tropical dry forest,TAwb,Deciduous,DE,0.5721715688705444
+ev-d3ym,Tropical moist forest,TAwa,Evergreen,EV,0.33012932538986206
+md-vk1k,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3500853180885315
+md-brl1,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.35696855187416077
+md-5drk,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.3984663188457489
+md-w1ta,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.41019392013549805
+md-jy1c,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4387630820274353
+md-jlb1,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.48057520389556885
+md-2spw,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.44142022728919983
+ev-m5cf,Tropical moist forest,TAwa,Evergreen,EV,0.4593268036842346
+de-jf5b,Tropical dry forest,TAwb,Deciduous,DE,0.6294898986816406
+md-lld4,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.5988311767578125
+md-4ptl,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.40419912338256836
+md-m3cf,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.40121254324913025
+md-ek8k,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4087473154067993
+md-myr8,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4305677115917206
+md-1cot,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4070679247379303
+md-p3hu,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4400971233844757
+md-vw5z,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4628649652004242
+de-tel4,Tropical dry forest,TAwb,Deciduous,DE,0.6856077909469604
+de-7xfp,Tropical dry forest,TAwb,Deciduous,DE,0.6433107256889343
+md-q5oj,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.5896754264831543
+md-gr7x,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.41041553020477295
+md-mfg4,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4038245379924774
+md-9wlh,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4168187081813812
+md-p2ia,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4004437029361725
+md-gh8v,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4140005111694336
+md-fho8,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4466600716114044
+md-7rqw,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.42942720651626587
+wl-c4fb,Tropical moist forest,TAwa,Other woodland,WL,0.4469413757324219
+wl-rq2p,Tropical dry forest,TAwb,Other woodland,WL,0.7075669765472412
+de-iup3,Tropical dry forest,TAwb,Deciduous,DE,0.7294543385505676
+de-2mvb,Tropical moist forest,TAwa,Deciduous,DE,0.5348052382469177
+md-x2yc,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4654705822467804
+md-oi7x,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.44167807698249817
+ev-bcy3,Tropical moist forest,TAwa,Evergreen,EV,0.41503816843032837
+md-8sld,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.40666237473487854
+md-r6fm,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4190181791782379
+md-ha1f,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4102415442466736
+md-oui3,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.40784990787506104
+md-5phu,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.399522066116333
+md-p8eu,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.49467960000038147
+md-uo2y,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.5340790152549744
+md-jpe3,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.5664856433868408
+md-1abo,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.5906841158866882
+md-e2fw,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.7429102063179016
+md-hh4n,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.7727087736129761
+de-zmm6,Tropical moist forest,TAwa,Deciduous,DE,0.4950847923755646
+md-7cva,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4772058427333832
+de-r3ld,Tropical moist forest,TAwa,Deciduous,DE,0.44493576884269714
+md-hf1v,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4384079575538635
+md-bsl3,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4547973573207855
+md-3vtm,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4493279457092285
+md-t3aq,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4397743344306946
+md-wi7e,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.6183013916015625
+md-cel9,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.6702394485473633
+md-5iyv,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.6473407745361328
+de-z9xv,Tropical dry forest,TAwb,Deciduous,DE,0.6065749526023865
+wl-zt4c,Tropical moist forest,TAwa,Other woodland,WL,0.5408032536506653
+wl-mun3,Tropical moist forest,TAwa,Other woodland,WL,0.4957718849182129
+md-5vye,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.49828416109085083
+md-q1gw,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4973375201225281
+md-jz3v,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.5043827295303345
+md-qba8,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.4946039021015167
+md-1qwf,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.5118016600608826
+de-b3ol,Tropical moist forest,TAwa,Deciduous,DE,0.5434474349021912
+md-su1b,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.6055931448936462
+md-mke3,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.7338125705718994
+md-7lvk,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.683830976486206
+de-a2sr,Tropical moist forest,TAwa,Deciduous,DE,0.5584275126457214
+de-im8r,Tropical moist forest,TAwa,Deciduous,DE,0.5527365803718567
+md-qty8,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.5697841644287109
+md-8krw,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.5376209616661072
+md-p3ek,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.5394604206085205
+md-lb3b,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.7204278111457825
+md-vxg9,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.7169464230537415
+de-5sko,Tropical moist forest,TAwa,Deciduous,DE,0.5960314869880676
+de-a6te,Tropical moist forest,TAwa,Deciduous,DE,0.5929250121116638
+md-qp4a,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.5951783061027527
+md-fhw9,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.6002923250198364
+md-3nkx,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.6295275092124939
+de-v5jt,Tropical dry forest,TAwb,Deciduous,DE,0.5705746412277222
+md-uj7c,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.5542758107185364
+md-ndw3,Tropical dry forest,TAwb,Mixed Deciduous,MD,0.5955908298492432
+de-9trf,Tropical dry forest,TAwb,Deciduous,DE,0.6108314990997314
+de-a3vx,Tropical dry forest,TAwb,Deciduous,DE,0.6320368647575378
+md-dl4z,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.6371408104896545
+wl-ndn2,Tropical moist forest,TAwa,Other woodland,WL,0.6430152654647827
+de-9gcj,Tropical moist forest,TAwa,Deciduous,DE,0.6357614994049072
+de-j3pm,Tropical dry forest,TAwb,Deciduous,DE,0.6687968969345093
+ev-mq2f,Tropical dry forest,TAwb,Evergreen,EV,0.6204237341880798
+de-gbu1,Tropical dry forest,TAwb,Deciduous,DE,0.6846339702606201
+md-8bcg,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.690716028213501
+md-r9lu,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.6957934498786926
+md-ev7l,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.6947998404502869
+de-oze2,Tropical moist forest,TAwa,Deciduous,DE,0.6872272491455078
+de-4dgu,Tropical dry forest,TAwb,Deciduous,DE,0.6535032987594604
+de-b9xh,Tropical dry forest,TAwb,Deciduous,DE,0.6665984392166138
+de-yh7g,Tropical dry forest,TAwb,Deciduous,DE,0.6948078870773315
+md-ozl7,Tropical moist forest,TAwa,Mixed Deciduous,MD,0.7434313893318176
+de-6gec,Tropical dry forest,TAwb,Deciduous,DE,0.6760955452919006
+de-e3cx,Tropical dry forest,TAwb,Deciduous,DE,0.6579846739768982
+de-jz2c,Tropical dry forest,TAwb,Deciduous,DE,0.7751199007034302
+de-fmu5,Tropical dry forest,TAwb,Deciduous,DE,0.675304114818573

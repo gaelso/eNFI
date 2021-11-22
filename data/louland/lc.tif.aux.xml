@@ -1,0 +1,13 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <CategoryNames>
+      <Category>WA</Category>
+      <Category>NF</Category>
+      <Category>WL</Category>
+      <Category>DD</Category>
+      <Category>MD</Category>
+      <Category>EV</Category>
+      <Category>MG</Category>
+    </CategoryNames>
+  </PAMRasterBand>
+</PAMDataset>
