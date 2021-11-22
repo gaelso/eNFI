@@ -18,6 +18,23 @@ library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+# Welcome
+
+<txt-green>Welcome to the first lesson</txt-green> of the **National Forest Inventory eLearning practice module**.
+
+<img src="images/lc-image.png" width="250" height="250" alt="eNFI lesson 1 image cover" align="right" style="margin: 2em 2em 2em 2em" />
+
+This interactive module is designed to complement the [NFI eLearning modules](https://bit.ly/3m5VEsE) with practical hands-on exercises. These exercises take place on a fictional island that just emerged in the middle of the Atlantic Ocean: `Louland`. 
+
+It features interactive lessons designed to practice National Forest Inventory (NFI) sampling and the exploratory analysis of NFI field data with the [R programming language](www.r-project.com). Although this fictional land is not an official country, we will use the acronym NFI when referring to its forest inventory as the method and formulas applied here are valid for nationwide forest inventories.
+
+
+
+<br>
+
+---
+
+<br>
 
 ## Topic 1
 
