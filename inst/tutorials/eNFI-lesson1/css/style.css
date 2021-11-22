@@ -1,34 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif:400,400i,700,700i|Lora:400,400i,700,700i|Oxanium:200,300,400,500,600,700,800|Space+Mono:400,400i,700,700i');
 
-/* Banner */
+
+
+/* --- Banner --- */
 
 .image-descript {
   position: relative;
-  display: none;
-  animation: slide-in-from-bottom 1s forwards;
+  /*display: none;*/
+  animation: slide-in-from-bottom 5s forwards;
   justify-content: center; /* flex horizontal center */
   align-items: center; /*flex vertical center*/
 }
- .big-text {
-    text-align: center;
-    color: #ffffff;
-    visibility: visible;
-    font-size: 3em;
-    text-shadow: 1px 1px 35px #0e0d0d38;
-    letter-spacing: 0.065em;
-  }
-  .small-text { 
-      color: white;
-      margin: 0 auto 5px auto;
-      text-align: center; 
-      display:block;
-      font-family: 'Lora', serif;
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 1.5em;
-      letter-spacing: 1px;
-      font-style: italic;
-      text-shadow: 1px 1px 35px #0e0d0d38;
-    }
 
 .big_image {
   margin-top: -50px;
@@ -47,108 +29,105 @@
 .lil-image-text { 
     color: white;
     margin-top: 0px;
-      margin-right: auto;
-      margin-bottom: 20px;
-      margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
     padding-top: 0px;
     text-align: center; 
     display:block;
-    font-family: 'Lora', serif;
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 1.5em;
-      letter-spacing: 1px;
-      font-style: italic;
-      font-weight: normal;
-      color: #fff;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    /*font-style: italic;*/
+    font-weight: normal;
+    color: #fff;
   }
-
-
-/*@media screen and (max-width: 300px) {
- .image-descript {
-  display: none;
- }*/
-
 
 .big-image-text { 
   letter-spacing: 0.065em;
   line-height: 1em;
-  font-size: 68px;
-  text-transform: uppercase;
+  font-size: 40px;
+  /*text-transform: uppercase;*/
   text-align: center; 
   display:block;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 400;
   color: #fff;
   margin-bottom: 3rem;
 }
 
-.color-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0,0,0,.1);
+
+
+/* --- TOC --- */
+
+#tutorial-topic::before {
+  content: "";
+  display: block;
+  height: 90px;
+  margin: 10px 10px 10px 10px;
+  background-image: url("../images/eNFI-logo.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+.topicsContainer {
+    width: 23%;
+    margin-right: 2%;
+    margin-left: 2%;
+    min-width: 200px;
+    max-width: 260px;
+    z-index: 100;
+}
+
+.topicsPositioner {
+  position: relative;
+}
+
+.topicsList {
+    min-width: 200px;
+    max-width: 260px;
+}
+
+.topicsHeader {
+    display: block;
+    text-align: center;
 }
 
 
 
+/* --- Style text, sections headers and title --- */
 
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Space+Mono:400,400i,700,700i|Noto+Serif:400,400i,700,700i|Lora:400,400i,700,700i');
-
-
-/* Style text, sections headers and title*/
 .book .book-body .page-wrapper .page-inner {
   max-width: 80%;
 }
 
-.book.font-family-0 {
-  font-family: 'Noto Serif', serif;
-}
-
-.book.font-family-1 {
-  font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
-}
-
-.title {
-  font-family: 'Lora' !important;
-  /*font-style: italic !important;*/
-  font-weight: normal !important;
-  font-size: 3em !important;
-}
-
-.subtitle {
-  font-family: 'Lora' !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-size: 1.8em !important;
-}
-
-.date {
-  font-family: 'Lora' !important;
-  font-style: normal !important;*/
+body {
+  font-family: 'Noto Sans', sans-serif;
 }
 
 h1, h2, h3 {
   color: #31708e;
   font-size: 1.6rem;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h2.tutorialTitle {
+  font-family: 'Lora', serif !important;
+  font-style: italic;
 }
 
 code, pre, samp, sourceCode {
-  font-family: 'Space Mono', monospace, !important;
+  font-family: 'Oxanium', 'Space Mono', monospace !important;
   /*font-size: 1.6em;*/
 }
 
-.author, .date {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 1.6em;
-}
-
-p.caption {
-  color: #777;
-  margin-top: 10px;
+.ace_editor {
+   font-family: 'Oxanium', 'Space Mono', monospace !important;
 }
 
 p code {
@@ -167,13 +146,10 @@ pre code {
   white-space: inherit;
 }
 
-.cols {
-  display: grid; 
-  grid-template-columns: 35% 5% 60%; 
-  /*grid-column-gap: 10px;*/
-}
 
-/* Style for watermark and boxes*/
+
+/* --- Style for watermark and boxes --- */
+
 .watermark {
   opacity: 0.3;
   position: fixed;
@@ -193,7 +169,6 @@ pre code {
   margin-top: 1.2em;
 }
 
-
 .question {
   padding: 1em;
   border: 2px solid #ffeeba;
@@ -209,7 +184,10 @@ txt-green{
   font-weight: bold;
 }
 
-/*Style for R chunks*/
+
+
+/* --- Style for R chunks --- */
+
 .Rchunk-cons {
   color: #8a6d3b !important;
   background-color: #fff3cd !important;
@@ -221,7 +199,6 @@ txt-green{
   border-color: #c3e6cb !important;
 }
 
-/*Style for R outputs*/
 .Rout-demo {
   background-color: #ffffff !important;
   font-weight: bold;

@@ -1,9 +1,6 @@
 
 # eNFI: National Forest Inventory eLearning <img src='images/eNFI-logo.png' align="right" height="139" /></a>
 
-### Designed with [learnr](https://rstudio.github.io/learnr/) 
-
-<br>
 
 ## Introduction
 
@@ -19,6 +16,16 @@ It features interactive lessons designed to practice National Forest Inventory (
 
 **TBD**
 
+
+
+
+<br>
+
+Developed with [learnr](https://rstudio.github.io/learnr/).
+
+<br>
+
+Design elements inspired by this R based [online course](https://github.com/tinystats/teacups-giraffes-and-statistics).
 
 <br>
 

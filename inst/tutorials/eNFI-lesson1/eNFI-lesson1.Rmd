@@ -1,16 +1,16 @@
 ---
-title: Title
+title: "Lesson 1: Overview"
 output: 
   learnr::tutorial:
     progressive: true
     allow_skip: false
-    css: css/style.css
+    css: css/style.css #css folder automatic
     toc: true
     toc_depth: 3
     includes:
-      in_header: banner1.html
-    
+      in_header: html/banner-lesson1.html
 runtime: shiny_prerendered
+#favicon: "images/favicon.ico" directly from html
 ---
 
 ```{r setup, include=FALSE}
@@ -28,7 +28,7 @@ knitr::opts_chunk$set(echo = FALSE)
 Write the R code required to add two plus two:
 
 ```{r two-plus-two, exercise=TRUE}
-
+1+1
 ```
 
 ### Exercise with Code
