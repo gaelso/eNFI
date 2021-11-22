@@ -4,13 +4,13 @@ output:
   learnr::tutorial:
     progressive: true
     allow_skip: false
-    css: css/style.css #css folder automatic
+    css: css/style.css
     toc: true
     toc_depth: 3
     includes:
       in_header: html/banner-lesson1.html
 runtime: shiny_prerendered
-#favicon: "images/favicon.ico" directly from html
+#favicon: "images/favicon.ico" #directly from html
 ---
 
 ```{r setup, include=FALSE}
