@@ -1,5 +1,5 @@
 
-# eNFI: National Forest Inventory eLearning <img src='images/eNFI-logo.png' align="right" height="139" /></a>
+# eNFI: eLearning National Forest Inventory <img src='images/eNFI-logo.png' align="right" height="139" /></a>
 
 
 ## Introduction
