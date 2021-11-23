@@ -10,17 +10,17 @@
 ## Read NFI data ############################################################
 ##
 
-list.files(file.path(path_proj, "data/mock-data"))
+#list.files(file.path(path_proj, "data/mock-data"))
 
-plot <- read_csv(file.path(path_proj, "data/mock-data/mock_plot.csv"), show_col_types = F)
-tree <- read_csv(file.path(path_proj, "data/mock-data/mock_tree.csv"), show_col_types = F)
+mock_plot <- read_csv("data/mock-data/mock_plot.csv", show_col_types = F)
+mock_tree <- read_csv("data/mock-data/mock_tree.csv", show_col_types = F)
 
-species_list <- read_csv(file.path(path_proj, "data/mock-data/mock_species.csv"), show_col_types = F)
+mock_species <- read_csv("data/mock-data/mock_species.csv", show_col_types = F)
 
-wd_species <- read_csv(file.path(path_proj, "data/mock-data/mock_wdsp.csv"), show_col_types = F)
-wd_genus   <- read_csv(file.path(path_proj, "data/mock-data/mock_wdgn.csv"), show_col_types = F)
+mock_wdsp <- read_csv("data/mock-data/mock_wdsp.csv", show_col_types = F)
+mock_wdgn <- read_csv("data/mock-data/mock_wdgn.csv", show_col_types = F)
 
-
+usethis::use_data(mock_plot, mock_tree, mock_species, mock_wdsp, mock_wdgn, overwrite = T)
 
 ##
 ## Read spatial data ########################################################
@@ -28,7 +28,7 @@ wd_genus   <- read_csv(file.path(path_proj, "data/mock-data/mock_wdgn.csv"), sho
 
 ## --- Louland --------------------------------------------------------------
 
-rs_path <- file.path(path_proj, "data/louland")
+rs_path <- file.path(path_proj, "data/louland") 
 
 ## Recall land features
 nb_ft <- 4

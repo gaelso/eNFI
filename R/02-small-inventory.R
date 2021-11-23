@@ -26,7 +26,7 @@ subplot_radius <- 5
 ## Filter trees and calc agb
 exfi_tree <- tree %>% filter(plot_id %in% plot_select)
 
-exfi_tagb<- exfi_tree %>%
+exfi_tagb <- exfi_tree %>%
   left_join(exfi_plot, by = "plot_id") %>%
   left_join(species_list, by = "sp_id") %>%
   left_join(wd_species, by = "sp_name") %>%

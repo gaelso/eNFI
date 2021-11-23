@@ -39,11 +39,11 @@ source(file.path(path_proj, "R/00-libs.R"     ), local = TRUE)
 
 ## Welcome! {#welcome}
 
-<txt-green>Welcome to the first lesson</txt-green> of the **National Forest Inventory eLearning practice module**.
+<txt-green>Welcome</txt-green> to the first lesson of the **National Forest Inventory eLearning practice module**.
 
 ### Intro {#intro}
 
-<img src="images/newland.gif" width="250" height="250" alt="eNFI lesson 1 image cover" align="right" />
+<img src="images/newland.gif" width="250" height="250" alt="eNFI lesson 1 image cover" align="right" style="margin: -1em 0 -1em 0"/>
 
 This interactive module is designed to complement the [NFI eLearning modules](https://bit.ly/3m5VEsE) with practical hands-on exercises. These exercises take place on a fictional island that just emerged in the middle of the Atlantic Ocean: `Louland`. 
 
@@ -74,6 +74,7 @@ For now, ```r newland_name``` forests are divided into ```r nb_ft + 1``` categor
 
 ::::::
 
+The remote sensing team has developed land cover and topographic maps based on 30m resolution remote sensing images and initial forest plot measurements taken by the first exploration crew. Based on their observations, we will be able to have a general understanding of ```r newland_name```'s forest cover. This data is called **auxiliary data**, it is not NFI data *per se*, but useful information to help design and implement an NFI.
 
 Here is what ```r newland_name``` looks like.
 
@@ -90,9 +91,6 @@ cat(paste0('
     '))
 
 ```
-
-
-The remote sensing team has developed land cover and topographic maps based on 30m resolution remote sensing images and initial forest plot measurements taken by the first exploration crew. Based on their observations, we will be able to have a general understanding of ```r newland_name```'s forest cover. This data is called **auxiliary data**, it is not NFI data *per se*, but useful information to help design and implement an NFI.
 
 In the next section, we will have a quick look at the exploration crew's forest inventory data, loaded in R as objects with the `exfi` prefix, and we will use the land cover maps to calculate the area of the main land cover types.
 

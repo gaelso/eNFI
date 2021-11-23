@@ -27,3 +27,9 @@ devtools::install()
 ## Launch lesson
 learnr::run_tutorial("eNFI-lesson1", "eNFI")
 
+## Create data files
+source("R/00-libs.R", local = TRUE)
+source("R/01-read-data.R"), local = TRUE)
+source(file.path(path_proj, "R/00-libs.R"     ), local = TRUE)
+
+usethis::use_data()
