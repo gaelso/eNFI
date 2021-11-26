@@ -54,17 +54,17 @@ make_3d <- function(.newland, .width = 250, .height = 250){
     dplyr::bind_cols(tibble::as_tibble(t(col2rgb(.$hex)), .name_repair = ~c("r", "g", "b")))
   
   rr <- tibble::tibble(id = as.vector(raster::flip(lc))) %>%
-    dplyr::left_join(lc_param %>% dplyr::select(id, r), by = "id") %>%
+    dplyr::left_join(lc_param %>% dplyr::select(id = lc_id, r), by = "id") %>%
     dplyr::pull(r) %>%
     matrix(., ncol = ncol(lc))
   
   gg <- tibble::tibble(id = as.vector(raster::flip(lc))) %>%
-    dplyr::left_join(lc_param %>% dplyr::select(id, g), by = "id") %>%
+    dplyr::left_join(lc_param %>% dplyr::select(id = lc_id, g), by = "id") %>%
     dplyr::pull(g) %>%
     matrix(., ncol = ncol(lc))
   
   bb <- tibble::tibble(id = as.vector(raster::flip(lc))) %>%
-    dplyr::left_join(lc_param %>% dplyr::select(id, b), by = "id") %>%
+    dplyr::left_join(lc_param %>% dplyr::select(id = lc_id, b), by = "id") %>%
     dplyr::pull(b) %>%
     matrix(., ncol = ncol(lc))
   

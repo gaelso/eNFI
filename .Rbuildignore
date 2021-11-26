@@ -1,3 +1,7 @@
 ^eNFI\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
+^images$
+^R-pkg-setup\.R$
+^LICENSE\.md$
+^\.github$

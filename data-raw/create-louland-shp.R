@@ -11,9 +11,9 @@ library(smoothr)
 library(sf)
 
 ## For testing
-.newland <- create_newland(.seed = 11, .alt = 2000, .sea = 0.2, .mg = T)
-.lc      <- .newland$lc_map
-.param   <- .newland$param
+# .newland <- create_newland(.seed = 11, .alt = 2000, .sea = 0.2, .mg = T)
+# .lc      <- .newland$lc_map
+# .param   <- .newland$param
 ##
 
 ## Function
@@ -41,7 +41,7 @@ library(sf)
 make_shp <- function(.lc, .param, .smoothness = 2.2){
   
   ## Create land cover shapefile
-  sf_lc <- stars::st_as_stars(.lc) %>%
+  sf_lc <- stars::st_as_stars(raster::raster(.lc)) %>%
     sf::st_as_sf(., as_points = FALSE, merge = TRUE) %>%
     sf::st_set_crs(st_crs(32727)) %>%
     dplyr::rename(lc_id = lc) %>%
@@ -62,7 +62,6 @@ make_shp <- function(.lc, .param, .smoothness = 2.2){
   # 
   # table(st_is_valid(sf_lc))
   # sf::st_is_valid(sf_lc, reason = TRUE)
-  
   
   sf_lc2 <- sf_lc %>%
     smoothr::smooth(method = "ksmooth", smoothness = .smoothness) %>%

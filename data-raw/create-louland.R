@@ -8,14 +8,13 @@ louland <- create_newland(.seed = 11, .alt = 2000, .sea = 0.2, .mg = T)
 
 plot(louland$lc_map, col = louland$param$hex)
 
-## Save raster data 
-louland_topo30m <- louland$topo
-louland_topo90m <- louland$topo_map
-louland_lc30m   <- louland$lc
-louland_lc90m   <- louland$lc_map
-louland_param   <- louland$param
-
-usethis::use_data(louland_topo30m, louland_topo90m, louland_lc30m, louland_lc90m, louland_param, overwrite = T)
+## Save raster data (ON HOLD - ONLY VECTORS SAVED TO DATA) 
+# louland_topo30m <- louland$topo
+# louland_topo90m <- louland$topo_map
+# louland_lc30m   <- louland$lc
+# louland_lc90m   <- louland$lc_map
+# louland_param   <- louland$param
+# usethis::use_data(louland_topo30m, louland_topo90m, louland_lc30m, louland_lc90m, louland_param, overwrite = T)
 
 tools::checkRdaFiles("data/louland_topo30m.Rda")
 
@@ -34,19 +33,21 @@ rgl::rgl.close()
 louland_lc <- make_shp(.lc = louland$lc_map, .param = louland$param, .smoothness = 2.2)
 
 louland_admin <- louland_lc %>%
-  st_buffer(100) %>%
-  st_union(by_feature = FALSE)
+  sf::st_buffer(100) %>%
+  sf::st_union(by_feature = FALSE) %>%
+  sf::st_as_sf()
 
 ## Not used
 # topo_seq <- seq(from = round(terra::global(louland$topo, "min")[[1]]), to = round(terra::global(louland$topo, "max")[[1]]), by = 100)
 # louland_topo <- louland$topo %>% st_as_stars() %>% st_contour(breaks = topo_seq)
 
 ## Check
-ggplot() +
-  geom_sf(data = louland_lc, aes(fill = lc), col = NA) +
-  geom_sf(data = louland_admin, fill = NA, col = "red", size = 1) +
-  scale_fill_manual(values = louland$param$hex) +
-  theme_bw()
+# ggplot() +
+#   geom_sf(data = louland_lc, aes(fill = lc), col = NA) +
+#   geom_sf(data = louland_admin, fill = NA, col = "red", size = 1) +
+#   scale_fill_manual(values = louland$param$hex) +
+#   theme_bw()
 
 ## Save vector data
-usethis::use_data(louland_lc, louland_admin, overwrite = T)
+louland_param <- louland$param
+usethis::use_data(louland_lc, louland_admin, louland_param, overwrite = T)
