@@ -9,10 +9,12 @@
 
 ## Libs
 #install.packages(c("devtools", "roxygen2", "learnr"))
+#devtools::install_github("gaelso/eNFIrawdata")
 library(devtools)
 library(usethis)
 library(roxygen2)
 library(learnr)
+library(eNFIrawdata)
 
 ## Make package
 usethis::create_package("D:/github-repos/eNFI")
@@ -20,6 +22,26 @@ usethis::create_package("D:/github-repos/eNFI")
 ## Make lessons
 usethis::use_tutorial("eNFI-lesson1", "Overview of the preliminary data", open = interactive())
 usethis::use_tutorial("eNFI-lesson2.1", "Simple sampling for carbon - Design", open = interactive())
+
+## Add dependencies
+usethis::use_package("dplyr")
+usethis::use_package("ggplot2")
+usethis::use_package("tibble")
+usethis::use_package("forcats")
+usethis::use_package("purrr")
+usethis::use_package("sf")
+usethis::use_package("tmap")
+usethis::use_package("ggspatial")
+usethis::use_package("units")
+usethis::use_package("learnr")
+
+usethis::use_dev_package("gradethis")
+usethis::use_dev_package("eNFIrawdata")
+
+## Create data for the training module
+usethis::use_data_raw()
+
+
 
 ## Install
 devtools::install()

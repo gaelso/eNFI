@@ -23,10 +23,10 @@ It features interactive lessons designed to practice National Forest Inventory (
 
 Developed with [learnr](https://rstudio.github.io/learnr/).
 
-<br>
-
 Design elements inspired by this R based [online course](https://github.com/tinystats/teacups-giraffes-and-statistics).
 
+Cover Photo by <a href="https://unsplash.com/@jeremybezanger?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeremy Bezanger</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 <br>
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
