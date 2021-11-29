@@ -22,17 +22,26 @@ usethis::create_package("D:/github-repos/eNFI")
 ## Make lessons
 usethis::use_tutorial("eNFI-lesson1", "Overview of the preliminary data", open = interactive())
 usethis::use_tutorial("eNFI-lesson2.1", "Simple sampling for carbon - Design", open = interactive())
-
+usethis::use_tutorial("eNFI-lesson2.2", "Simple sampling for carbon - Analysis", open = interactive())
 ## Add dependencies
-# usethis::use_package("dplyr")
-# usethis::use_package("ggplot2")
-# usethis::use_package("tibble")
-# usethis::use_package("forcats")
-# usethis::use_package("purrr")
+
+## --- Tidyverse
+usethis::use_package("dplyr")
+usethis::use_package("ggplot2")
+usethis::use_package("tibble")
+usethis::use_package("forcats")
+usethis::use_package("purrr")
 usethis::use_package("tidyverse", type = "depends")
+
+## --- geospatial
 usethis::use_package("sf")
 usethis::use_package("tmap")
 usethis::use_package("units")
+usethis::use_package("raster")
+usethis::use_package("stars")
+usethis::use_package("smoothr")
+
+## --- Tutos
 usethis::use_package("learnr")
 usethis::use_dev_package("gradethis")
 usethis::use_dev_package("eNFIrawdata")
@@ -40,12 +49,8 @@ usethis::use_package("ggspatial")
 usethis::use_package("sysfonts")
 usethis::use_package("showtext")
 
-## Create data for the training module
+## Add raw data
 usethis::use_data_raw()
-
-## Populate data-raw
-
-## Add data description
 
 ## Check
 devtools::check()
