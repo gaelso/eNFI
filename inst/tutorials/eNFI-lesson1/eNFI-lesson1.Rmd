@@ -24,7 +24,6 @@ library(learnr)
 library(gradethis)
 
 ## --- Data
-library(eNFIrawdata)
 library(eNFI)
 
 ## --- Data analysis
