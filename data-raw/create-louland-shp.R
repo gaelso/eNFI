@@ -1,14 +1,17 @@
 
 ## Creating Louland land cover and admin vectors
 
+library(raster)
 library(stars)
 library(sf)
 library(smoothr)
 library(tidyverse)
-library(eNFIrawdata)
 
 ## Data preparation
-louland_lc90m <- stars::read_stars(system.file("extdata/louland_lc90m.tif", package = "eNFIrawdata", mustWork = T))
+#louland_lc90m <- stars::read_stars(system.file("extdata/louland_lc90m.tif", package = "eNFI", mustWork = T))
+louland_lc90m <- stars::read_stars("inst/extdata/louland_lc90m.tif")
+
+plot(louland_lc90m)
 
 ## Create shapefiles
 t1 <- Sys.time()

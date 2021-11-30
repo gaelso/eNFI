@@ -37,9 +37,6 @@ usethis::use_package("tidyverse", type = "depends")
 usethis::use_package("sf")
 usethis::use_package("tmap")
 usethis::use_package("units")
-usethis::use_package("raster")
-usethis::use_package("stars")
-usethis::use_package("smoothr")
 
 ## --- Tutos
 usethis::use_package("learnr")
@@ -49,8 +46,15 @@ usethis::use_package("ggspatial")
 usethis::use_package("sysfonts")
 usethis::use_package("showtext")
 
-## Add raw data
+## Create raw data template
 usethis::use_data_raw()
+
+## Create Louland spatial data
+source("data-raw/create-louland.R", local = TRUE)
+source("data-raw/create-louland-shp.R", local = TRUE)
+
+## Create exfi data
+source("data-raw/create-exfi.R", local = TRUE)
 
 ## Check
 devtools::check()
