@@ -14,7 +14,6 @@ library(devtools)
 library(usethis)
 library(roxygen2)
 library(learnr)
-library(eNFIrawdata)
 
 ## Make package
 usethis::create_package("D:/github-repos/eNFI")

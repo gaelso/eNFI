@@ -1,6 +1,9 @@
 ---
 title: "Simple sampling for carbon - Analysis"
-output: learnr::tutorial
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: false
 runtime: shiny_prerendered
 ---
 
