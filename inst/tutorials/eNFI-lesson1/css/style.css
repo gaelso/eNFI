@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif:400,400i,700,700i|Lora:400,400i,700,700i|Oxanium:200,300,400,500,600,700,800|Space+Mono:400,400i,700,700i|Ubuntu+Mono:400,400i,700,700i');
+/*@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif:400,400i,700,700i|Lora:400,400i,700,700i|Oxanium:200,300,400,500,600,700,800|Space+Mono:400,400i,700,700i|Ubuntu+Mono:400,400i,700,700i');
 
 
 
@@ -108,17 +108,20 @@
 
 body {
   font-family: 'Noto Sans', sans-serif;
+  font-size: 19px;
 }
 
 h1, h2, h3 {
   color: #31708e;
   /*font-size: 1.6rem;*/
   font-family: 'Noto Sans', sans-serif;
+  font-size: 34px;
 }
 
 h2.tutorialTitle {
   font-family: 'Lora', serif !important;
   font-style: italic;
+  font-size: 24px;
 }
 
 code, pre, samp, sourceCode {

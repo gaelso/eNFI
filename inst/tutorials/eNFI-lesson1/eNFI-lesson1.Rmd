@@ -1,5 +1,5 @@
 ---
-title: "Lesson 1: Overview"
+title: "eNFI Lesson 1: Overview"
 output: 
   learnr::tutorial:
     progressive: true
@@ -8,7 +8,8 @@ output:
     includes:
       in_header: html/banner-lesson1.html
 runtime: shiny_prerendered
-#favicon: "images/favicon.ico" #directly from html
+description: >
+  Discover Louland, a fictional island that just emerged in the middle of the Atlantic Ocean and calculate the average Aboveground Biomass (AGB) of a small forest inventory.
 ---
 
 ```{r setup, include=FALSE}
@@ -113,7 +114,7 @@ area_tot <- sf_lc %>%
 
 
 
-### Intro
+###
 
 <img src="images/newland.gif" width="250" height="250" alt="eNFI lesson 1 image cover" align="right" style="margin: -1em 0 -1em 0"/>
 
@@ -458,7 +459,7 @@ Check the total area:
 print(area_tot)
 ```
 
-Weell done, we have found that the total area of ```r newland_name``` is ```r round(area_tot$area_ha)``` ha. From the table `area_lc`, we know that ```r round(area_lc %>% filter(lc == "WA") %>% pull(area_ha))``` and ```r round(area_lc %>% filter(lc == "NF") %>% pull(area_ha))``` ha are Water and Non-forest respectively. This leaves: ```r round(area_lc %>% filter(!(lc %in% c("WA", "NF"))) %>% pull(area_ha) %>% sum())``` ha of Forest land.
+Well done, we have found that the total area of ```r newland_name``` is ```r round(area_tot$area_ha)``` ha. From the table `area_lc`, we know that ```r round(area_lc %>% filter(lc == "WA") %>% pull(area_ha))``` and ```r round(area_lc %>% filter(lc == "NF") %>% pull(area_ha))``` ha are Water and Non-forest respectively. This leaves: ```r round(area_lc %>% filter(!(lc %in% c("WA", "NF"))) %>% pull(area_ha) %>% sum())``` ha of Forest land.
 
 
 ## Conclusion
