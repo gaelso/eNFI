@@ -32,7 +32,7 @@ usethis::use_package("forcats")
 usethis::use_package("purrr")
 usethis::use_package("tidyverse", type = "depends")
 
-## --- geospatial
+## --- Geospatial
 usethis::use_package("sf")
 usethis::use_package("tmap")
 usethis::use_package("units")
