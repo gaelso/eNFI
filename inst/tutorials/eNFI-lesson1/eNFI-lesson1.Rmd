@@ -4,9 +4,15 @@ output:
   learnr::tutorial:
     progressive: true
     allow_skip: false
-    css: css/style.css
+    #css: css/style.css # To replace with in_header system.file() calls.
     includes:
-      in_header: html/banner-lesson1.html
+      in_header:
+        - !expr  system.file("tuto-helpers/css/custom.html", package = "eNFI")
+        - !expr  system.file("tuto-helpers/css/fonts.html", package = "eNFI")
+        - !expr  system.file("tuto-helpers/css/style.html", package = "eNFI")
+        - !expr  system.file("tuto-helpers/css/banner-style.html", package = "eNFI")
+        - !expr  system.file("tuto-helpers/css/toc-style.html", package = "eNFI")
+        - html/header.html
 runtime: shiny_prerendered
 description: >
   Discover Louland, a fictional island that just emerged in the middle of the Atlantic Ocean and calculate the average Aboveground Biomass (AGB) of a small forest inventory.
@@ -14,30 +20,9 @@ description: >
 
 ```{r setup, include=FALSE}
 
-## Libs
-## --- Spatial
-library(sf)
-library(units)
-library(tmap)
-
-## --- Tuto
 library(learnr)
 library(gradethis)
-
-## --- Data
 library(eNFI)
-
-## --- Data analysis
-library(tidyverse)
-
-## --- Style
-library(ggspatial)
-library(sysfonts)
-library(showtext)
-sysfonts::font_add("Lora", system.file("fonts/Lora-Regular.ttf", package = "eNFI", mustWork = T))
-sysfonts::font_add("LoraIt", system.file("fonts/Lora-Italic.ttf", package = "eNFI", mustWork = T))
-sysfonts::font_add("Shadow", system.file("fonts/ShadowsIntoLight-Regular.ttf", package = "eNFI", mustWork = T))
-showtext::showtext_auto()
 
 ## Options
 knitr::opts_chunk$set(echo=F, message=F, warning=F)
@@ -49,10 +34,44 @@ tutorial_options(
 
 gradethis_setup()
 
-## Data
+
+## Data preparation
+# source(system.file("tuto-helper/R/libs.R", package = "eNFI"), local = T)
+# source(system.file("tuto-helper/R/load-fonts.R", package = "eNFI"), local = T)
+# source(system.file("tuto-helper/R/data-preparation.R", package = "eNFI"), local = T)
+
+
+## --- Spatial
+library(sf)
+library(units)
+library(tmap)
+
+## --- Tuto
+# library(learnr)
+# library(gradethis)
+
+## --- Data
+# library(eNFI)
+
+## --- Data analysis
+library(tidyverse)
+
+## --- Style
+library(ggspatial)
+library(sysfonts)
+library(showtext)
+
+sysfonts::font_add("Lora", system.file("fonts/lora-v23-latin-italic.ttf", package = "eNFI", mustWork = T))
+sysfonts::font_add("Shadow", system.file("fonts/shadows-into-light-v14-latin-regular.ttf", package = "eNFI", mustWork = T))
+showtext::showtext_auto()
+
+## Prepare data
+
+## Load data
 load(system.file("extdata/louland_lc.Rda", package = "eNFI"))
 load(system.file("extdata/louland_admin.Rda", package = "eNFI"))
 load(system.file("extdata/sf_exfi.Rda", package = "eNFI"))
+
 
 ## fixed profile - more profiles to be implemented in V2.0
 newland_name <- "Louland"
@@ -91,7 +110,7 @@ area_lc <- sf_lc %>%
   mutate(
     area_m2 = st_area(.),
     area_ha = units::set_units(area_m2, value = ha)
-    ) %>%
+  ) %>%
   as_tibble() %>% 
   group_by(lc) %>%
   summarise(area_ha = sum(area_ha))
@@ -100,7 +119,7 @@ area_tot <- sf_lc %>%
   mutate(
     area_m2 = st_area(.),
     area_ha = units::set_units(area_m2, value = ha)
-    ) %>%
+  ) %>%
   as_tibble() %>% 
   summarise(area_ha = sum(area_ha))
 
