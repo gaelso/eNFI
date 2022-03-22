@@ -52,8 +52,20 @@ usethis::use_data_raw()
 source("data-raw/create-louland.R", local = TRUE)
 source("data-raw/create-louland-shp.R", local = TRUE)
 
+## Copy images from tuto-helpers to tutos
+images <- list.files("inst/tuto-helpers/images")
+images
+
+file.copy(images, "inst/")
+
 ## Create exfi data
 source("data-raw/create-exfi.R", local = TRUE)
+
+## Create Solutions for Lesson 1
+source("data-raw/lesson1-sol.R", local = TRUE)
+
+
+
 
 ## Check
 devtools::check()

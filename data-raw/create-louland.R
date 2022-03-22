@@ -31,13 +31,14 @@ raster::writeRaster(louland_lc90m, "inst/extdata/louland_lc90m.tif", overwrite =
 #save(louland_lc90m, file = "inst/extdata/louland_lc90m.Rda", compress = "xz")
 
 ## Create image
-dir.create("images", showWarnings = F)
-png(filename = "images/louland.png", width = 250, height = 250)
+dir.create("inst/tuto-helpers")
+dir.create("inst/tuto-helpers/images", showWarnings = F)
+png(filename = "inst/tuto-helpers/images/louland.png", width = 250, height = 250)
 make_3d(.newland = louland)
 render_snapshot()
 dev.off()
 
 ## Create video
-render_movie(filename = "images/louland.gif")
+render_movie(filename = "inst/tuto-helpers/images/louland.gif")
 rgl::rgl.close()
 
