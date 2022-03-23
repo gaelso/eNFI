@@ -14,7 +14,7 @@
 #'   \item{lc_id}{Land cover ID.}
 #'   \item{lc}{Land cover code.}
 #'   \item{w}{Land cover area weight.}
-#'   \item{hex}{Polygon geometry.}
+#'   \item{hex}{Land cover mapping colors.}
 #' }
 #' 
 #' @source Created with `NLMR`, `terra`, `stars` and `smoothr`.
