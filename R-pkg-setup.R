@@ -45,21 +45,51 @@ usethis::use_package("ggspatial")
 usethis::use_package("sysfonts")
 usethis::use_package("showtext")
 
+
+## RAW DATA 
+## --- Created by R scripts in data-raw/
+## --- Data stored in inst/extdata/
+## --- called with system.file()
+## --- See: https://r-pkgs.org/data.html#data
+## PACKAGE DATA
+## --- Created by R-script in data-raw/
+## --- Documentation created in R/
+## --- Data stored in data/
+
 ## Create raw data template
 usethis::use_data_raw()
 
-## Create Louland spatial data
+
+## --- Create Louland spatial data
+
+## Create inst/extdata/louland_lc90m.tif 
+## Create data/louland_param.Rda and R/louland_param.R
 source("data-raw/create-louland.R", local = TRUE)
+
+## Create inst/extdata/louland_lc.Rda
+## Create inst/extdata/louland_admin.Rda
 source("data-raw/create-louland-shp.R", local = TRUE)
 
+
+## --- Create exploratory crew forest inventory data
+
+## Create data/exfi_plot.Rda and data/exfi_plot.R
+## Create data/exfi_tree.Rda and data/exfi_tree.R
+## Create inst/extdata/sf_exfi.Rda
+source("data-raw/create-exfi.R", local = TRUE)
+
+
+## Create solutions for Lesson 1
+
+
 ## Copy images from tuto-helpers to tutos
-images <- list.files("inst/tuto-helpers/images")
+images <- list.files("inst/tuto-helpers/images", full.names = T)
 images
 
-file.copy(images, "inst/")
+file.copy(images, "inst/tutorials/eNFI-lesson1/images")
 
-## Create exfi data
-source("data-raw/create-exfi.R", local = TRUE)
+
+
 
 ## Create Solutions for Lesson 1
 source("data-raw/lesson1-sol.R", local = TRUE)
