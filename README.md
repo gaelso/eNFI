@@ -16,7 +16,15 @@ It features interactive lessons designed to practice National Forest Inventory (
 
 **TBD**
 
+The interactive lessons are available with a R package: `eNFI`. 
 
+The current package version number is 1.0. 
+
+Users 
+
+To install the package, open Rstudio  
+
+The lessons' content and status :
 
 
 <br>
