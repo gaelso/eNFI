@@ -59,6 +59,12 @@ usethis::use_package("showtext")
 ## Create raw data template
 usethis::use_data_raw()
 
+## Create inst subfolders
+dir.create("inst", showWarnings = F)
+dir.create("inst/extdata", showWarnings = F)
+dir.create("inst/tuto-helpers", showWarnings = F)
+dir.create("inst/tuto-helpers/images", showWarnings = F)
+
 
 ## --- Create Louland spatial data
 
@@ -68,6 +74,8 @@ source("data-raw/create-louland.R", local = TRUE)
 
 ## Create inst/extdata/louland_lc.Rda
 ## Create inst/extdata/louland_admin.Rda
+## Create inst/tuto-helpers/images/louland-map.png
+## Create inst/tuto-helpers/images/louland-map-nolegend.png
 source("data-raw/create-louland-shp.R", local = TRUE)
 
 
@@ -80,14 +88,13 @@ source("data-raw/create-exfi.R", local = TRUE)
 
 
 ## Create solutions for Lesson 1
-
+source("data-raw/solutions-lesson1.R", local = TRUE)
 
 ## Copy images from tuto-helpers to tutos
 images <- list.files("inst/tuto-helpers/images", full.names = T)
 images
 
 file.copy(images, "inst/tutorials/eNFI-lesson1/images")
-
 
 
 
