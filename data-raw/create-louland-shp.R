@@ -10,7 +10,7 @@ library(tidyverse)
 ## Data preparation
 #louland_lc90m <- stars::read_stars(system.file("extdata/louland_lc90m.tif", package = "eNFI", mustWork = T))
 louland_lc90m <- stars::read_stars("inst/extdata/louland_lc90m.tif")
-load("data/louland_param.rda")
+load("inst/extdata/louland_param.rda")
 
 plot(louland_lc90m)
 
@@ -26,7 +26,7 @@ sf_lc <- louland_lc90m %>%
   sf::st_as_sf(., as_points = FALSE, merge = TRUE) %>%
   sf::st_set_crs(st_crs(32727)) %>%
   dplyr::rename(lc = louland_lc90m.tif) %>%
-  dplyr::left_join(louland_param %>% dplyr::select(lc_id, lc), by = "lc") %>%
+  dplyr::left_join(louland_param %>% dplyr::select(lc_id, lc, lc_name), by = "lc") %>%
   dplyr::mutate(
     id = 1:nrow(.),
     lc = forcats::fct_reorder(lc, lc_id)
@@ -38,7 +38,7 @@ sf_lc <- louland_lc90m %>%
 bkp_warn <- getOption("warn")
 options(warn = -1)
 
-louland_lc <- sf_lc %>%
+sf_lc2 <- sf_lc %>%
   smoothr::smooth(method = "ksmooth", smoothness = 2.2) %>%
   dplyr::mutate(id = 1:nrow(.)) %>%
   st_make_valid() %>%
@@ -49,23 +49,24 @@ options(warn = bkp_warn)
 t2 <- Sys.time()
 print(t2 - t1)
 
-rm(sf_lc)
-
-louland_admin <- louland_lc %>%
+louland_admin <- sf_lc2 %>%
   sf::st_buffer(100) %>%
   sf::st_union(by_feature = FALSE) %>%
   sf::st_as_sf()
 
+louland_lc <- sf_lc2
+
 save(louland_lc, file = "inst/extdata/louland_lc.Rda", compress = "xz")
 save(louland_admin, file = "inst/extdata/louland_admin.Rda", compress = "xz")
 
+#rm(sf_lc, sf_lc2)
+
 ## Create maps
-sf_lc <- louland_lc %>%
-  left_join(tibble(lc_id = 0:6, lc_name = c("Water", "Non-forest", "Woodland", "Deciduous", "Mixed-deciduous", "Evergreen", "Mangrove")), by = "lc_id") %>%
-  mutate(lc_name = fct_reorder(lc_name, lc_id))
+sf_lc <- louland_lc
 sf_admin <- louland_admin
 pal <- louland_param$hex
-nb_ft <- 4
+#nb_ft <- 4
+
 
 gr_map <- ggplot() +
   geom_sf(data = sf_lc, aes(fill = lc_name), col= NA) +
@@ -96,6 +97,17 @@ gr_map <- ggplot() +
       text_face = "italic"
     )
   )
-gr_map  
+gr_map 
 
+## Save maps to inst/tuto-helpers/images
+ggsave(
+  plot = gr_map, 
+  filename = "inst/tuto-helpers/images/louland-map.png", 
+  width = 800, height = 600, units = "px", dpi = 72
+  )
+ggsave(
+  plot = gr_map + theme(legend.position = "none"),
+  filename = "inst/tuto-helpers/images/louland-map-nolegend.png", 
+  width = 600, height = 600, units = "px", dpi = 72
+  )
 
