@@ -1,6 +1,7 @@
 ---
 title: "eNFI Lesson 1: Overview"
-output: 
+# output: word_document ## Uncomment for docx output and comment other outputs + runtime
+output:
   learnr::tutorial:
     progressive: true
     allow_skip: false
@@ -20,38 +21,16 @@ description: >
 
 ```{r setup, include=FALSE}
 
-library(learnr)
-library(gradethis)
-library(eNFI)
-
 ## Options
 knitr::opts_chunk$set(echo=F, message=F, warning=F)
-
-tutorial_options(
-  exercise.timelimit = 40,
-  exercise.reveal_solution = FALSE
-  )
-
-gradethis_setup()
-
-
-## Data preparation
-# source(system.file("tuto-helper/R/libs.R", package = "eNFI"), local = T)
-# source(system.file("tuto-helper/R/load-fonts.R", package = "eNFI"), local = T)
-# source(system.file("tuto-helper/R/data-preparation.R", package = "eNFI"), local = T)
-
 
 ## --- Spatial
 library(sf)
 library(units)
 library(tmap)
 
-## --- Tuto
-# library(learnr)
-# library(gradethis)
-
 ## --- Data
-# library(eNFI)
+library(eNFI)
 
 ## --- Data analysis
 library(tidyverse)
@@ -65,63 +44,42 @@ sysfonts::font_add("Lora", system.file("fonts/lora-v23-latin-italic.ttf", packag
 sysfonts::font_add("Shadow", system.file("fonts/shadows-into-light-v14-latin-regular.ttf", package = "eNFI", mustWork = T))
 showtext::showtext_auto()
 
-## Prepare data
 
 ## Load data
+load(system.file("extdata/louland_param.Rda", package = "eNFI"))
 load(system.file("extdata/louland_lc.Rda", package = "eNFI"))
 load(system.file("extdata/louland_admin.Rda", package = "eNFI"))
 load(system.file("extdata/sf_exfi.Rda", package = "eNFI"))
 
+## Load solutions
+load(system.file("extdata/solutions-lesson1.Rda", package = "eNFI"))
 
 ## fixed profile - more profiles to be implemented in V2.0
+## Rename tables
 newland_name <- "Louland"
 
-sf_lc <- louland_lc %>%
-  left_join(tibble(lc_id = 0:6, lc_name = c("Water", "Non-forest", "Woodland", "Deciduous", "Mixed-deciduous", "Evergreen", "Mangrove")), by = "lc_id") %>%
-  mutate(lc_name = fct_reorder(lc_name, lc_id))
+sf_lc    <- louland_lc
 sf_admin <- louland_admin
-pal <- louland_param$hex
+pal      <- louland_param$hex
 nb_ft <- 4
 
-## Exercises corrections
-exfi_pagb <- exfi_tree %>%
-  group_by(plot_id) %>%
-  summarise(
-    count_tree = sum(scale_factor),
-    plot_ba    = sum(tree_ba * scale_factor),
-    plot_agb   = sum(tree_agb * scale_factor)
+## Tutorial setup - Comment out to print docx for review
+library(learnr)
+library(gradethis)
+
+tutorial_options(
+  exercise.timelimit = 40,
+  exercise.reveal_solution = FALSE
   )
 
-exfi_agb2 <- exfi_agb <- exfi_pagb %>%
-  summarise(
-    n_plot   = n(),
-    n_tree   = mean(count_tree),
-    mean_ba  = mean(plot_ba),
-    sd_ba    = sd(plot_ba),
-    mean_agb = mean(plot_agb),
-    sd_agb   = sd(plot_agb)
-  ) %>%
-  mutate(
-    ci      = sd_agb / sqrt(n_plot) * 1.96,
-    ci_perc = round(ci / mean_agb * 100, 0)
-  )
+gradethis_setup()
 
-area_lc <- sf_lc %>%
-  mutate(
-    area_m2 = st_area(.),
-    area_ha = units::set_units(area_m2, value = ha)
-  ) %>%
-  as_tibble() %>% 
-  group_by(lc) %>%
-  summarise(area_ha = sum(area_ha))
 
-area_tot <- sf_lc %>%
-  mutate(
-    area_m2 = st_area(.),
-    area_ha = units::set_units(area_m2, value = ha)
-  ) %>%
-  as_tibble() %>% 
-  summarise(area_ha = sum(area_ha))
+## For printing docx
+# knitr::opts_chunk$set(error=TRUE)
+# 
+# grade_this_code <- function(x){return("")}
+# grade_code      <- function(x){return("")}
 
 ```
 
@@ -131,11 +89,27 @@ area_tot <- sf_lc %>%
 
 <txt-green>Welcome</txt-green> to the first lesson of the **National Forest Inventory eLearning practice module**.
 
+```{r}
 
+## Check pandoc output format 
+
+# if (knitr::opts_knit$get('rmarkdown.pandoc.to') != "docx") {
+#   
+#   print(knitr::opts_knit$get('rmarkdown.pandoc.to'))
+# 
+#   
+# } else {
+#   
+#   print("else \n")
+#   print(knitr::opts_knit$get('rmarkdown.pandoc.to'))
+#   
+# }
+
+```
 
 ###
 
-<img src="images/newland.gif" width="250" height="250" alt="eNFI lesson 1 image cover" align="right" style="margin: -1em 0 -1em 0"/>
+<img src="images/louland.gif" width="250" height="250" alt="eNFI lesson 1 image cover" align="right" style="margin: -1em 0 -1em 0"/>
 
 This interactive module is designed to complement the [NFI eLearning modules](https://bit.ly/3m5VEsE) with practical hands-on exercises. These exercises take place on a fictional island that just emerged in the middle of the Atlantic Ocean: `Louland`. 
 
@@ -181,10 +155,9 @@ Follow the instructions and try to complete or create the code necessary to get 
 
 ::::::{.infobox data-latex=""}
 
+**Instructions**
+
 The interactive lessons are designed on a trial and error model. The code is first showcased then pre-filled code with holes is presented for you to complete in order to become familiar with the commands. Finally, after a few practice exercises, the last console for a group of commands will be empty.
-
-::::::
-
 
 Let's test it out. Type `1+1` in the console below, Click **Run code** to see the results, and **Submit answer** to check if your code is correct.
 
@@ -201,7 +174,7 @@ Let's test it out. Type `1+1` in the console below, Click **Run code** to see th
 grade_this_code()
 ```
 
-
+::::::
 
 
 ## A new land has emerged
@@ -220,42 +193,13 @@ For now, ```r newland_name``` forests are divided into ```r nb_ft + 1``` categor
 
 The remote sensing team has developed land cover and topographic maps based on 30m resolution remote sensing images and initial forest plot measurements taken by the first exploration crew. Based on their observations, we will be able to have a general understanding of ```r newland_name```'s forest cover. This data is called **auxiliary data**, it is not NFI data *per se*, but useful information to help design and implement an NFI.
 
-Here is what ```r newland_name```'s land covers look like.
+Here is what ```r newland_name```'s land covers look like with a map generated with the packages `ggplot2`, `sf` and `ggspatial`.
 
-```{r lc}
 
-gr_map <- ggplot() +
-  geom_sf(data = sf_lc, aes(fill = lc_name), col= NA) +
-  scale_fill_manual(values = pal) +
-  geom_sf(data = sf_admin, fill = NA, size = 1, color = "black") +
-  theme_bw() +
-  theme(
-    panel.background = element_rect(fill = "#73c2fb"),
-    text = element_text(family = "Lora", face = "italic", size = 16),
-  ) +
-  labs(fill = "") +
-  coord_sf(xlim = c(-20.5, -19.5), ylim = c(-0.8, 0.2), expand = FALSE, crs = st_crs(4326)) +
-  ggspatial::annotation_scale(
-    location = "tr",
-    bar_cols = c("grey60", "white"),
-    text_family = "Lora",
-    text_face = "italic"
-  ) +
-  ggspatial::annotation_north_arrow(
-    location = "tr", 
-    which_north = "true",
-    pad_x = unit(0.2, "in"), 
-    pad_y = unit(0.3, "in"),
-    style = ggspatial::north_arrow_nautical(
-      fill = c("grey40", "white"),
-      line_col = "grey20",
-      text_family = "Lora",
-      text_face = "italic"
-    )
-  )
-gr_map  
+<!-- HTML -->
+<img class="img-center" src="images/louland-map.png" alt="Louland map"/>
 
-```
+<!-- END HTML -->
 
 In the next section, we will have a quick look at the exploration crew's forest inventory data, loaded in R as objects with the `exfi` prefix, and we will use the land cover maps to calculate the area of the main land cover types.
 
@@ -289,6 +233,14 @@ The 10 plots come from a random sample from one of the Evergreen forests of ```r
 
 ```{r fi, exercise=TRUE, exercise.lines=3}
 print(___)
+```
+
+```{r fi-solution}
+print(exfi_pagb)
+```
+
+```{r fi-check}
+grade_this_code()
 ```
 
 The table, `exfi_pagb`, contains the ID `plot_id`, number of trees per hectare `count_tree`, basal area `plot_ba` in m^2^/ha and aboveground biomass `plot_agb` in ton/ha, for each plot.
@@ -478,14 +430,14 @@ Check the total area:
 print(area_tot)
 ```
 
-Well done, we have found that the total area of ```r newland_name``` is ```r round(area_tot$area_ha)``` ha. From the table `area_lc`, we know that ```r round(area_lc %>% filter(lc == "WA") %>% pull(area_ha))``` and ```r round(area_lc %>% filter(lc == "NF") %>% pull(area_ha))``` ha are Water and Non-forest respectively. This leaves: ```r round(area_lc %>% filter(!(lc %in% c("WA", "NF"))) %>% pull(area_ha) %>% sum())``` ha of Forest land.
+We have found that the total area of ```r newland_name``` is ```r round(area_tot$area_ha)``` ha. From the table `area_lc`, we know that ```r round(area_lc %>% filter(lc == "WA") %>% pull(area_ha))``` and ```r round(area_lc %>% filter(lc == "NF") %>% pull(area_ha))``` ha are Water and Non-forest respectively. This leaves ```r round(area_lc %>% filter(!(lc %in% c("WA", "NF"))) %>% pull(area_ha) %>% sum())``` ha of Forest land.
 
 
 ## Conclusion
 
 This is the end of the lesson 1. In the next lessons, we will use these preliminary data to design different sampling frames and analyze tree and plot data. Forest inventory data will be assigned to our sampling design and we will use it to estimate several NFI main variables, such as carbon, biodiversity or production indicators.
 
-Before moving on with the <txt-green>sampling designs</txt-green> and other lessons in this practice module, here is a dynamic view of ```r newland_name``` and the first 10 forest inventory plots.
+Before moving on with the <txt-green>sampling designs</txt-green> and other lessons in this practice module, here is a dynamic view of ```r newland_name``` and the first 10 forest inventory plots, using the package `tmap`.
 
 ```{r tmap1}
 

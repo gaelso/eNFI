@@ -1,74 +1,153 @@
 ---
-title: "Simple sampling for carbon - Design"
-output: learnr::tutorial
+title: "eNFI Lesson 2.1: Simple sampling for carbon - Design"
+# output: word_document ## Uncomment for docx output and comment other outputs + runtime
+output:
+  learnr::tutorial:
+    progressive: true
+    allow_skip: false
+    #css: css/style.css # To replace with in_header system.file() calls.
+    includes:
+      in_header:
+        - !expr  system.file("tuto-helpers/css/custom.html", package = "eNFI")
+        - !expr  system.file("tuto-helpers/css/fonts.html", package = "eNFI")
+        - !expr  system.file("tuto-helpers/css/style.html", package = "eNFI")
+        - !expr  system.file("tuto-helpers/css/banner-style.html", package = "eNFI")
+        - !expr  system.file("tuto-helpers/css/toc-style.html", package = "eNFI")
+        - html/header.html
 runtime: shiny_prerendered
+description: >
+  Develop a systematic sampling design for carbon, based on forest cover areas and preliminary forest inventory. 
 ---
 
 ```{r setup, include=FALSE}
+
+## Options
+knitr::opts_chunk$set(echo=F, message=F, warning=F)
+
+## --- Spatial
+library(sf)
+library(units)
+library(tmap)
+
+## --- Data
+library(eNFI)
+
+## --- Data analysis
+library(tidyverse)
+
+## --- Style
+library(ggspatial)
+library(sysfonts)
+library(showtext)
+
+sysfonts::font_add("Lora", system.file("fonts/lora-v23-latin-italic.ttf", package = "eNFI", mustWork = T))
+sysfonts::font_add("Shadow", system.file("fonts/shadows-into-light-v14-latin-regular.ttf", package = "eNFI", mustWork = T))
+showtext::showtext_auto()
+
+
+## Load data
+load(system.file("extdata/louland_param.Rda", package = "eNFI"))
+load(system.file("extdata/louland_lc.Rda", package = "eNFI"))
+load(system.file("extdata/louland_admin.Rda", package = "eNFI"))
+load(system.file("extdata/sf_exfi.Rda", package = "eNFI"))
+
+## Load solutions
+#load(system.file("extdata/solutions-lesson21.Rda", package = "eNFI"))
+
+## fixed profile - more profiles to be implemented in V2.0
+## Rename tables
+newland_name <- "Louland"
+
+sf_lc    <- louland_lc
+sf_admin <- louland_admin
+pal      <- louland_param$hex
+nb_ft <- 4
+
+## Tutorial setup - Comment out to print docx for review
 library(learnr)
-knitr::opts_chunk$set(echo = FALSE)
-```
+library(gradethis)
 
-
-## Topic 1
-
-### Exercise 
-
-*Here's a simple exercise with an empty code chunk provided for entering the answer.*
-
-Write the R code required to add two plus two:
-
-```{r two-plus-two, exercise=TRUE}
-
-```
-
-### Exercise with Code
-
-*Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
-
-Now write a function that adds any two numbers and then call it:
-
-```{r add-function, exercise=TRUE, exercise.lines = 5}
-add <- function() {
-  
-}
-```
-
-## Topic 2
-
-### Exercise with Hint
-
-*Here's an exercise where the chunk is pre-evaulated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
-
-Modify the following code to limit the number of rows printed to 5:
-
-```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
-mtcars
-```
-
-```{r print-limit-hint}
-head(mtcars)
-```
-
-### Quiz
-
-*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
-
-Some questions to verify that you understand the purposes of various base and recommended R packages:
-
-```{r quiz}
-quiz(
-  question("Which package contains functions for installing other R packages?",
-    answer("base"),
-    answer("tools"),
-    answer("utils", correct = TRUE),
-    answer("codetools")
-  ),
-  question("Which of the R packages listed below are used to create plots?",
-    answer("lattice", correct = TRUE),
-    answer("tools"),
-    answer("stats"),
-    answer("grid", correct = TRUE)
+tutorial_options(
+  exercise.timelimit = 40,
+  exercise.reveal_solution = FALSE
   )
-)
+
+gradethis_setup()
+
+
+## For printing docx
+# knitr::opts_chunk$set(error=TRUE)
+# 
+# grade_this_code <- function(x){return("")}
+# grade_code      <- function(x){return("")}
+
 ```
+
+## Welcome back!
+
+<txt-green>This is the second lesson</txt-green> of the National Forest Inventory eLearning practice module.
+
+
+###
+
+<img src="images/lc-grid10-image.png" width="400" height="400" alt="Louland with a systematic sampling grid" align="right" style="margin: -1em 0 -1em 0"/>
+
+This interactive module is designed to complement the National Forest Inventory eLearning Modules with practical, hands-on exercises. As you learned in lesson one, these exercises take place on a fictional island that just emerged in the middle of the Atlantic Ocean: `Louland`.
+
+The practice module features interactive lessons designed to practice National Forest Inventory (NFI) sampling and the exploratory analysis of NFI field data with the [R programming language](www.r-project.com). Although this fictional land is not an official country, we will use the acronym NFI when referring to its forest inventory as the method and formulas applied here are valid for nationwide forest inventories.
+
+Lesson 2 focuses on several sampling methods that we call "simple sampling" as they are based on the <txt-green>simple random sampling statistics</txt-green>. 
+
+
+
+### Objectives 
+
+As we have seen in the NFI eLearning Modules, NFIs are multi-purpose in nature, but the sampling design requires that we focus on one main variable of interest. In this lesson, <txt-green>the main variable of interest is the forest mean aboveground biomass</txt-green> of `r newland_name`. 
+
+Here, we will limit ourselves to random and systematic sampling, and we will obtain aboveground biomass estimates for each forest type through post-stratification.
+
+
+::::::{.infobox data-latex=""}
+
+If you have not completed lesson 1: *Overview of the preliminary data*, we encourage you to start there. Lesson 1 provides a small overview of `r newland_name` and introduces how you will interact with the R consoles that are embedded in this document.
+
+::::::
+
+Lesson 2 is divided into two parts:
+
+1. Sampling design
+1. Data analysis
+
+We will now bagin part 1. We will develop a <txt-green>sampling design</txt-green> for estimating the mean carbon stock of `r newland_name`'s forests in ton/ha. The objectives of part 1 are:
+
+- Estimate sample size based on a precision/cost trade-off (cost being simplified to the number of plots that we can afford for now),
+- Find a sampling grid size for a systematic sampling, closest to the estimated number of samples. 
+- Create a simple random sampling with the same number of plots.
+- Compare the distribution of plots per forest category for these two types of simple sampling designs.
+
+
+::::::{.infobox data-latex=""}
+
+Please note that nowadays many countries do not use these sampling design methods due to several inconveniences. These designs are often not optimal, as different sub-populations have different variability, and taking variability into consideration allows for more optimal designs (See module 3 on Sampling for more information).
+
+However, since the calculations for the estimations resulting from these sampling methods are fairly simple, they constitute a good entry point to sampling and we will start from there. More advanced sampling design methods for NFI, *i.e.* stratified and ratio estimators, are the focus of other interactive lessons.
+
+::::::
+
+
+In this lesson, we will use the collection of packages grouped inside the package `tidyverse` for general data analysis and the package `sf` for spatial data analysis. We will also briefly use the package `units` to avoid confusion around area units.
+
+```{r libs, eval=F}
+
+library(tidyverse)
+library(sf)
+library(units)
+
+```
+
+Note that in the background we also use `extrafont` to add Google Fonts to our figures and `ggspatial` to add the North arrow and scale to our maps.
+
+<txt-green>Let's get started!</txt-green>
+
+
+
