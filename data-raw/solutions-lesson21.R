@@ -8,10 +8,20 @@ library(sf)
 
 ## Load data
 load("inst/extdata/louland_lc.Rda")
+load("inst/extdata/louland_admin.Rda")
+load("inst/extdata/louland_param.Rda")
 load("data/exfi_tree.Rda")
 
+sf_lc <- louland_lc
+sf_admin <- louland_admin
+pal <- louland_param$hex
 
-offset <- st_bbox(sf_lc)[c("xmin", "ymin")] + c(-1000, -1000)
+## Fonts for mapping
+sysfonts::font_add("Lora", "inst/fonts/lora-v23-latin-italic.ttf")
+showtext::showtext_auto()
+
+
+offset <- st_bbox(sf_lc)[c("xmin", "ymin")] + c(-2000, -2000)
 
 sf_g <- st_make_grid(sf_lc, cellsize = c(10000, 10000), what = "polygons", offset = offset) %>%
   st_intersection(sf_admin)
@@ -28,19 +38,18 @@ gr_grid10 <- ggplot() +
   scale_fill_manual(values = pal) +
   geom_sf(data = sf_p, aes(fill = lc), shape = 21) +
   geom_sf(data = sf_g, fill = NA, col = "red", size = 0.1) +
-  geom_sf(data = sf_admin, fill = NA, size = 0.6, color = "black") +
+  geom_sf(data = sf_admin, fill = NA, size = 0.8, color = "black") +
   theme_bw() +
   theme(
     panel.background = element_rect(fill = "#73c2fb"),
-    text = element_text(family = "LoraIt"),
-    legend.position = "none"
+    text = element_text(family = "Lora")
   ) +
   labs(fill = "", color = "AGB (ton/ha)") +
   coord_sf(xlim = c(-20.5, -19.5), ylim = c(-0.8, 0.2), expand = FALSE, crs = st_crs(4326)) +
   ggspatial::annotation_scale(
     location = "tr",
     bar_cols = c("grey60", "white"),
-    text_family = "LoraIt"
+    text_family = "Lora"
   ) +
   ggspatial::annotation_north_arrow(
     location = "tr", 
@@ -50,10 +59,11 @@ gr_grid10 <- ggplot() +
     style = ggspatial::north_arrow_nautical(
       fill = c("grey40", "white"),
       line_col = "grey20",
-      text_family = "LoraIt"
+      text_family = "Lora"
     )
   )
 
 gr_grid10
-ggsave(plot = gr_grid10, filename = "data/louland/lc-grid10-image.png", width = 15, height = 15, dpi = 100, units = "cm")
-rm(gr_grid10)
+ggsave(plot = gr_grid10, filename = "inst/tuto-helpers/images/louland-grid10.png", width = 15, height = 15, dpi = 100, units = "cm")
+
+#rm(gr_grid10)

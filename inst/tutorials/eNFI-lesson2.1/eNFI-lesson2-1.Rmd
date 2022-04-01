@@ -22,6 +22,8 @@ description: >
 ```{r setup, include=FALSE}
 
 ## Options
+options(yaml.eval.expr = T)
+
 knitr::opts_chunk$set(echo=F, message=F, warning=F)
 
 ## --- Spatial
@@ -52,6 +54,7 @@ load(system.file("extdata/louland_admin.Rda", package = "eNFI"))
 load(system.file("extdata/sf_exfi.Rda", package = "eNFI"))
 
 ## Load solutions
+load(system.file("extdata/solutions-lesson1.Rda", package = "eNFI"))
 #load(system.file("extdata/solutions-lesson21.Rda", package = "eNFI"))
 
 ## fixed profile - more profiles to be implemented in V2.0
@@ -148,6 +151,158 @@ library(units)
 Note that in the background we also use `extrafont` to add Google Fonts to our figures and `ggspatial` to add the North arrow and scale to our maps.
 
 <txt-green>Let's get started!</txt-green>
+
+
+
+
+## Sampling size
+
+Remember in the third NFI eLearning Module, the formula to estimate the **sampling size**, `n`, based on Simple Random Sample (SRS), is:
+
+$$n = \left(\frac{CV \cdot t^{1 - \alpha/2}_{n-1}}{A}\right)^2 \sim \left(\frac{CV \cdot 1.96}{A}\right)^2$$
+with:
+
+- $CV = s / \overline{y} \times 100$ the NFI main variable coefficient of variation expressed as percentage, 
+- $s$ and $\overline{y}$ the samples main variable's standard deviation and average respectively,
+- $A$ the desired precision in percentage, and 
+- $t^{1 - \alpha/2}_{n-1}$ the Student's t-value with $n-1$ degrees of freedom and $1-\frac{\alpha}{2}$ confidence level where $\alpha$ is the significance level. This value is approximated by the value 1.96 when assuming an infinite sample and 0.95 confidence level (two tails $\alpha$ = 0.05).
+
+
+###
+
+Thanks to the results of the preliminary forest inventory (`exfi_agb`), we have an estimate of $\overline{y}$ and $s$ for a forest stand in ```r newland_name```. While this stand is most likely not representative of the whole island, we can use it to make an estimate of the number of samples necessary to achieve various target precision values. The final number of plots will depend on the desired precision and your budget constraints. In case of systematic sampling we can add an additional constraint: we want the NFI grid size in km to be an integer number (i.e. 1, 2, 3. etc.).
+
+We looked at the table `exfi_agb` in Lesson 1, let's show it again to remind ourselves the inventory's mean aboveground biomass, `mean_agb`, and it's standard deviation, `sd_agb`. Print the table name in the console below.
+
+```{r exfi, exercise=TRUE, exercise.lines=3}
+
+
+```
+
+```{r exfi-solution}
+print(exfi_agb)
+```
+
+```{r exfi-check}
+grade_this_code()
+```
+
+###
+
+The table contains aggregated information on the number of trees measured, the average basal area (BA), in m^2^/ha, and aboveground biomass (AGB) in ton/ha. The aboveground biomass is associated with its confidence interval in ton/ha and in percentage.
+
+
+```{r question1, echo=F}
+
+question("What is the average aboveground biomass in ton/ha in the preliminary forest inventory?",
+  answer("135", correct = TRUE),
+  answer("303"),
+  answer("115"),
+  answer("53"),
+  incorrect = "Incorrect, the average aboveground biomass is in the column mean_agb."
+)
+
+``` 
+
+
+Back to calculating a sampling size, let's first calculate the number of samples for different precision levels. For a 5% precision, the number of samples is:
+
+```{r n05}
+
+n05 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb * 100) * 1.96 / 5)^2)
+
+print(n05)
+
+``` 
+
+
+**Your turn, calculate `n10`, `n15` and `n20`, the number of samples necessary to get respectively 10%, 15% and 20% precision on ```r newland_name```'s mean aboveground biomass.**
+
+Calculations for 10% here: 
+
+```{r n10, exercise=TRUE, exercise.lines=6}
+
+n10 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb) * ___ / ___)^2)
+
+
+```
+
+```{r n10-solution}
+
+n10 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb * 100) * 1.96 / 10)^2)
+
+```
+
+```{r n10-check}
+
+grade_this_code(print(n10))
+
+```
+
+
+Calculations for 15% here: 
+
+
+```{r n15, exercise=TRUE, exercise.lines=6}
+
+n15 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb) * ___ / ___)^2)
+
+
+```
+
+```{r n15-solution}
+
+n15 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb * 100) * 1.96 / 15)^2)
+
+```
+
+```{r n15-check}
+
+grade_this_code(print(n15))
+
+```
+
+  
+
+Calculations for 20% here: 
+
+
+```{r n20, exercise=TRUE, exercise.lines=6}
+
+n20 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb) * ___ / ___)^2)
+
+
+```
+
+```{r n20-solution}
+
+n20 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb * 100) * 1.96 / 20)^2)
+
+```
+
+```{r n20-check}
+
+grade_this_code(print(n20))
+
+```
+
+
+
+###
+
+Well done! **We have enough to budget for approximately 300 plots**. 
+
+```{r question2, echo=F}
+
+question("What precision can we afford?",
+  answer("5%"),
+  answer("10%", correct = TRUE),
+  answer("15%"),
+  answer("20%"),
+  incorrect = "Incorrect, look again at the numnber of plots given for different precision targets."
+)
+
+``` 
 
 
 
