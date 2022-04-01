@@ -85,6 +85,8 @@ gradethis_setup()
 
 
 
+<!-- Section 1 -->
+
 ## Welcome!
 
 <txt-green>Welcome</txt-green> to the first lesson of the **National Forest Inventory eLearning practice module**.
@@ -176,6 +178,9 @@ grade_this_code()
 
 ::::::
 
+
+
+<!-- Section 2 -->
 
 ## A new land has emerged
 
@@ -306,6 +311,8 @@ In the next section we will have an overview of the spatial data on ```r newland
 
 
 
+<!-- Section 3 -->
+
 ## land cover types and areas
 
 ### Spatial objects
@@ -432,6 +439,9 @@ print(area_tot)
 
 We have found that the total area of ```r newland_name``` is ```r round(area_tot$area_ha)``` ha. From the table `area_lc`, we know that ```r round(area_lc %>% filter(lc == "WA") %>% pull(area_ha))``` and ```r round(area_lc %>% filter(lc == "NF") %>% pull(area_ha))``` ha are Water and Non-forest respectively. This leaves ```r round(area_lc %>% filter(!(lc %in% c("WA", "NF"))) %>% pull(area_ha) %>% sum())``` ha of Forest land.
 
+
+
+<!-- Section 4 -->
 
 ## Conclusion
 
