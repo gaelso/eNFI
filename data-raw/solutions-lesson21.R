@@ -65,14 +65,10 @@ gr_grid10 <- ggplot() +
   )
 
 gr_grid10
-ggsave(
-  plot = gr_grid10, 
-  filename = "inst/tuto-helpers/images/louland-grid10-legend.png", 
-  width = 800, height = 600, units = "px", dpi = 72
-)
+
 ggsave(
   plot = gr_grid10 + theme(legend.position = "none"),
-  filename = "inst/tuto-helpers/images/louland-grid10.png", 
+  filename = "inst/tuto-helpers/images/louland-grid10-img.png", 
   width = 600, height = 600, units = "px", dpi = 72
 )
 
@@ -119,7 +115,13 @@ n15 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb * 100) * 1.96 / 15)^2)
 n20 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb * 100) * 1.96 / 20)^2)
 
 
-## Systematic sampling
+## Save files in inst/extdata/
+save(exfi_pagb, exfi_agb, n05, n10, n15, n20, 
+     file = "inst/extdata/solutions-lesson21-part1.Rda")
+
+
+
+## --- Systematic sampling
 area_lc <- sf_lc %>%
   mutate(
     area_m2 = st_area(.),
@@ -188,7 +190,7 @@ gr_grid5
 
 ggsave(
   plot = gr_grid5, 
-  filename = "inst/tuto-helpers/images/louland-grid5-legend.png", 
+  filename = "inst/tuto-helpers/images/louland-grid5.png", 
   width = 800, height = 600, units = "px", dpi = 72
 )
 
@@ -205,7 +207,7 @@ gr_grid4
 
 ggsave(
   plot = gr_grid4,
-  filename = "inst/tuto-helpers/images/louland-grid4-legend.png",
+  filename = "inst/tuto-helpers/images/louland-grid4.png",
   width = 800, height = 600, units = "px", dpi = 72
 )
 
@@ -228,14 +230,86 @@ nplot4_total <- nplot4 %>%
   summarise(n = sum(n))
 
 ## Save files in inst/extdata/
-save(exfi_pagb, exfi_agb, 
-     n05, n10, n15, n20, 
-     area_lc, area_forest, area_forest_km2, grid_spacing,
+save(area_lc, area_forest, area_forest_km2, grid_spacing,
      random_x, random_y, offset, 
      sf_grid5, sf_grid4,
      sf_points5, sf_points4, 
      sf_plot5, sf_plot4, 
      nplot5, nplot4,
      nplot5_total, nplot4_total,
-     file = "inst/extdata/solutions-lesson21.Rda")
+     file = "inst/extdata/solutions-lesson21-part2.Rda")
+
+
+
+## --- Random sampling
+
+sf_forest <- sf_lc %>%
+  filter(lc %in% c("EV", "MD", "DD", "WL", "MG"))
+
+set.seed(10)
+sf_points_rd <- st_sample(x = sf_forest, size = nplot4_total$n) %>%
+  st_as_sf()
+
+sf_plot_rd <- sf_points_rd %>%
+  st_join(sf_lc) %>%
+  mutate(
+    lc = fct_reorder(lc, lc_id),
+    lc_name = fct_reorder(lc_name, lc_id)) %>%
+  filter(!is.na(lc))
+
+gr_srs <- ggplot() +
+  geom_sf(data = sf_lc, aes(fill = lc_name), color = NA) +
+  geom_sf(data = sf_plot_rd, aes(fill = lc_name), shape = 21) +
+  geom_sf(data = sf_admin, fill = NA) +
+  scale_fill_manual(values = pal) +
+  labs(fill = "", color = "") +
+  theme_void()
+
+ggsave(
+  plot = gr_srs,
+  filename = "inst/tuto-helpers/images/louland-srs.png",
+  width = 800, height = 600, units = "px", dpi = 72
+)
+
+nplot_rd <- sf_plot_rd %>%
+  as_tibble() %>%
+  group_by(lc) %>%
+  summarise(n = n())
+
+
+set.seed(100)
+sf_points_rd2 <- st_sample(x = sf_forest, size = nplot4_total$n) %>%
+  st_as_sf()
+
+sf_plot_rd2 <- sf_points_rd2 %>%
+  st_join(sf_lc) %>%
+  mutate(lc = fct_reorder(lc, lc_id)) %>%
+  filter(!is.na(lc))
+
+gr_srs2 <- ggplot() +
+  geom_sf(data = sf_lc, aes(fill = lc_name), color = NA) +
+  geom_sf(data = sf_plot_rd2, aes(fill = lc_name), shape = 21) +
+  geom_sf(data = sf_admin, fill = NA) +
+  scale_fill_manual(values = pal) +
+  labs(fill = "", color = "") +
+  theme_void()
+
+ggsave(
+  plot = gr_srs2,
+  filename = "inst/tuto-helpers/images/louland-srs2.png",
+  width = 800, height = 600, units = "px", dpi = 72
+)
+
+
+nplot_rd2 <- sf_plot_rd2 %>%
+  as_tibble() %>%
+  group_by(lc) %>%
+  summarise(n = n())
+
+
+## Save objects
+save(sf_forest, 
+     sf_points_rd, sf_plot_rd, nplot_rd,
+     sf_points_rd2, sf_plot_rd2, nplot_rd2,
+     file = "inst/extdata/solutions-lesson21-part3.Rda")
 

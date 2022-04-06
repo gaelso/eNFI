@@ -107,7 +107,7 @@ ggsave(
   )
 ggsave(
   plot = gr_map + theme(legend.position = "none"),
-  filename = "inst/tuto-helpers/images/louland-map-nolegend.png", 
+  filename = "inst/tuto-helpers/images/louland-img.png", 
   width = 600, height = 600, units = "px", dpi = 72
   )
 
