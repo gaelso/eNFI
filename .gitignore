@@ -1,3 +1,7 @@
+## Custom gitignore
+inst/tuto-helpers/images
+
+
 # History files
 .Rhistory
 .Rapp.history
