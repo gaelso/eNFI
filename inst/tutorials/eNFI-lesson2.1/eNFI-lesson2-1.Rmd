@@ -54,7 +54,9 @@ load(system.file("extdata/louland_admin.Rda", package = "eNFI"))
 load(system.file("extdata/sf_exfi.Rda", package = "eNFI"))
 
 ## Load solutions
-load(system.file("extdata/solutions-lesson21.Rda", package = "eNFI"))
+load(system.file("extdata/solutions-lesson21-part1.Rda", package = "eNFI"))
+load(system.file("extdata/solutions-lesson21-part2.Rda", package = "eNFI"))
+load(system.file("extdata/solutions-lesson21-part3.Rda", package = "eNFI"))
 
 ## fixed profile - more profiles to be implemented in V2.0
 ## Rename tables
@@ -665,8 +667,9 @@ ggplot() +
 
 ```
 
-<img src="images/louland-grid5-legend.png" width="600" height="600" alt="5 x 5 km systematic sampling grid" align="center" style="margin: -1em 0 -1em 0"/>
-
+<!-- HTML -->
+<img class="img-center" src="images/louland-grid5.png"/>
+<!-- END HTML -->
 
 
 ###
@@ -714,8 +717,9 @@ gradethis::grade_this_code()
 
 Well done here is what the 4 x 4 km grid look like:
 
-<img src="images/louland-grid4-legend.png" width="600" height="600" alt="5 x 5 km systematic sampling grid" align="center" style="margin: -1em 0 -1em 0"/>
-
+<!-- HTML -->
+<img class="img-center" src="images/louland-grid4.png"/>
+<!-- END HTML -->
 
 
 ### Calculate the number of plots per land cover class
@@ -812,7 +816,6 @@ print(nplot5_total)
 
 ```{r nplot4tot-hint}
 
-## Tips
 nplot4_total <- ___ %>%
   filter(!(lc %in% c("WA", "NF"))) %>%
   summarise(___)
@@ -852,4 +855,360 @@ Based on the preliminary inventory, and analyzing using R skills, we have now id
 1. We have selected the most adequate sampling grid based on our **cost/precision trade-off**.
 
 
+
+<!-- Section 4 -->
+
+## Random Sampling
+
+Simple random sampling (SRS) designs have a number of disadvantages and are generally not recommended at a national scale. We will still relocate our ```r nplot4_total$n``` plots randomly to compare with our systematic sampling design. 
+
+
+### Demo
+
+The equivalent of the function `st_make_grid()` for random sampling is `st_sample()`. Every time the function `st_sample()` is used a new set of random locations is created. To get the same random allocation every time we run the code, we need to set a "seed" using the function `set.seed()`. In the following example, we will use `set.seed(10)` but feel free to change or remove at will the chose seed number in the practice below.
+
+
+::::::{.infobox data-latex=""}
+
+As the plot locations are completely random, we have no control over how many plots are going to land on forest versus non-forest land. We can apply two possible strategies to reach our target number of plots inside forest land:
+
+1. Filter out non-forest polygons and make the sample size equal to the total number of plots in forest land from our 4 x 4 km sampling grid `nplot4_total$n`.
+1. Make the sampling size equal to the original number of points in a 4 x 4 km grid `nrow(sf_points4)`, and accept that the final number of plots may be slightly different from the previous systematic sampling. 
+
+We can anticipate that the second solution is better if you are also interested in non-forest land, although there is no guarantee you will have enough plots in each land cover type. Here, we will favor option 1, as our primary target is forest carbon stock.
+
+As `sf` objects behave similarly to tibbles, the tidyverse function, `filter()`, will allow us to prepare a forest only shapefile. To do so, we we filter only the forest types from the original land cover `sf` object.
+
+```{r forest, echo=T, eval=F}
+
+sf_forest <- sf_lc %>%
+  filter(lc %in% c("EV", "MD", "DD", "WL", "MG"))
+
+```
+
+::::::
+
+
+We can now create the random points based on the `sf_forest` canvas.
+
+```{r srs, echo=T, eval=F}
+
+set.seed(10)
+sf_points_rd <- st_sample(x = sf_forest, size = nplot4_total$n) %>%
+  st_as_sf()
+
+```
+
+
+
+We can then extract the land cover at the plots' location:
+
+```{r srs-plot, echo=T, eval=F}
+
+sf_plot_rd <- sf_points_rd %>%
+  st_join(sf_lc) %>%
+  mutate(
+    lc = fct_reorder(lc, lc_id),
+    lc_name = fct_reorder(lc_name, lc_id)) %>%
+  filter(!is.na(lc))
+
+```
+
+And map them:
+
+```{r srs-map, , echo=T, eval=F}
+
+ggplot() +
+  geom_sf(data = sf_lc, aes(fill = lc_name), color = NA) +
+  geom_sf(data = sf_plot_rd, aes(fill = lc_name), shape = 21) +
+  geom_sf(data = sf_admin, fill = NA) +
+  scale_fill_manual(values = pal) +
+  labs(fill = "", color = "") +
+  theme_void()
+
+```
+
+<!-- HTML -->
+<img class="img-center" src="images/louland-srs.png"/>
+<!-- END HTML -->
+
+ 
+### 
+
+Now let's calculate the number of plots per land cover category to see if our random sampling is comparable to our systematic sampling.
+
+```{r srs_nplot, echo=T, eval=F}
+
+nplot_rd <- sf_plot_rd %>%
+  as_tibble() %>%
+  group_by(lc) %>%
+  summarise(n = n())
+
+```
+
+It gives the following plot distribution
+
+```{r, echo=T}
+
+print(nplot_rd)
+
+```
+
+
+
+### Practice
+
+**Your turn! In the console below, test a different seed number: 100, and visualize the results.**
+
+- Create the points simple feature `sf_points_rd2` with seed 100 and identical simple feature and number of forest plots as the demo:
+
+```{r srs2, exercise=TRUE, exercise.lines=6}
+
+set.seed(100)
+sf_points_rd2 <- st_sample(x = ___, size = ___) %>%
+  st_as_sf()
+
+```
+
+```{r srs2-solution}
+
+set.seed(100)
+sf_points_rd2 <- st_sample(x = sf_forest, size = nplot4_total$n) %>%
+  st_as_sf()
+
+```
+
+
+```{r srs2-check}
+
+gradethis::grade_this_code()  
+
+```
+
+
+
+###
+
+- Add the land cover information to `sf_points_rd2` and call the new object `sf_plot_rd2`:
+
+```{r srs2-plot, exercise=TRUE, exercise.lines=6}
+
+
+```
+
+```{r srs2-plot-hint}
+
+sf_plot_rd2 <- sf_points_rd2 %>%
+  st_join(___) %>%
+  mutate(lc = fct_reorder(lc, ___)) %>%
+  filter(___)
+
+```
+
+```{r srs2-plot-solution}
+
+sf_plot_rd2 <- sf_points_rd2 %>%
+  st_join(sf_lc) %>%
+  mutate(lc = fct_reorder(lc, lc_id)) %>%
+  filter(!is.na(lc))
+
+```
+
+```{r srs2-plot-check}
+
+gradethis::grade_this_code()
+
+```
+
+
+
+###
+
+- Show the plot locations on a map, with land cover fill based on `lc_name` and remove labels with `labs()` and `theme-void()`:
+
+```{r srs2-map, exercise=TRUE, exercise.lines=9}
+
+```
+
+```{r srs2-map-hint}
+ggplot() +
+  geom_sf(data = sf_lc, aes(fill = lc_name), color = NA) +
+  geom_sf(data = ___, aes(fill = ___), shape = 21) +
+  geom_sf(data = sf_admin, fill = NA) +
+  scale_fill_manual(values = pal) +
+  labs(___, ___) +
+  theme_void()
+
+```
+
+```{r srs2-map-solution}
+
+ggplot() +
+  geom_sf(data = sf_lc, aes(fill = lc_name), color = NA) +
+  geom_sf(data = sf_plot_rd2, aes(fill = lc_name), shape = 21) +
+  geom_sf(data = sf_admin, fill = NA) +
+  scale_fill_manual(values = pal) +
+  labs(fill = "", color = "") +
+  theme_void()
+
+```
+
+```{r srs2-map-check}
+
+gradethis::grade_this_code()
+
+```
+
+
+
+###
+
+With a new seed, the plot locations are different:
+
+<!-- HTML -->
+<img class="img-center" src="images/louland-srs.png"/>
+<!-- END HTML -->
+
+
+
+###
+
+- Finally, calculate the number of plots per land cover type in `nplot_rd2`:
+
+```{r srs2-nplot, exercise=TRUE, exercise.lines=6}
+
+```
+
+
+```{r srs2-nplot-hint}
+
+nplot_rd2 <- ___ %>%
+  as_tibble() %>%
+  group_by(___) %>%
+  summarise(n = n())
+
+```
+
+```{r srs2-nplot-solution}
+
+nplot_rd2 <- sf_plot_rd2 %>%
+  as_tibble() %>%
+  group_by(lc) %>%
+  summarise(n = n())
+
+```
+
+```{r srs2-nplot-check}
+
+gradethis::grade_this_code(paste0("Well done, your code is correct and the result table is \n", print(nplot_rd2)))
+
+```
+
+
+
+###
+
+You have successfully created both a systematic and a simple random sampling designs. In the next section, we will compare their plot distribution.
+
+
+
+### Proportion of plots per forest type
+
+Let's compare how many plots fell within each of `r newland_name`'s land cover classes, between systematic and simple random sampling (Table below). We can see that our two simple sampling methods gave similar plot allocation per land cover class. There is plus or minus 2 points between their proportion and the area proportion of the land cover classes. 
+
+
+```{r compa, echo=F}
+
+simple_res <- area_lc %>%
+  mutate(area_kha = round(as.numeric(area_ha) / 1000, 2)) %>%
+  select(-area_ha) %>%
+  left_join(nplot4 %>% rename(n_sys4 = n), by = "lc") %>%
+  left_join(nplot_rd %>% rename(n_rd = n), by = "lc") %>%
+  left_join(nplot_rd2 %>% rename(n_rd2 = n), by = "lc") %>%
+  mutate(
+    n_rd = replace_na(n_rd, 0),
+    n_rd2 = replace_na(n_rd2, 0)
+    ) %>%
+  filter(lc %in% c("EV", "MD", "DD", "WL", "MG"))
+
+simple_tot <- simple_res %>%
+  summarise(across(where(is.numeric), sum)) %>%
+  mutate(lc = "Total") %>% 
+  select(lc, everything())
+  
+kab <- simple_res %>%
+  mutate(
+    p_area = as.numeric(round(area_kha / simple_tot$area_kha * 100)),
+    p_sys4 = round(n_sys4 / simple_tot$n_sys4 * 100),
+    p_rd   = round(n_rd / simple_tot$n_rd * 100),
+    p_rd2   = round(n_rd / simple_tot$n_rd2 * 100),
+  ) %>%
+  bind_rows(simple_tot %>% mutate(p_area = 100, p_sys4 = 100, p_rd = 100, p_rd2 = 100)) %>%
+  select(lc, area_kha, p_area, n_sys4, p_sys4, n_rd, p_rd, n_rd2, p_rd2)
+
+kab_opt <- list(
+  x = kab,
+  caption = "Area and percentage of plots in each forest land cover class.",
+  col.names = c("Land cover", "Area", "perc.",  rep(c("# plots", "perc."), 3)),
+  booktabs = TRUE,
+  escape = F
+  )
+
+do.call(knitr::kable, c(kab_opt, format = "html")) %>%
+  kableExtra::kable_styling(full_width = F) %>%
+  kableExtra::add_header_above(c(
+    " " = 1,
+    "Area (kha)" = 2, 
+    "Systematic sampling" = 2, 
+    "Random sampling" = 2,
+    "Random sampling 2" = 2
+  ))
+
+```
+
+
+
+### 
+
+Let's refer back to **NFI eLearning Module 3: Sampling**. The differences between these sampling methods do not translate to major differences in plot allocation per land cover classes, but rather to statistical considerations.
+
+
+```{r question3}
+
+question("Which of the following assertions are true? (select ALL that apply)",
+  answer("Simple random sampling (SRS) is not suitable because you have no control over plot distribution."),
+  answer("SRS is less suitable than systematic sampling methods as SRS presents a higher chance of autocorrelation.SRS is less suitable than systematic sampling methods as SRS presents a higher chance of autocorrelation.", correct = TRUE),
+  answer("Systematic sampling consists of one sample, it only borrows SRS stats because they are considered conservative.", correct = TRUE),
+  allow_retry = TRUE
+)
+
+``` 
+
+
+
+<!-- Section 5 -->
+
+## Conclusion
+
+This is the end of Lesson 2, part 1. In this lesson we have tested different sampling designs based on the sampling size that was calculated for simple random sampling and that is applicable to systematic sampling. We have seen that considerations for choosing our method among these simple sampling designs were not related to differences in plot distribution per land cover class, but rather to statistical concepts such as autocorrelation and how systematic grids are in fact random samples of size one.
+
+In part 2 of this lesson 2, we will get the tree and plot data, from the NFI crews, for our systematic sampling design and start the data analysis. 
+
+::::::{.infobox data-latex=""}
+
+A plot distribution proportional to the relative areas of land cover classes is not always desirable. The main goal of sampling optimization is to get the best precision possible with the lowest number of plots to measure.  
+
+From the sampling size formula for Simple Random Sampling, it is easy to understand that the number of plots to measure increases with the variability of our main variable of interest (represented by its coefficient of variation $CV$).
+
+If, for example, a population with a high $CV$ could be divided into two sub-populations each with a very low $CV$, we can intuitively understand that a small number of plots in each sub-population, and therefore a smaller overall number of plots, could give us a good precision. 
+
+Similarly, if one of the sub-populations has a higher $CV$ than the other, and **even if its area was comparatively smaller relative to the other**, allocating a higher number of plots to this sub-population would increase the overall precision.
+
+Our "simple" sampling methods provided a sample allocation to land cover classes more or less proportional to their relative areas. This meant a very small number of plots were allocated in Mangrove forests and a high number of plots were allocated in Mixed-Deciduous forests. However, the aboveground biomass $CV$ in Mangrove forests may very well be much higher than in Mixed-Deciduous forests. In this case, a sampling strategy that would give more plots to Mangrove and less to Mixed-Deciduous forests would increase the overall precision of our aboveground biomass and be more cost-efficient.
+
+These strategies are called <txt-green>Stratified Sampling</txt-green> and will be the main topic of another interactive lesson.
+
+For now, we will continue with our systematic sampling design, based on the 4 x 4 km grid.
+
+::::::
 
