@@ -104,9 +104,10 @@ file.copy("inst/tuto-helpers/images/louland-map.png", "inst/tutorials/eNFI-lesso
 
 ## -> L2
 file.copy("inst/tuto-helpers/images/louland-grid10.png", "inst/tutorials/eNFI-lesson2.1/images")
-file.copy("inst/tuto-helpers/images/louland-grid5-legend.png", "inst/tutorials/eNFI-lesson2.1/images")
-
-
+file.copy("inst/tuto-helpers/images/louland-grid5.png", "inst/tutorials/eNFI-lesson2.1/images")
+file.copy("inst/tuto-helpers/images/louland-grid4.png", "inst/tutorials/eNFI-lesson2.1/images")
+file.copy("inst/tuto-helpers/images/louland-srs.png", "inst/tutorials/eNFI-lesson2.1/images")
+file.copy("inst/tuto-helpers/images/louland-srs2.png", "inst/tutorials/eNFI-lesson2.1/images")
 
 ## Check
 devtools::check()
