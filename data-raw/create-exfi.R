@@ -49,11 +49,21 @@ exfi_tree <- eNFIrawdata::raw_tree %>%
     plot_area    = round(if_else(tree_dbh < 20, pi * subplot_radius^2, pi * plot_radius^2) / 10000, 3),
     scale_factor = round(1 / plot_area),
     tree_height_chave  = exp(0.893 - envir_stress + 0.760 * log(tree_dbh) - 0.0340 * (log(tree_dbh))^2),
-    tree_height_top = round((tree_height_top + tree_height_chave)/2),
+    tree_height_ci     = 0.243 * tree_height_chave * 1.96,
+    tree_height_valid  = if_else(abs(tree_height_chave - tree_height_top) < tree_height_ci, 1, 0),
+    tree_height_top    = if_else(tree_height_valid != 1 | is.na(tree_height_top), tree_height_chave, tree_height_top),
+    ## Alternatively make height top as average to smooth results and remove outliers
+    # tree_height_top = round((tree_height_top + tree_height_chave)/2),
+    tree_height_origin = if_else(tree_height_valid != 1 | is.na(tree_height_top), "model", "data"),
     tree_wd            = case_when(
       !is.na(wd_avg)  ~ wd_avg,
       !is.na(wd_avg2) ~ wd_avg2,
       TRUE ~ 0.57
+    ),
+    wd_level = case_when(
+      !is.na(wd_avg)  ~ "species",
+      !is.na(wd_avg2) ~ "genus",
+      TRUE ~ "global avg"
     ),
     tree_agb = 0.0673 * (tree_wd * tree_dbh^2 * tree_height_top)^0.976 / 10^3,
     tree_ba  = pi * (tree_dbh / 200)^2

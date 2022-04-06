@@ -90,17 +90,21 @@ source("data-raw/create-exfi.R", local = TRUE)
 ## Create solutions for Lesson 1
 source("data-raw/solutions-lesson1.R", local = TRUE)
 
+## Create solutions for Lesson 2.1
+source("data-raw/solutions-lesson21.R", local = TRUE)
+
+
 ## Copy images from tuto-helpers to tutos
 images <- list.files("inst/tuto-helpers/images", full.names = T)
 images
 
-file.copy(images, "inst/tutorials/eNFI-lesson1/images")
+## -> L1
+file.copy("inst/tuto-helpers/images/louland.gif", "inst/tutorials/eNFI-lesson1/images")
+file.copy("inst/tuto-helpers/images/louland-map.png", "inst/tutorials/eNFI-lesson1/images")
 
-
-
-## Create Solutions for Lesson 1
-source("data-raw/lesson1-sol.R", local = TRUE)
-
+## -> L2
+file.copy("inst/tuto-helpers/images/louland-grid10.png", "inst/tutorials/eNFI-lesson2.1/images")
+file.copy("inst/tuto-helpers/images/louland-grid5-legend.png", "inst/tutorials/eNFI-lesson2.1/images")
 
 
 

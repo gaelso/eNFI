@@ -210,6 +210,8 @@ In the next section, we will have a quick look at the exploration crew's forest 
 
 
 
+<!-- Section 3 -->
+
 ## First forest inventory
 
 ### Overview
@@ -233,6 +235,10 @@ Since we are using functions from the `tidyverse` collection of R packages, data
 The table (or tibble) `exfi_agb` contains the number of plots `n_plot`, the mean and standard deviation for aboveground biomass and basal area: `mean_agb` and  `sd_agb` in ton/ha, `mean_ba` and `sd_ba` in m^2^/ha, and `ci` and `ci_perc` represent the confidence interval around the mean AGB in ton/ha and percentage of the mean respectively.
 
 The 10 plots come from a random sample from one of the Evergreen forests of ```r newland_name```. The crew also shared the plot level aboveground biomass in the table name `exfi_pagb`. 
+
+
+
+###
 
 **Your turn!** Run the table name, `exfi_pagb`, in the console below to see the table's basic information.
 
@@ -272,7 +278,9 @@ Which gives:
 print(exfi_ba)
 ```
 
-<br>
+
+
+###
 
 **Your turn!** Create a table, `exfi_agb2`, with the columns `mean_agb` and `sd_agb` to create respectively the mean and standard deviation of plot level AGB, then display the results.
 
@@ -311,7 +319,7 @@ In the next section we will have an overview of the spatial data on ```r newland
 
 
 
-<!-- Section 3 -->
+<!-- Section 4 -->
 
 ## land cover types and areas
 
@@ -398,6 +406,9 @@ print(area_lc)
 ```
 
 
+
+###
+
 **Your turn!** Calculate the total area of land in ```r newland_name```, all land cover classes together, and save it in an object `area_tot`.
 
 Hint: `group_by()` is not necessary anymore.
@@ -441,7 +452,7 @@ We have found that the total area of ```r newland_name``` is ```r round(area_tot
 
 
 
-<!-- Section 4 -->
+<!-- Section 5 -->
 
 ## Conclusion
 

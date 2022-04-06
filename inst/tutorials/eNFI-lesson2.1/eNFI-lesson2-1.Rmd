@@ -54,8 +54,7 @@ load(system.file("extdata/louland_admin.Rda", package = "eNFI"))
 load(system.file("extdata/sf_exfi.Rda", package = "eNFI"))
 
 ## Load solutions
-load(system.file("extdata/solutions-lesson1.Rda", package = "eNFI"))
-#load(system.file("extdata/solutions-lesson21.Rda", package = "eNFI"))
+load(system.file("extdata/solutions-lesson21.Rda", package = "eNFI"))
 
 ## fixed profile - more profiles to be implemented in V2.0
 ## Rename tables
@@ -71,8 +70,8 @@ library(learnr)
 library(gradethis)
 
 tutorial_options(
-  exercise.timelimit = 40,
-  exercise.reveal_solution = FALSE
+  exercise.timelimit = 40#,
+  #exercise.reveal_solution = FALSE
   )
 
 gradethis_setup()
@@ -86,14 +85,19 @@ gradethis_setup()
 
 ```
 
+
+
+<!-- Section 1 -->
+
 ## Welcome back!
 
 <txt-green>This is the second lesson</txt-green> of the National Forest Inventory eLearning practice module.
 
 
+
 ###
 
-<img src="images/lc-grid10-image.png" width="400" height="400" alt="Louland with a systematic sampling grid" align="right" style="margin: -1em 0 -1em 0"/>
+<img src="images/louland-grid10.png" width="400" height="400" alt="Louland with a systematic sampling grid" align="right" style="margin: -1em 0 -1em 0"/>
 
 This interactive module is designed to complement the National Forest Inventory eLearning Modules with practical, hands-on exercises. As you learned in lesson one, these exercises take place on a fictional island that just emerged in the middle of the Atlantic Ocean: `Louland`.
 
@@ -115,6 +119,7 @@ Here, we will limit ourselves to random and systematic sampling, and we will obt
 If you have not completed lesson 1: *Overview of the preliminary data*, we encourage you to start there. Lesson 1 provides a small overview of `r newland_name` and introduces how you will interact with the R consoles that are embedded in this document.
 
 ::::::
+
 
 Lesson 2 is divided into two parts:
 
@@ -138,6 +143,8 @@ However, since the calculations for the estimations resulting from these samplin
 ::::::
 
 
+### Setup
+
 In this lesson, we will use the collection of packages grouped inside the package `tidyverse` for general data analysis and the package `sf` for spatial data analysis. We will also briefly use the package `units` to avoid confusion around area units.
 
 ```{r libs, eval=F}
@@ -154,6 +161,7 @@ Note that in the background we also use `extrafont` to add Google Fonts to our f
 
 
 
+<!-- Section 2 -->
 
 ## Sampling size
 
@@ -168,9 +176,14 @@ with:
 - $t^{1 - \alpha/2}_{n-1}$ the Student's t-value with $n-1$ degrees of freedom and $1-\frac{\alpha}{2}$ confidence level where $\alpha$ is the significance level. This value is approximated by the value 1.96 when assuming an infinite sample and 0.95 confidence level (two tails $\alpha$ = 0.05).
 
 
+
 ###
 
 Thanks to the results of the preliminary forest inventory (`exfi_agb`), we have an estimate of $\overline{y}$ and $s$ for a forest stand in ```r newland_name```. While this stand is most likely not representative of the whole island, we can use it to make an estimate of the number of samples necessary to achieve various target precision values. The final number of plots will depend on the desired precision and your budget constraints. In case of systematic sampling we can add an additional constraint: we want the NFI grid size in km to be an integer number (i.e. 1, 2, 3. etc.).
+
+
+
+###
 
 We looked at the table `exfi_agb` in Lesson 1, let's show it again to remind ourselves the inventory's mean aboveground biomass, `mean_agb`, and it's standard deviation, `sd_agb`. Print the table name in the console below.
 
@@ -187,42 +200,53 @@ print(exfi_agb)
 grade_this_code()
 ```
 
+
+
 ###
 
 The table contains aggregated information on the number of trees measured, the average basal area (BA), in m^2^/ha, and aboveground biomass (AGB) in ton/ha. The aboveground biomass is associated with its confidence interval in ton/ha and in percentage.
 
 
-```{r question1, echo=F}
+```{r question1}
 
 question("What is the average aboveground biomass in ton/ha in the preliminary forest inventory?",
-  answer("135", correct = TRUE),
+  answer(as.character(round(exfi_agb$mean_agb,0)), correct = TRUE),
   answer("303"),
   answer("115"),
   answer("53"),
-  incorrect = "Incorrect, the average aboveground biomass is in the column mean_agb."
+  incorrect = "Incorrect, the average aboveground biomass is in the column mean_agb.",
+  allow_retry = TRUE
 )
 
 ``` 
 
-
 Back to calculating a sampling size, let's first calculate the number of samples for different precision levels. For a 5% precision, the number of samples is:
 
-```{r n05}
+```{r n05, echo=T, eval=F}
 
 n05 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb * 100) * 1.96 / 5)^2)
+
+```
+
+Which gives:
+
+```{r, echo=T}
 
 print(n05)
 
 ``` 
 
 
+
+###
+
 **Your turn, calculate `n10`, `n15` and `n20`, the number of samples necessary to get respectively 10%, 15% and 20% precision on ```r newland_name```'s mean aboveground biomass.**
 
-Calculations for 10% here: 
+**Start with the Calculations for 10% here**: 
 
 ```{r n10, exercise=TRUE, exercise.lines=6}
 
-n10 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb) * ___ / ___)^2)
+n10 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb * 100) * ___ / ___)^2)
 
 
 ```
@@ -240,12 +264,15 @@ grade_this_code(print(n10))
 ```
 
 
-Calculations for 15% here: 
+
+###
+
+**Continue with calculations for 15% here**: 
 
 
 ```{r n15, exercise=TRUE, exercise.lines=6}
 
-n15 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb) * ___ / ___)^2)
+n15 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb * 100) * ___ / ___)^2)
 
 
 ```
@@ -262,14 +289,16 @@ grade_this_code(print(n15))
 
 ```
 
+ 
   
+###
 
-Calculations for 20% here: 
+**And calculations for 20% here**: 
 
 
 ```{r n20, exercise=TRUE, exercise.lines=6}
 
-n20 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb) * ___ / ___)^2)
+n20 <- round(((exfi_agb$sd_agb / exfi_agb$mean_agb * 100) * ___ / ___)^2)
 
 
 ```
@@ -299,10 +328,528 @@ question("What precision can we afford?",
   answer("10%", correct = TRUE),
   answer("15%"),
   answer("20%"),
-  incorrect = "Incorrect, look again at the numnber of plots given for different precision targets."
+  incorrect = "Incorrect, look again at the numnber of plots given for different precision targets.",
+  allow_retry = TRUE
 )
 
 ``` 
+
+
+
+<!-- Section 3 -->
+
+## Systematic sampling
+
+Now let's see what sampling grid spacing is the closest to a sampling size of `r n10` plots, the number of plots selected with our budget constraint. We will start with <txt-green>systematic sampling</txt-green> to account for the additional constraint on grid spacing, and afterwards we will make a simple random sampling that matches the same number of plots.
+
+
+
+### Grid spacing
+
+To calculate the grid spacing that corresponds to our sampling size, we must first divide forest area by sampling size to obtain an estimate of the area that each sample point represents. For a square grid, the square root of this division gives the grid spacing. For example, for a 1,000 ha forest and a sampling size of 20 plots, the grid size will be:
+
+$$d = \sqrt{\frac{1000 ha}{20}} = \sqrt{50ha} = \sqrt{500000m^2} \approx 707.1m$$
+
+In our case, we can calculate the forest area of `r newland_name` from the table, `area_lc`, calculated in Lesson 1. We need to (1) filter forested land cover classes with the function `filter()`, (2) extract their area with the function `pull()` and (3) sum their area. 
+
+
+
+###
+
+**Your turn! Use the console below to create the object, `area_forest`, which contains the total forest area.**
+
+Remember that our land cover classes are coded `EV`, `MD`, `DD`, `MG`, `WL`, `NF` and `WA` for Evergreen, Mixed Deciduous, Deciduous and Mangrove Forests, Woodland, Non-Forest and Water respectively.
+
+```{r areafor, exercise=TRUE, exercise.lines=6}
+
+
+```
+
+```{r areafor-hint-1}
+
+## First run `area_lc` in the console to see what land cover classes are
+## represented and which codes need to be filtered
+
+```
+
+```{r areafor-hint-2}
+
+area_forest <- area_lc %>%
+  filter(lc %in% c(___)) %>%
+  pull(___) %>%
+  sum()
+
+```
+
+```{r areafor-solution}
+
+area_forest <- area_lc %>%
+  filter(lc %in% c("EV", "MD", "DD", "MG", "WL")) %>%
+  pull(area_ha) %>%
+  sum()
+
+```
+
+```{r areafor-check}
+
+gradethis::grade_code(print(area_forest))
+
+```
+
+
+
+###
+
+Then we need to convert the forest area from hectares to square km:
+
+```{r, echo=T}
+
+area_forest_km2 <- as.numeric(set_units(area_forest, value = km2))
+
+print(area_forest_km2)
+
+``` 
+
+
+
+###
+
+Finally, we can apply the grid spacing formula with the square root function `sqrt()`, and the sampling size for a 10% precision, `n10`. Complete the following code sequence to calculate the grid spacing.
+
+
+```{r gridspacing, exercise=TRUE, exercise.lines=6}
+
+grid_spacing <- round(sqrt(___ / ___), 3)
+
+```
+
+```{r gridspacing-solution}
+
+grid_spacing <- round(sqrt(area_forest_km2 / n10), 3)
+
+```
+
+```{r gridspacing-check}
+
+gradethis::grade_this_code()
+
+```
+
+
+### 
+
+The grid spacing is:
+ 
+```{r, echo=T}
+
+print(grid_spacing)
+
+```
+
+It is slightly larger than 4km. We must note here that the number of plots falling on forest land might differ from this hypothetical value, depending on the forest distribution. We need to create the grid and calculate how many plots are located on forest land in order to cross check that the grid spacing fits our desired cost/precision sampling size. Even after this confirmation, there can be mapping errors and several plots confirmed to be located on forest land that may not be actually forested. 
+
+
+::::::{.infobox data-latex=""}
+
+To help you become familiar with the R code, we will demonstrate the sequence of commands to create the grid, map it and calculate the number of plots per land cover class on a 5 x 5 km grid and we will let you develop the 4 x 4 km grid through guided exercises.
+
+::::::
+
+
+
+### Create grid points
+
+The `sf` package contains the function `st_make_grid()` to create grids, and aligned or unaligned grid points within grid polygons. We have the `sf_admin` shapefile that contains the administrative boundary of `r newland_name` and can be used as a canvas for the grid. 
+
+We have two `sf` objects in the preliminary data: `sf_admin`, the administrative boundaries of  `r newland_name` and `sf_lc` the land cover shapefile data of `r newland_name`. In the console below you can run the object names to see their basic information.
+
+```{r check-sf, exercise=TRUE, exercise.lines=3}
+
+
+```
+
+
+
+###
+
+:::::::{.infobox data-latex=""}
+
+By default, the grid starting point is the land most Southern and Western point. Systematic sampling designs are considered to be random samples of size one as only the starting point of their grid is chosen randomly. To get a random starting point so, we will chose randomly an integer value between 500 meters and 2 km. We start at 500m to avoid having too many plots at the edge of the land. This is a precaution specific for this exercise, as ```r newland_name```'s shape is close to a square. This precaution may not be needed in a real country! The `offset` is calculated based on the land cover shapefile bounding box calculated with `st_bbox()`.
+
+```{r offset, echo=T, eval=F}
+
+set.seed(10)
+random_x <- sample(500:2000, size = 1)
+random_y <- sample(500:2000, size = 1)
+offset <- st_bbox(sf_lc)[c("xmin", "ymin")] + c(-random_x, -random_y)
+
+```
+
+:::::::
+
+
+
+### How to create grids
+
+To create a 5 x 5 km grid, we will fill the input `cellsize` with `c(5000, 5000)` as the unit is meters, and to make the grid we use the option `what = "polygon"`:
+
+```{r grid5, echo=T, eval=F}
+
+sf_grid5 <- st_make_grid(sf_lc, cellsize = c(5000, 5000), what = "polygons", offset = offset) %>%
+  st_intersection(sf_admin) %>%
+  st_as_sf()
+
+```
+
+
+###
+
+**Your turn! Adapt the above code to create `sf_grid4`,  the 4 x 4 km grid.** 
+
+```{r grid4, exercise=TRUE, exercise.lines=6}
+
+sf_grid4 <- st_make_grid(sf_lc, cellsize = c(___, ___), what = ___, offset = ___) %>%
+  st_intersection(sf_admin) %>%
+  st_as_sf()
+
+```
+
+```{r grid4-solution}
+
+sf_grid4 <- st_make_grid(sf_lc, cellsize = c(4000, 4000), what = "polygons", offset = offset) %>%
+  st_intersection(sf_admin) %>%
+  st_as_sf()
+
+```
+
+
+```{r grid4-check}
+
+gradethis::grade_this_code()
+
+```
+
+
+### How to create aligned sampling points {-}
+
+
+To create the points, we change the option to `what = "center"` (replace `"center"` with `"corner"` to locate the points at the grid intersections). At this stage, we can also use the function `st_intersection()` to reduce the grid to our 'country' boundaries and the function `st_as_sf()` converts the result of the intersection to an `sf` object. 
+
+```{r points5, echo=T, eval=T}
+
+sf_points5 <- st_make_grid(sf_lc, cellsize = c(5000, 5000), what = "centers", offset = offset) %>%
+  st_intersection(sf_admin) %>%
+  st_as_sf()
+
+```
+
+
+
+###
+
+**Your turn! Prepare `sf_point4`, the points' location on the 4 x 4 k grid.**
+
+```{r points4, exercise=TRUE, exercise.lines=6}
+
+
+```
+
+```{r points4-hint}
+
+sf_points4 <- st_make_grid(sf_lc, cellsize = c(___, ___), what = ___, offset = ___) %>%
+  st_intersection(___) %>%
+  st_as_sf()
+
+```
+
+```{r points4-solution}
+
+sf_points4 <- st_make_grid(sf_lc, cellsize = c(4000, 4000), what = "centers", offset = offset) %>%
+  st_intersection(sf_admin) %>%
+  st_as_sf()
+
+```
+
+```{r points4-check}
+
+gradethis::grade_this_code()
+
+```
+
+
+
+###
+
+We can finally overlap the grid points with the land cover layer, using the function `st_join()`, to assign land cover to each plot. We aim for our land cover code `lc` to appear in a certain order in the map. To follow the order of the land cover numerical ID `lc_id`, we use the function `fct_reorder()` from the tidyverse package `forcats`. This function converts a text variable into an ordered factor following an other variable (in our case `lc_id`). 
+
+```{r plot5, echo=T, eval=F}
+
+sf_plot5 <- sf_points5 %>%
+  st_join(sf_lc) %>%
+  mutate(lc = fct_reorder(lc, lc_id)) %>%
+  filter(!is.na(lc))
+
+```
+
+
+
+###
+
+**Your turn! Adapt the above code to prepare `sf_plot4`, joining the points location and the land cover class spatial data.**
+
+```{r plot4, exercise=TRUE, exercise.lines=6}
+
+
+```
+
+```{r plot4-hint}
+
+sf_plot4 <- ___ %>%
+  st_join(___) %>%
+  mutate(lc = fct_reorder(___, ___)) %>%
+  filter(___)
+
+```
+
+```{r plot4-solution}
+
+sf_plot4 <- sf_points4 %>%
+  st_join(sf_lc) %>%
+  mutate(lc = fct_reorder(lc, lc_id)) %>%
+  filter(!is.na(lc))
+
+```
+
+```{r plot4-check}
+
+gradethis::grade_this_code()
+
+```
+
+
+
+### Visualize
+
+We can visualize the grid with the following code based on the `ggplot2` package and its `geom_sf()` function to display `sf` objects. 
+
+
+:::::::{.infobox data-latex=""}
+
+We have a custom color palette `pal` for ```r newland_name``` land covers. We can see this color palette with the function `show_col()`, from the `scales` package
+
+```{r pal, out.width='50%'}
+pal <- c("#73c2fb", "#edf5e1", "#ffcb9a", "#5cdb95", "#379683", "#00743f", "#012172")
+
+library(scales)
+show_col(pal)
+```
+
+::::::
+
+
+
+###
+
+Here is the code to make the map with the 5 x 5 km systematic sampling design.
+
+```{r gr-grid5, echo=T, eval=F}
+
+ggplot() +
+  geom_sf(data = sf_lc, aes(fill = lc), color = NA) +
+  geom_sf(data = sf_plot5, aes(fill = lc), shape = 21) +
+  geom_sf(data = sf_grid5, fill = NA, col = "red", size = 0.1) +
+  geom_sf(data = sf_admin, fill= NA) +
+  scale_fill_manual(values = pal) +
+  labs(fill = "", color = "") +
+  theme_void()
+
+```
+
+<img src="images/louland-grid5-legend.png" width="600" height="600" alt="5 x 5 km systematic sampling grid" align="center" style="margin: -1em 0 -1em 0"/>
+
+
+
+###
+
+**Your turn! Try to adapt this code to make the same map with the 4 x 4 km grid.**
+
+```{r gr-grid4, exercise=TRUE, exercise.lines=10}
+
+```
+
+```{r gr-grid4-hint}
+
+ggplot() +
+  geom_sf(data = ___, aes(fill = lc), color = NA) +
+  geom_sf(data = ___, aes(fill = lc), shape = 21) +
+  geom_sf(data = ___, fill = NA, col = "red", size = 0.1) +
+  geom_sf(data = ___, fill= NA) +
+  scale_fill_manual(values = ___) +
+  labs(fill = "", color = "") +
+  theme_void()
+
+```
+
+```{r gr-grid4-solution}
+
+ggplot() +
+  geom_sf(data = sf_lc, aes(fill = lc), color = NA) +
+  geom_sf(data = sf_plot4, aes(fill = lc), shape = 21) +
+  geom_sf(data = sf_grid4, fill = NA, col = "red", size = 0.1) +
+  geom_sf(data = sf_admin, fill= NA) +
+  scale_fill_manual(values = pal) +
+  labs(fill = "", color = "") +
+  theme_void()
+
+```
+
+```{r gr-grid4-check}
+
+gradethis::grade_this_code()
+
+```
+
+
+###
+
+Well done here is what the 4 x 4 km grid look like:
+
+<img src="images/louland-grid4-legend.png" width="600" height="600" alt="5 x 5 km systematic sampling grid" align="center" style="margin: -1em 0 -1em 0"/>
+
+
+
+### Calculate the number of plots per land cover class
+
+To calculate the number of plots in each land cover class, we need to group the plots by land cover with the function `group_by()`, then count them with the function `summarise()` (remember lesson 1) and the function `n()`. The function `n()` counts the number of rows in a table or in each category of a category variable. As we don't need the spatial information, we first convert our `sf` object to a tibble with the function `as_tibble()`. For the 5 x 5 km grid the number of plots peer land cover category is calculated with:
+
+```{r nplot5, echo=T, eval=F}
+
+nplot5 <- sf_plot5 %>%
+  as_tibble() %>%
+  group_by(lc) %>%
+  summarise(n = n())
+ 
+
+```
+
+Which gives:
+
+```{r, echo=T}
+
+print(nplot5)
+
+```
+
+
+
+###
+
+**Your turn! Calculate the number of plots per land cover class with the 4 x 4 km grid**
+
+```{r nplot4, exercise=TRUE, exercise.lines=6}
+
+
+```
+
+```{r nplot4-hint}
+
+nplot4 <- ___ %>%
+  as_tibble() %>%
+  ___(lc) %>%
+  ___(n = n())
+
+
+```
+
+```{r nplot4-solution}
+
+nplot4 <- sf_plot4 %>%
+  as_tibble() %>%
+  group_by(lc) %>%
+  summarise(n = n())
+
+```
+
+```{r nplot4-check}
+
+gradethis::grade_this_code(print(nplot4))
+
+```
+
+
+
+###
+
+Last step, to get the total number of forest plots, we need to filter out non-forest categories with the function `filter()` and sum up the remaining number of plots.
+
+```{r nplot5tot, echo=T, eval=F}
+
+nplot5_total <- nplot5 %>%
+  filter(!(lc %in% c("WA", "NF"))) %>%
+  summarise(n = sum(n))
+
+```
+
+Which gives:
+
+```{r, echo=T}
+
+print(nplot5_total)
+
+```
+
+
+
+###  
+
+**Your turn! Calculate the total number of forest plots in the 4 x 4 km grid.**
+
+```{r nplot4tot, exercise=TRUE, exercise.lines=6}
+
+
+
+```
+
+```{r nplot4tot-hint}
+
+## Tips
+nplot4_total <- ___ %>%
+  filter(!(lc %in% c("WA", "NF"))) %>%
+  summarise(___)
+
+```
+
+```{r nplot4tot-solution}
+
+nplot4_total <- nplot4 %>%
+  filter(!(lc %in% c("WA", "NF"))) %>%
+  summarise(n = sum(n))
+
+```
+
+
+```{nplot4tot-check}
+
+gradethis::grade_this_code()
+
+```
+  
+
+
+###
+
+Good job! Looking back at the sampling size given by different precision levels, we had ```r round(n10)``` plots for 10% precision and ```r round(n15)``` plots for 15% precision. Our budget is enough to measure around 300 plots, so we can afford an expected precision of 10%. <txt-green>The 4 x 4 km grid</txt-green> anticipates `r nplot4_total$n` plots in forest land and its exactly what we need and can afford.
+
+
+
+### Systematic sampling: Recap
+
+Based on the preliminary inventory, and analyzing using R skills, we have now identified a good sampling grid. To recap, the process was:
+
+1. We used the **preliminary forest inventory** results to calculate a hypothetical number of samples required for a desired precision of 5, 10, 15 or 20%.
+1. Based on our available budget we have identified what precision we can afford and how many plots it requires, *i.e.* our **sampling size**.
+1. We have then created different **sampling grids** for `r newland_name` and estimated how many plots would fall on forest land.
+1. We have selected the most adequate sampling grid based on our **cost/precision trade-off**.
 
 
 
