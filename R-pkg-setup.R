@@ -44,7 +44,8 @@ usethis::use_dev_package("eNFIrawdata")
 usethis::use_package("ggspatial")
 usethis::use_package("sysfonts")
 usethis::use_package("showtext")
-
+usethis::use_package("knitr")
+usethis::use_package("kableExtra")
 
 ## RAW DATA 
 ## --- Created by R scripts in data-raw/
