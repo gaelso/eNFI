@@ -33,6 +33,8 @@ Imports:
     tmap,
     units,
     learnr,
-    gradethis (>= 0.2.4.9000)
+    gradethis (>= 0.2.4.9000),
+    knitr,
+    kableExtra
 Remotes:  
     rstudio-education/gradethis
