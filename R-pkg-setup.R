@@ -110,6 +110,8 @@ file.copy("inst/tuto-helpers/images/louland-grid4.png", "inst/tutorials/eNFI-les
 file.copy("inst/tuto-helpers/images/louland-srs.png", "inst/tutorials/eNFI-lesson2.1/images")
 file.copy("inst/tuto-helpers/images/louland-srs2.png", "inst/tutorials/eNFI-lesson2.1/images")
 
+unlink(images)
+
 ## Check
 devtools::check()
 
