@@ -4,8 +4,7 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/gaelso/eNFI/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/gaelso/eNFI/actions/workflows/check-standard.yaml)
-[![GitHub R package version](https://img.shields.io/github/r-package/v/gaelso/eNFI)]()
-
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/gaelso/eNFI?display_name=tag&include_prereleases)
 <!-- badges: end -->
 
 
@@ -80,9 +79,3 @@ Cover Photo by <a href="https://unsplash.com/@jeremybezanger?utm_source=unsplash
 <br />
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
 
-<!-- badges: start
-
-[![CRAN status](https://www.r-pkg.org/badges/version/dplyr)](https://cran.r-project.org/package=dplyr)
-[![R build status](https://github.com/tidyverse/dplyr/workflows/R-CMD-check/badge.svg)](https://github.com/tidyverse/dplyr/actions?workflow=R-CMD-check)
-[![Codecov test coverage](https://codecov.io/gh/tidyverse/dplyr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/dplyr?branch=main)
-<!-- badges: end -->
