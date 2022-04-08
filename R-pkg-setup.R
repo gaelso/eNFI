@@ -122,5 +122,9 @@ devtools::document()
 devtools::install()
 
 ## Launch lesson
-learnr::run_tutorial("eNFI-lesson1", "eNFI")
+learnr::run_tutorial("eNFI-lesson2.1", "eNFI")
+
+
+## Add github actions
+usethis::use_github_action_check_standard()
 

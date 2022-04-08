@@ -2,9 +2,10 @@
 # eNFI: eLearning National Forest Inventory <img src='inst/tutorials/eNFI-lesson1/images/eNFI-logo.png' align="right" height="139" /></a>
 
 
-
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/gaelso/eNFI/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/gaelso/eNFI/actions/workflows/check-standard.yaml)
 
+[![GitHub R package version](https://img.shields.io/github/r-package/v/gaelso/eNFI)]()
 
 <!-- badges: end -->
 
