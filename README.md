@@ -3,9 +3,8 @@
 
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/gaelso/eNFI/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/gaelso/eNFI/actions/workflows/check-standard.yaml)
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/gaelso/eNFI?display_name=tag&include_prereleases)
 [![R-CMD-check](https://github.com/gaelso/eNFI/workflows/R-CMD-check/badge.svg)](https://github.com/gaelso/eNFI/actions)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/gaelso/eNFI?display_name=tag&include_prereleases)
 <!-- badges: end -->
 
 
