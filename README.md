@@ -1,5 +1,13 @@
 
-# eNFI: eLearning National Forest Inventory <img src='images/eNFI-logo.png' align="right" height="139" /></a>
+# eNFI: eLearning National Forest Inventory <img src='inst/tutorials/eNFI-lesson1/images/eNFI-logo.png' align="right" height="139" /></a>
+
+
+
+<!-- badges: start -->
+
+
+<!-- badges: end -->
+
 
 
 ## Introduction
@@ -42,7 +50,7 @@ remotes::install_github("gaelso/eNFI@v0.1.0")
 ```
 - Restart Rstudio
 
-- If you didn't have the package `learnr`installed beforehand, a new tab "Tutorial" is created in the top-right panel, where you can start the eNFI lessons.
+- If you didn't have the package `learnr` installed beforehand, a new tab "Tutorial" is created in the top-right panel, where you can start the eNFI lessons.
 
 - Alternatively, you can start the lessons from the console:
 
