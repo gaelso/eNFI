@@ -13,7 +13,7 @@ output:
         - !expr  system.file("tuto-helpers/css/style.html", package = "eNFI")
         - !expr  system.file("tuto-helpers/css/banner-style.html", package = "eNFI")
         - !expr  system.file("tuto-helpers/css/toc-style.html", package = "eNFI")
-        - html/header.html
+        - "html/header.html"
 runtime: shiny_prerendered
 description: >
   Develop a systematic sampling design for carbon, based on forest cover areas and preliminary forest inventory. 
