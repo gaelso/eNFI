@@ -4,7 +4,6 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/gaelso/eNFI/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/gaelso/eNFI/actions/workflows/check-standard.yaml)
-
 [![GitHub R package version](https://img.shields.io/github/r-package/v/gaelso/eNFI)]()
 
 <!-- badges: end -->
