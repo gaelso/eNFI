@@ -1,5 +1,5 @@
 
-# eNFI: eLearning National Forest Inventory <img src='inst/tutorials/eNFI-lesson1/images/eNFI-logo.png' align="right" height="139" /></a>
+# eNFI: eLearning National Forest Inventory <img src='images/eNFI-logo.png' align="right" height="139" />
 
 
 <!-- badges: start -->
@@ -34,9 +34,16 @@ A fair amount of code is related to spatial analysis and spatial data visualizat
 
 ## How to use
 
+The interactive lessons are available with a R package: `eNFI`. 
+
+
 We assume that you have already an updated version of R (R >= 3.5) and Rstudio running on your computer. 
 
-The interactive lessons are available with a R package: `eNFI`.  The current package version number is v0.1.0, this is a pre-release with the lessons 1 and 2.1 for internal review. to in 
+---
+
+**This package is not ready for launch, stay tuned for the version 1.0!**
+
+The current package version number is v0.1.0, this is a pre-release with the lessons 1 and 2.1 for internal review only. 
 
 To install:
 
@@ -47,9 +54,15 @@ install.packages("remotes")
 remotes::install_github("gaelso/eNFI@v0.1.0")
 
 ```
-- Restart Rstudio
+- Restart Rstudio.
 
-- If you didn't have the package `learnr` installed beforehand, a new tab "Tutorial" is created in the top-right panel, where you can start the eNFI lessons.
+- If you didn't have the package `learnr` installed beforehand, a new tab "Tutorial" is created in the top-right panel, where you can start the eNFI lessons:
+
+
+<img src='images/readme1.png' align="center" height="450" width="800" />
+
+
+
 
 - Alternatively, you can start the lessons from the console:
 
@@ -59,7 +72,7 @@ learnr::run_tutorial("eNFI-lesson2.1", "eNFI")
 
 ```
 
-
+--- 
 
 
 
