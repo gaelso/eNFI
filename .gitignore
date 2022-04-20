@@ -1,6 +1,6 @@
 ## Custom gitignore
 inst/tuto-helpers/images
-
+rsconnect
 
 # History files
 .Rhistory

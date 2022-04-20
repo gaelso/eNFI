@@ -36,41 +36,58 @@ A fair amount of code is related to spatial analysis and spatial data visualizat
 
 The interactive lessons are available with a R package: `eNFI`. 
 
+---
 
-We assume that you have already an updated version of R (R >= 3.5) and Rstudio running on your computer. 
+> **This package is not ready for launch, stay tuned for the version 1.0!**
+> 
+> **The current package version number is v0.1.0, this is a pre-release with the lessons 1 and 2.1 for internal review only.**
 
 ---
 
-**This package is not ready for launch, stay tuned for the version 1.0!**
 
-The current package version number is v0.1.0, this is a pre-release with the lessons 1 and 2.1 for internal review only. 
 
 To install:
 
-- Install the package from Github:
+> We assume that you have already an updated version of R (R >= 3.5) and Rstudio running on your computer. 
+> 
+> If you haven't updated packages in a long time, now is a good time to do so. in Rstudio you can go to the Packages tab (bottom right panel), click update, select all and update. Note that it is best to restart R and close your current project if any before updating.
 
-```r
-install.packages("remotes")
-remotes::install_github("gaelso/eNFI@v0.1.0")
+1. Install the `remotes` package:
 
-```
-- Restart Rstudio.
+    ```r
+    if (!require("remotes")) install.packages("remotes")
+    ```
 
-- If you didn't have the package `learnr` installed beforehand, a new tab "Tutorial" is created in the top-right panel, where you can start the eNFI lessons:
+1. Install the development versions of `learn` and `gradethis` packages:
+
+    ```r
+    remotes::install_github("rstudio/learnr")
+    remotes::install_github("rstudio/gradethis")
+    ```
+    > Note: When installing from Github, R asks you to update packages, type **3** if you don't want to update packages during this installation.
+
+1. Install the package `eNFI` from Github:
+
+    ```r
+    remotes::install_github("gaelso/eNFI@v0.1.0")
+
+    ```
+
+1. Restart Rstudio.
+
+1. If you didn't have the package `learnr` installed beforehand, a new tab "Tutorial" is created in the top-right panel, where you can start the eNFI lessons:
 
 
-<img src='images/readme1.png' align="center" height="450" width="800" />
+    <img src='images/readme1.png' align="center" height="450" width="800" />
 
 
+1. Alternatively, you can start the lessons from the console:
 
+    ```r
+    learnr::run_tutorial("eNFI-lesson1", "eNFI")
+    learnr::run_tutorial("eNFI-lesson2.1", "eNFI")
 
-- Alternatively, you can start the lessons from the console:
-
-```r
-learnr::run_tutorial("eNFI-lesson1", "eNFI")
-learnr::run_tutorial("eNFI-lesson2.1", "eNFI")
-
-```
+    ```
 
 --- 
 
