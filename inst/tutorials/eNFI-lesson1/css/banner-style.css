@@ -1,0 +1,59 @@
+
+
+
+/* --- Banner --- */
+
+.image-descript {
+  position: relative;
+  /*display: none;*/
+  animation: slide-in-from-bottom 5s forwards;
+  justify-content: center; /* flex horizontal center */
+  align-items: center; /*flex vertical center*/
+}
+
+.big_image {
+  margin-top: -50px;
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+.image-text{
+    position: absolute;
+    top:30%;
+    left:0;
+    right:0;
+    bottom:0;
+  }
+  
+.lil-image-text { 
+    color: white;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    padding-top: 0px;
+    text-align: center; 
+    display:block;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    /*font-style: italic;*/
+    font-weight: normal;
+    color: #fff;
+  }
+
+.big-image-text { 
+  letter-spacing: 0.065em;
+  line-height: 1em;
+  font-size: 40px;
+  /*text-transform: uppercase;*/
+  text-align: center; 
+  display:block;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 3rem;
+}

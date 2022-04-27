@@ -5,15 +5,22 @@ output:
   learnr::tutorial:
     progressive: true
     allow_skip: false
-    #css: css/style.css # To replace with in_header system.file() calls.
+    # css:
+    #   - css/custom.css
+    #   - css/fonts.css
+    #   - css/style.css
+    #   - css/banner-style.css
+    #   - css/toc-style.css
     includes:
-      in_header:
-        - !expr  system.file("tuto-helpers/css/custom.html", package = "eNFI")
-        - !expr  system.file("tuto-helpers/css/fonts.html", package = "eNFI")
-        - !expr  system.file("tuto-helpers/css/style.html", package = "eNFI")
-        - !expr  system.file("tuto-helpers/css/banner-style.html", package = "eNFI")
-        - !expr  system.file("tuto-helpers/css/toc-style.html", package = "eNFI")
-        - "html/header.html"
+      in_header: 
+      - html/header.html
+      - !expr system.file("tuto-helpers/css/custom.html", package = "eNFI")
+      - !expr system.file("tuto-helpers/css/fonts.html", package = "eNFI")
+      - !expr system.file("tuto-helpers/css/style.html", package = "eNFI")
+      - !expr system.file("tuto-helpers/css/banner-style.html", package = "eNFI")
+      - !expr system.file("tuto-helpers/css/toc-style.html", package = "eNFI")
+    includes:
+      in_header: html/header.html
 runtime: shiny_prerendered
 description: >
   Discover Louland, a fictional island that just emerged in the middle of the Atlantic Ocean and calculate the average Aboveground Biomass (AGB) of a small forest inventory.
@@ -28,6 +35,7 @@ knitr::opts_chunk$set(echo=F, message=F, warning=F)
 library(sf)
 library(units)
 library(tmap)
+tmap_options(check.and.fix = TRUE)
 
 ## --- Data
 library(eNFI)
@@ -40,13 +48,27 @@ library(ggspatial)
 library(sysfonts)
 library(showtext)
 
+## --- Tuto -- comment out for doc knit
+library(learnr)
+library(gradethis)
+
+## Setup
 sysfonts::font_add("Lora", system.file("fonts/lora-v23-latin-italic.ttf", package = "eNFI", mustWork = T))
 sysfonts::font_add("Shadow", system.file("fonts/shadows-into-light-v14-latin-regular.ttf", package = "eNFI", mustWork = T))
 showtext::showtext_auto()
 
 
 ## Load data
-load(system.file("extdata/louland_param.Rda", package = "eNFI"))
+#load(system.file("extdata/louland_param.Rda", package = "eNFI"))
+louland_param <- tibble(
+      lc_id   = 0:6, 
+      lc      = c("WA", "NF", "WL", "DD", "MD", "EV", "MG"),
+      lc_name = c("Water", "Non-forest", "Woodland", "Deciduous", "Mixed-deciduous", "Evergreen", "Mangrove"),
+      w       = c(0, 0.37, 0.21, 0.08, 0.23, 0.11,  0),
+      hex     = c("#73c2fb", "#edf5e1", "#ffcb9a", "#5cdb95", "#379683", "#00743f", "#012172")
+    ) %>%
+  mutate(lc_name = fct_reorder(lc_name, lc_id))
+
 load(system.file("extdata/louland_lc.Rda", package = "eNFI"))
 load(system.file("extdata/louland_admin.Rda", package = "eNFI"))
 load(system.file("extdata/sf_exfi.Rda", package = "eNFI"))
@@ -61,18 +83,15 @@ newland_name <- "Louland"
 sf_lc    <- louland_lc
 sf_admin <- louland_admin
 pal      <- louland_param$hex
-nb_ft <- 4
+nb_ft    <- 4
 
 ## Tutorial setup - Comment out to print docx for review
-library(learnr)
-library(gradethis)
-
-tutorial_options(
+learnr::tutorial_options(
   exercise.timelimit = 40,
-  exercise.reveal_solution = FALSE
+  #exercise.reveal_solution = FALSE
   )
 
-gradethis_setup()
+gradethis::gradethis_setup()
 
 
 ## For printing docx
@@ -213,9 +232,9 @@ In the next section, we will have a quick look at the exploration crew's forest 
 <!-- Section 3 -->
 
 ## First forest inventory
-
+  
 ### Overview
-
+  
 First, let's have a look at the results of 10 forest plots measured by the exploration crew. The data is stored in the object `exfi_agb`. By printing the object name in the console, we will see the results:
 
 ```{r fi-demo, echo=T}
@@ -320,11 +339,11 @@ In the next section we will have an overview of the spatial data on ```r newland
 
 
 <!-- Section 4 -->
-
+  
 ## land cover types and areas
-
+  
 ### Spatial objects
-
+  
 We can use the land cover shapefile provided to us, by the remote sensing analysts, to view the extent of the different land covers and calculate the area of the forest cover. The shapefile is loaded in the R environment under the name `sf_lc` with the package `sf`. It contains the attribute table, the geometries and the coordinate reference system of ```r newland_name```'s land cover. Running the object by its name in the console displays its summary information.
 
 ```{r sf_newland, echo=T}
@@ -364,8 +383,8 @@ lc_tab <- arrange(.data = t3, lc_id)
 Notice that with the pipe operator, `%>%`, we can place the commands one after the other and the resulting table of each function is silently passed to the next function. We don't need to repeat the input `.data = `.
 
 :::::::
-
-
+  
+  
 ::::::{.infobox data-latex=""}
 
 **Let's set a few naming conventions.**
@@ -379,11 +398,11 @@ The prefix `exfi_`, from the tables shown in the previous section was added for 
 Similarly, all spatial data are handled mostly with the `sf` package, and the prefix, `sf_`, was used as a naming convention. The spatial objects available for this tutorial are as follows: `sf_admin`, `sf_lc` and `sf_topo`, respectively the administrative boundaries, land cover, and topography of ```r newland_name```.
 
 ::::::
-
-
-
+  
+  
+  
 ### Land cover areas
-
+  
 `sf` objects behave similarly to standard tibbles, making it easy to apply `tidyverse` functions, while keeping the spatial information, or to convert them to tibbles with the function `as_tibble()`. The `sf` package also contains the `st_area()` function that we are going to use to calculate the areas of the land covers.
 
 In the following sequence, we combine the function `mutate()`, used to create or modify columns in our target table, with the function `st_area()`. Since `st_area()` takes the whole spatial object as input, we could use `st_area(sf_lc)` or `st_area(.)`, which is the standard way to call the current state of a tibble inside a sequence of functions linked with pipes.
@@ -393,14 +412,14 @@ area_lc <- sf_lc %>%
   mutate(
     area_m2 = st_area(.),
     area_ha = units::set_units(area_m2, value = ha)
-    ) %>%
+  ) %>%
   as_tibble() %>% 
   group_by(lc) %>%
   summarise(area_ha = sum(area_ha))
 ```
 
 Which gives:
-
+  
 ```{r get-area-res, echo=T}
 print(area_lc)
 ```
@@ -419,7 +438,7 @@ area_tot <- sf_lc %>%
   mutate(
     area_m2 = st_area(___),
     area_ha = units::set_units(___, value = ha)
-    ) %>%
+  ) %>%
   as_tibble() %>% 
   summarise(___ = sum(___))
 ```
@@ -429,7 +448,7 @@ area_tot <- sf_lc %>%
   mutate(
     area_m2 = st_area(.),
     area_ha = units::set_units(area_m2, value = ha)
-    ) %>%
+  ) %>%
   as_tibble() %>% 
   summarise(area_ha = sum(area_ha))
 ```
@@ -443,7 +462,7 @@ grade_code("Amazing!")
 ### Results
 
 Check the total area:
-
+  
 ```{r lc-area-res, exercise=T}
 print(area_tot)
 ```
@@ -452,10 +471,11 @@ We have found that the total area of ```r newland_name``` is ```r round(area_tot
 
 
 
+
 <!-- Section 5 -->
-
+  
 ## Conclusion
-
+  
 This is the end of the lesson 1. In the next lessons, we will use these preliminary data to design different sampling frames and analyze tree and plot data. Forest inventory data will be assigned to our sampling design and we will use it to estimate several NFI main variables, such as carbon, biodiversity or production indicators.
 
 Before moving on with the <txt-green>sampling designs</txt-green> and other lessons in this practice module, here is a dynamic view of ```r newland_name``` and the first 10 forest inventory plots, using the package `tmap`.
@@ -465,20 +485,18 @@ Before moving on with the <txt-green>sampling designs</txt-green> and other less
 sf_exfi2 <- sf_exfi %>%
   left_join(exfi_pagb, by = "plot_id")
 
-tmap_options(check.and.fix = TRUE)
 tmap_mode("view")
 tm_basemap(server = "Esri.WorldTopoMap") +
-tm_shape(sf_lc) + tm_polygons(col = "lc", 
-                              title = "Land cover",
-                              palette = pal, 
-                              popup.vars = c("lc", "id"), border.alpha = 0) +
-tm_shape(sf_exfi2) + tm_dots(col = "plot_agb", title = "AGB (t/ha)", size = 0.1)
+  tm_shape(sf_lc) + tm_polygons(col = "lc",
+                                title = "Land cover",
+                                palette = pal,
+                                popup.vars = c("lc", "id"), border.alpha = 0) +
+  tm_shape(sf_exfi2) + tm_dots(col = "plot_agb", title = "AGB (t/ha)", size = 0.1)
 
 ```
 
 
 <!-- End of lesson 1 intro to Newland -->
-
 
 
 

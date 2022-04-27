@@ -1,0 +1,39 @@
+
+
+#tutorial-topic::before {
+  content: "";
+  display: block;
+  height: 90px;
+  margin: 10px 10px 10px 10px;
+  background-image: url("../images/eNFI-logo.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: inherit !important;
+}
+
+.topicsContainer {
+    width: 23%;
+    margin-right: 2%;
+    margin-left: 2%;
+    min-width: 200px !important;
+    max-width: 260px !important;
+    z-index: 100;
+}
+
+.topicsPositioner {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0px; 
+  }
+
+.topicsList {
+    min-width: 200px !important;
+    max-width: 260px !important;
+}
+
+.topicsHeader {
+    display: block;
+    text-align: center;
+}
+

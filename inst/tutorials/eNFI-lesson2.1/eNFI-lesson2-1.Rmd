@@ -1,19 +1,27 @@
 ---
 title: "eNFI Lesson 2.1: Simple sampling for carbon - Design"
-# output: word_document ## Uncomment for docx output and comment other outputs + runtime
+#output: word_document ## Uncomment for docx output and comment other outputs + runtime
+always_allow_html: true
 output:
   learnr::tutorial:
     progressive: true
     allow_skip: false
-    #css: css/style.css # To replace with in_header system.file() calls.
+    # css:
+    #   - css/custom.css
+    #   - css/fonts.css
+    #   - css/style.css
+    #   - css/banner-style.css
+    #   - css/toc-style.css
     includes:
-      in_header:
-        - !expr  system.file("tuto-helpers/css/custom.html", package = "eNFI")
-        - !expr  system.file("tuto-helpers/css/fonts.html", package = "eNFI")
-        - !expr  system.file("tuto-helpers/css/style.html", package = "eNFI")
-        - !expr  system.file("tuto-helpers/css/banner-style.html", package = "eNFI")
-        - !expr  system.file("tuto-helpers/css/toc-style.html", package = "eNFI")
-        - "html/header.html"
+      in_header: 
+      - html/header.html
+      - !expr system.file("tuto-helpers/css/custom.html", package = "eNFI")
+      - !expr system.file("tuto-helpers/css/fonts.html", package = "eNFI")
+      - !expr system.file("tuto-helpers/css/style.html", package = "eNFI")
+      - !expr system.file("tuto-helpers/css/banner-style.html", package = "eNFI")
+      - !expr system.file("tuto-helpers/css/toc-style.html", package = "eNFI")
+    includes:
+      in_header: html/header.html
 runtime: shiny_prerendered
 description: >
   Develop a systematic sampling design for carbon, based on forest cover areas and preliminary forest inventory. 
@@ -48,7 +56,16 @@ showtext::showtext_auto()
 
 
 ## Load data
-load(system.file("extdata/louland_param.Rda", package = "eNFI"))
+#load(system.file("extdata/louland_param.Rda", package = "eNFI"))
+louland_param <- tibble(
+      lc_id   = 0:6, 
+      lc      = c("WA", "NF", "WL", "DD", "MD", "EV", "MG"),
+      lc_name = c("Water", "Non-forest", "Woodland", "Deciduous", "Mixed-deciduous", "Evergreen", "Mangrove"),
+      w       = c(0, 0.37, 0.21, 0.08, 0.23, 0.11,  0),
+      hex     = c("#73c2fb", "#edf5e1", "#ffcb9a", "#5cdb95", "#379683", "#00743f", "#012172")
+    ) %>%
+  mutate(lc_name = fct_reorder(lc_name, lc_id))
+
 load(system.file("extdata/louland_lc.Rda", package = "eNFI"))
 load(system.file("extdata/louland_admin.Rda", package = "eNFI"))
 load(system.file("extdata/sf_exfi.Rda", package = "eNFI"))
